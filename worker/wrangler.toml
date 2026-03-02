@@ -1,0 +1,20 @@
+name = "makine-web"
+main = "index.ts"
+compatibility_date = "2024-12-01"
+
+routes = [
+  { pattern = "makineceviri.net/*", zone_name = "makineceviri.net" },
+  { pattern = "*.makineceviri.net/*", zone_name = "makineceviri.net" }
+]
+
+[assets]
+directory = "../dist"
+binding = "ASSETS"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "makineai-translations"
+
+[[send_email]]
+name = "SEND_EMAIL"
+destination_address = "iletisim@makineceviri.net"

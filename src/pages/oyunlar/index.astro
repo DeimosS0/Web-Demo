@@ -1,0 +1,160 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+interface GamePackage {
+  name: string;
+  v: string;
+  sizeBytes: number;
+  size: number;
+  dataUrl: string;
+  checksum: string;
+  dirName: string;
+}
+
+function slugify(name: string): string {
+  const trMap: Record<string, string> = {
+    'ç': 'c',
+    'Ç': 'c',
+    'ş': 's',
+    'Ş': 's',
+    'ğ': 'g',
+    'Ğ': 'g',
+    'ü': 'u',
+    'Ü': 'u',
+    'ö': 'o',
+    'Ö': 'o',
+    'ı': 'i',
+    'İ': 'i',
+  };
+  return name
+    .toLowerCase()
+    .split('')
+    .map(c => trMap[c] || c)
+    .join('')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+const catalog = (await import('../../data/index.json')).default as {
+  packages: Record<string, GamePackage>;
+};
+
+const slugMap = new Map<string, string>();
+const games = Object.entries(catalog.packages)
+  .map(([appId, pkg]) => {
+    let slug = slugify(pkg.name);
+    if (slugMap.has(slug)) slug = `${slug}-${appId}`;
+    slugMap.set(slug, appId);
+    return { appId, slug, ...pkg };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name, 'tr'));
+
+// Popular games — default fallback (replace with analytics data at build time)
+const popularIds = ["1174180", "1245620", "2358720", "990080", "2124490"];
+const popular = popularIds
+  .map(id => games.find(g => g.appId === id))
+  .filter((g): g is NonNullable<typeof g> => g != null);
+
+const popularPool = new Set(["1174180", "3764200", "2208920", "1245620", "2592160", "2124490", "2358720", "990080", "3611110", "2050650", "1817070", "2651280", "1774580", "2842040", "1196590", "2561580", "1817190", "668580", "870780", "812140"]);
+
+const dubPool = new Set(["1245620", "266840"]);
+
+const siteUrl = 'https://makineceviri.net';
+const pageUrl = `${siteUrl}/oyunlar`;
+const pageTitle = 'Türkçe Yama Destekli Oyunlar — Makine Çeviri';
+const pageDesc = `${games.length}+ oyun için Türkçe yama. MakineAI ile tek tıkla kur.`;
+---
+
+<Layout title={pageTitle} description={pageDesc} canonical={pageUrl}>
+  <Navbar showSearch={true} />
+
+  <div class="gl">
+    <section class="gl-popular" id="gl-popular">
+      <div class="gl-popular__header">
+        <h2 class="gl-popular__title">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Popüler Oyunlar
+        </h2>
+      </div>
+      <div class="gl-popular__row">
+        {popular.map((game) => (
+          <a href={`/oyunlar/${game.slug}`} class="gl-pop-card">
+            <img src={`https://cdn.makineceviri.net/assets/images/${game.appId}.png`} alt={game.name} class="gl-pop-card__img" loading="eager" onerror={`this.onerror=null;this.src="https://cdn.akamai.steamstatic.com/steam/apps/${game.appId}/header.jpg"`} />
+            <div class="gl-pop-card__info">
+              <span class="gl-pop-card__name">{game.name}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <div class="gl-topbar">
+      <h2 class="gl-topbar__title">Oyunlar</h2>
+    </div>
+
+    <div class="gl-grid" id="gl-grid">
+      {games.map((game) => (
+        <a href={`/oyunlar/${game.slug}`} class="gl-card" data-name={game.name.toLowerCase()}>
+          <img src={`https://cdn.makineceviri.net/assets/images/${game.appId}.png`} alt={game.name} class="gl-card__img" loading="lazy" decoding="async" onerror={`this.onerror=null;this.src="https://cdn.akamai.steamstatic.com/steam/apps/${game.appId}/header.jpg"`} />
+          <div class="gl-card__info">
+            <span class="gl-card__name">{game.name}</span>
+            <div class="gl-card__tags">
+              <span class="gl-card__tag">Türkçe</span>
+              {dubPool.has(game.appId) && (
+                <span class="gl-card__tag gl-card__tag--dub">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                  Dublaj
+                </span>
+              )}
+              {popularPool.has(game.appId) && (
+                <span class="gl-card__tag gl-card__tag--pop">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  Popüler
+                </span>
+              )}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <p class="gl-empty" id="gl-empty" style="display:none;">Sonuç bulunamadı.</p>
+  </div>
+
+  <Footer />
+</Layout>
+
+<script>
+  const input = document.getElementById('gl-search') as HTMLInputElement;
+  const grid = document.getElementById('gl-grid')!;
+  const popular = document.getElementById('gl-popular')!;
+  const empty = document.getElementById('gl-empty')!;
+  const cards = Array.from(grid.querySelectorAll('.gl-card')) as HTMLElement[];
+
+  const trLower = (s: string) => s
+    .replace(/İ/g, 'i')
+    .replace(/I/g, 'ı')
+    .toLowerCase();
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== input) {
+      e.preventDefault();
+      input?.focus();
+    }
+  });
+
+  input?.addEventListener('input', () => {
+    const q = trLower(input.value.trim());
+    popular.style.display = q ? 'none' : '';
+    let visible = 0;
+    cards.forEach((card) => {
+      const name = card.dataset.name || '';
+      const match = !q || trLower(name).includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    empty.style.display = visible === 0 && q ? '' : 'none';
+  });
+</script>

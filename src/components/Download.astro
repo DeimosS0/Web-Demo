@@ -1,0 +1,298 @@
+---
+---
+
+<section id="indir" class="download-section">
+  <div class="cyber-floor"></div>
+  <div class="ambient-glow"></div>
+
+  <div class="download-container ai-fade-up">
+    <div class="vault-card" id="download-vault">
+      
+      <div class="vault-content">
+        <div class="badge-wrapper">
+          <span class="status-dot blink"></span>
+          <span class="badge-text">SÜRÜM 3.0 // STABİL</span>
+        </div>
+        
+        <h2 class="vault-title">
+          Sinir Ağını <br/>
+          <span class="metallic-text" data-text="Bilgisayarına Taşı.">Bilgisayarına Taşı.</span>
+        </h2>
+        
+        <p class="vault-subtitle">
+          MakineAI istemcisini indirin, kurulum gerektirmeyen taşınabilir (portable) motoru çalıştırın ve oyunlarınızdaki dil sınırlarını sonsuza dek kaldırın.
+        </p>
+
+        <div class="sys-req-terminal">
+          <div class="req-line"><span class="req-key">OS:</span> <span class="req-val">Windows 10 / 11 (64-bit)</span></div>
+          <div class="req-line"><span class="req-key">Boyut:</span> <span class="req-val">~45 MB (Sıkıştırılmış Paket)</span></div>
+          <div class="req-line"><span class="req-key">Ağ:</span> <span class="req-val highlight">Sürekli İnternet Bağlantısı Gerekli</span></div>
+        </div>
+
+        <div class="download-action">
+          <a href="#" class="cyber-download-btn" id="main-download-btn">
+            <div class="btn-glow-follower"></div>
+            <span class="btn-content">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="download-icon">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              MAKINE.AI İNDİR
+            </span>
+          </a>
+          <span class="secure-text">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            256-bit Şifreli ve Güvenli
+          </span>
+        </div>
+      </div>
+
+      <div class="vault-visual">
+        <div id="hypercore-canvas"></div>
+        <div class="holo-scanner"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .download-section {
+    position: relative; padding: 180px 20px;
+    background: #050507; z-index: 10; overflow: hidden;
+    display: flex; justify-content: center; align-items: center;
+  }
+
+  /* Siber Zemin (Grid) ve Arka Plan Işıması */
+  .cyber-floor {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(78, 205, 196, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(78, 205, 196, 0.05) 1px, transparent 1px);
+    transform: perspective(500px) rotateX(60deg) translateY(100px) translateZ(-200px);
+    mask-image: linear-gradient(to top, black, transparent);
+    -webkit-mask-image: linear-gradient(to top, black, transparent);
+    z-index: 0; pointer-events: none;
+  }
+  
+  .ambient-glow {
+    position: absolute; top: 50%; left: 50%; width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.1) 0%, transparent 60%);
+    transform: translate(-50%, -50%); z-index: 0; pointer-events: none;
+  }
+
+  .download-container {
+    position: relative; z-index: 2; width: 100%; max-width: 1200px;
+    perspective: 1200px;
+  }
+
+  /* Devasa Cam Kasa (Vault) - Bükülme kalktı, Levitasyon geldi */
+  .vault-card {
+    display: flex; background: rgba(13, 13, 17, 0.6);
+    border: 1px solid rgba(78, 205, 196, 0.2); border-radius: 32px;
+    backdrop-filter: blur(24px); overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(78, 205, 196, 0.05);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+  }
+  
+  .vault-card:hover { 
+    border-color: rgba(78, 205, 196, 0.4); 
+    transform: translateY(-8px); /* Hafifçe yukarı kalkar (Ağır ve asil) */
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), inset 0 0 80px rgba(78, 205, 196, 0.15); /* İç ışık derinleşir */
+  }
+
+  /* Sol Taraf: İçerik */
+  .vault-content { flex: 1; padding: 4rem; display: flex; flex-direction: column; justify-content: center; }
+
+  .badge-wrapper {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 1.5rem;
+    padding: 6px 12px; background: rgba(78, 205, 196, 0.1); border: 1px solid rgba(78, 205, 196, 0.2);
+    border-radius: 20px; width: fit-content;
+  }
+  .status-dot { width: 8px; height: 8px; background: #4ecdc4; border-radius: 50%; box-shadow: 0 0 10px #4ecdc4; }
+  .status-dot.blink { animation: blink 2s infinite; }
+  .badge-text { font-family: 'SF Mono', monospace; font-size: 0.75rem; color: #4ecdc4; font-weight: 600; letter-spacing: 0.05em; }
+
+  .vault-title { font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
+  .metallic-text { position: relative; display: inline-block; color: #a1a1aa; }
+  .metallic-text::after { content: attr(data-text); position: absolute; left: 0; top: 0; background: linear-gradient(110deg, transparent 20%, #fff 40%, #fff 60%, transparent 80%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: metallicShine 4s linear infinite; }
+
+  .vault-subtitle { font-size: 1.1rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 2.5rem; max-width: 450px; }
+
+  /* Terminal Sistemi Gereksinimleri */
+  .sys-req-terminal {
+    background: #000; border: 1px solid #27272a; border-radius: 12px; padding: 1.5rem;
+    font-family: 'SF Mono', monospace; font-size: 0.85rem; margin-bottom: 3rem; max-width: 450px;
+  }
+  .req-line { display: flex; justify-content: space-between; margin-bottom: 0.75rem; border-bottom: 1px dashed #27272a; padding-bottom: 0.75rem; }
+  .req-line:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+  .req-key { color: #71717a; }
+  .req-val { color: #e4e4e7; text-align: right; }
+  .req-val.highlight { color: #d4a843; }
+
+  /* İndirme Butonu */
+  .download-action { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+  
+  .cyber-download-btn {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    padding: 2px; border-radius: 16px; background: rgba(78, 205, 196, 0.2);
+    text-decoration: none; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cyber-download-btn::before {
+    content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #4ecdc4, #d4a843, #8ab648);
+    opacity: 0.5; transition: opacity 0.3s;
+  }
+  .btn-content {
+    position: relative; z-index: 2; background: #09090b; padding: 18px 48px;
+    border-radius: 14px; color: #fff; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.05em;
+    display: flex; align-items: center; gap: 12px; transition: background 0.3s;
+  }
+  .download-icon { width: 22px; height: 22px; color: #4ecdc4; transition: transform 0.3s, color 0.3s; }
+  
+  .cyber-download-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 30px rgba(78, 205, 196, 0.3); }
+  .cyber-download-btn:hover::before { opacity: 1; }
+  .cyber-download-btn:hover .btn-content { background: rgba(9, 9, 11, 0.9); }
+  .cyber-download-btn:hover .download-icon { transform: translateY(3px); color: #d4a843; }
+
+  .secure-text { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #71717a; font-family: monospace; }
+  .secure-text svg { width: 14px; height: 14px; color: #8ab648; }
+
+  /* Sağ Taraf: Görsel */
+  .vault-visual {
+    flex: 1; position: relative; background: radial-gradient(circle at center, rgba(78,205,196,0.1) 0%, #050507 70%);
+    border-left: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center;
+    min-height: 500px; overflow: hidden;
+  }
+  
+  #hypercore-canvas { width: 100%; height: 100%; position: absolute; inset: 0; z-index: 1; }
+  
+  .holo-scanner {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100px;
+    background: linear-gradient(to bottom, transparent, rgba(78, 205, 196, 0.2), transparent);
+    z-index: 2; pointer-events: none; animation: scanHolo 4s ease-in-out infinite;
+  }
+
+  /* Animasyonlar */
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @keyframes metallicShine { 0% { background-position: 200% 50%; } 100% { background-position: -200% 50%; } }
+  @keyframes scanHolo { 0%, 100% { top: -20%; opacity: 0; } 50% { top: 100%; opacity: 1; } }
+  
+  .ai-fade-up { opacity: 0; transform: translateY(40px); animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  /* Mobil Uyumluluk */
+  @media (max-width: 992px) {
+    .vault-card { flex-direction: column; }
+    .vault-content { padding: 3rem 2rem; }
+    .vault-visual { min-height: 400px; border-left: none; border-top: 1px solid rgba(255,255,255,0.05); }
+    .sys-req-terminal { max-width: 100%; }
+  }
+</style>
+
+<script>
+  import * as THREE from 'three';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // KART BÜKÜLME JS KODU KALDIRILDI - Artık CSS üzerinden asil bir şekilde havalanıyor.
+
+    // --- 3D Holografik Yapay Zeka Çekirdeği (Hypercore) ---
+    const container = document.getElementById('hypercore-canvas');
+    if (container) {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 0, 40);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      const coreGeometry = new THREE.IcosahedronGeometry(8, 1);
+      const wireMaterial = new THREE.MeshBasicMaterial({
+        color: 0x4ecdc4,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.3
+      });
+      const coreMesh = new THREE.Mesh(coreGeometry, wireMaterial);
+      scene.add(coreMesh);
+
+      const innerGeometry = new THREE.IcosahedronGeometry(6, 0);
+      const innerMaterial = new THREE.MeshBasicMaterial({
+        color: 0x050507,
+        transparent: true,
+        opacity: 0.9
+      });
+      const innerMesh = new THREE.Mesh(innerGeometry, innerMaterial);
+      coreMesh.add(innerMesh);
+
+      const particlesGeo = new THREE.BufferGeometry();
+      const particlesCount = 150;
+      const posArray = new Float32Array(particlesCount * 3);
+      for(let i = 0; i < particlesCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 35;
+      }
+      particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+      const particlesMat = new THREE.PointsMaterial({
+        size: 0.2,
+        color: 0xd4a843, 
+        transparent: true,
+        opacity: 0.6,
+        blending: THREE.AdditiveBlending
+      });
+      const particlesMesh = new THREE.Points(particlesGeo, particlesMat);
+      scene.add(particlesMesh);
+
+      let targetRotationSpeed = 0.002;
+      let currentRotationSpeed = 0.002;
+      let targetParticleSpeed = 0.001;
+      let currentParticleSpeed = 0.001;
+      
+      const downloadBtn = document.getElementById('main-download-btn');
+      if (downloadBtn) {
+        downloadBtn.addEventListener('mouseenter', () => {
+          targetRotationSpeed = 0.02; 
+          targetParticleSpeed = 0.01;
+          wireMaterial.opacity = 0.8;
+          wireMaterial.color.setHex(0xd4a843); 
+        });
+        
+        downloadBtn.addEventListener('mouseleave', () => {
+          targetRotationSpeed = 0.002;
+          targetParticleSpeed = 0.001;
+          wireMaterial.opacity = 0.3;
+          wireMaterial.color.setHex(0x4ecdc4); 
+        });
+      }
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+
+        currentRotationSpeed += (targetRotationSpeed - currentRotationSpeed) * 0.05;
+        currentParticleSpeed += (targetParticleSpeed - currentParticleSpeed) * 0.05;
+
+        coreMesh.rotation.x += currentRotationSpeed;
+        coreMesh.rotation.y += currentRotationSpeed * 1.5;
+
+        particlesMesh.rotation.y -= currentParticleSpeed;
+        particlesMesh.rotation.z -= currentParticleSpeed * 0.5;
+
+        const time = Date.now() * 0.001;
+        const scale = 1 + Math.sin(time * 2) * 0.05;
+        coreMesh.scale.setScalar(scale);
+
+        renderer.render(scene, camera);
+      };
+
+      animate();
+
+      window.addEventListener('resize', () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+    }
+  });
+</script>

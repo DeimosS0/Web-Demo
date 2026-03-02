@@ -1,0 +1,285 @@
+---
+---
+
+<section id="nasil-calisir" class="hiw-section">
+  <div class="hiw-container">
+    
+    <div class="section-header reveal-trigger">
+      <h2 class="section-title">
+        Arka Planda Devrim, <br/>
+        <span class="metallic-text" data-text="Ön Planda Sadelik.">Ön Planda Sadelik.</span>
+      </h2>
+      <p class="section-subtitle">
+        Siz sadece arkanıza yaslanın. MakineAI Engine, milyonlarca satırlık çeviri işlemini saniyeler içinde otonom olarak halleder.
+      </p>
+    </div>
+
+    <div class="pipeline-wrapper">
+      
+      <div class="pipeline-track">
+        <div class="pipeline-fill" id="pipeline-fill"></div>
+        <div class="pipeline-glow" id="pipeline-glow"></div>
+      </div>
+
+      <div class="step-module left-module reveal-trigger">
+        <div class="step-node"><div class="node-core"></div></div>
+        <div class="step-card bento-glass">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Sistem Taraması</h3>
+          <p class="step-text">MakineAI istemcisi, kütüphanenizdeki oyunları otomatik olarak tarar ve uyumlu sürümleri saptar.</p>
+          
+          <div class="mini-sim">
+            <div class="sim-header"><span></span><span></span><span></span></div>
+            <div class="sim-body scanning">
+              <div class="folder-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                <div class="scan-laser"></div>
+              </div>
+              <span class="sim-status">Oyun dizini aranıyor...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-module right-module reveal-trigger">
+        <div class="step-node"><div class="node-core"></div></div>
+        <div class="step-card bento-glass">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Sinir Ağı Entegrasyonu</h3>
+          <p class="step-text">Bulut tabanlı yapay zeka beyni ile bağlantı kurulur. Dil dosyaları bypass edilerek bellek üzerinden çeviri uygulanır.</p>
+          
+          <div class="mini-sim">
+            <div class="sim-header"><span></span><span></span><span></span></div>
+            <div class="sim-body neural">
+              <div class="neural-network-sim">
+                <span class="n-dot d1"></span><span class="n-line l1"></span>
+                <span class="n-dot d2"></span><span class="n-line l2"></span>
+                <span class="n-dot d3"></span>
+              </div>
+              <span class="sim-status highlight">Veri akışı aktif.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-module left-module reveal-trigger">
+        <div class="step-node"><div class="node-core"></div></div>
+        <div class="step-card bento-glass">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Sınırsız Deneyim</h3>
+          <p class="step-text">İşlem tamamlandı. Artık oyununuzu tamamen ana dilinizde, hiçbir takılma yaşamadan oynayabilirsiniz.</p>
+          
+          <div class="mini-sim">
+            <div class="sim-header"><span></span><span></span><span></span></div>
+            <div class="sim-body success">
+              <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4ecdc4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div class="launch-btn-sim">OYUNU BAŞLAT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .hiw-section {
+    position: relative; padding: 160px 20px;
+    background: #050507; z-index: 10;
+  }
+  .hiw-container { max-width: 1000px; margin: 0 auto; }
+
+  /* Başlıklar (Önceki stille uyumlu) */
+  .section-header { text-align: center; margin-bottom: 6rem; perspective: 1000px; }
+  .section-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
+  .metallic-text { position: relative; display: inline-block; color: #a1a1aa; }
+  .metallic-text::after { content: attr(data-text); position: absolute; left: 0; top: 0; background: linear-gradient(110deg, transparent 20%, #fff 40%, #fff 60%, transparent 80%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: metallicShine 4s linear infinite; }
+  .section-subtitle { font-size: 1.15rem; color: #71717a; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+
+  /* --- Veri Hattı (Timeline) --- */
+  .pipeline-wrapper { position: relative; padding: 2rem 0; }
+  
+  /* Ortadaki Boş Kablo */
+  .pipeline-track {
+    position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+    background: rgba(255, 255, 255, 0.05); transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  
+  /* Scroll İle Dolan Neon Lazer */
+  .pipeline-fill {
+    position: absolute; top: 0; left: 0; width: 100%; height: 0%; /* JS ile artacak */
+    background: linear-gradient(to bottom, #d4a843, #4ecdc4);
+    border-radius: 2px; transition: height 0.1s ease-out;
+  }
+  /* Lazerin Ucundaki Işıma (Glow) */
+  .pipeline-glow {
+    position: absolute; top: 0; left: 50%; width: 20px; height: 40px;
+    background: #4ecdc4; filter: blur(15px);
+    transform: translate(-50%, -100%); transition: top 0.1s ease-out;
+    opacity: 0;
+  }
+
+  /* --- Adımlar (Kartlar) --- */
+  .step-module {
+    position: relative; display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 6rem; width: 100%;
+  }
+  .step-module:last-child { margin-bottom: 0; }
+  
+  .left-module { flex-direction: row-reverse; }
+  .right-module { flex-direction: row; }
+
+  /* Ortadaki Node (Bağlantı Noktaları) */
+  .step-node {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 24px; height: 24px; border-radius: 50%; background: #050507;
+    border: 2px solid #27272a; display: flex; align-items: center; justify-content: center;
+    z-index: 2; transition: border-color 0.4s, box-shadow 0.4s;
+  }
+  .node-core {
+    width: 8px; height: 8px; border-radius: 50%; background: #3f3f46;
+    transition: background 0.4s;
+  }
+  /* Node Aktifleştiğinde */
+  .step-module.is-active .step-node { border-color: #4ecdc4; box-shadow: 0 0 20px rgba(78, 205, 196, 0.4); }
+  .step-module.is-active .node-core { background: #fff; box-shadow: 0 0 10px #fff; }
+
+  /* Cam Kartlar */
+  .step-card {
+    width: 45%; padding: 2.5rem; border-radius: 24px;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+  }
+  .bento-glass {
+    background: rgba(24, 24, 27, 0.4); border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+  }
+  /* Kart Aktifleştiğinde */
+  .step-module.is-active .bento-glass { border-color: rgba(78, 205, 196, 0.3); transform: translateY(-5px); }
+
+  .step-number { font-family: 'SF Mono', monospace; font-size: 3rem; font-weight: 800; color: rgba(255, 255, 255, 0.03); line-height: 1; margin-bottom: 1rem; }
+  .step-title { font-size: 1.5rem; font-weight: 600; color: #fafafa; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+  .step-text { font-size: 0.95rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 2rem; }
+
+  /* --- Mini Simülasyon Pencereleri (Deneysellik) --- */
+  .mini-sim {
+    background: #000; border: 1px solid #27272a; border-radius: 12px; overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0,0,0,1);
+  }
+  .sim-header { background: #09090b; padding: 8px 12px; display: flex; gap: 6px; border-bottom: 1px solid #27272a; }
+  .sim-header span { width: 8px; height: 8px; border-radius: 50%; background: #3f3f46; }
+  .sim-body { padding: 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; min-height: 120px; }
+  .sim-status { font-family: monospace; font-size: 0.75rem; color: #71717a; }
+  .sim-status.highlight { color: #d4a843; }
+
+  /* Sim 1: Radar Lazer */
+  .folder-icon { position: relative; width: 48px; height: 48px; color: #3f3f46; }
+  .scan-laser { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: #4ecdc4; box-shadow: 0 0 10px #4ecdc4; animation: scanUpDown 2s ease-in-out infinite; opacity: 0.5; }
+  .step-module.is-active .folder-icon { color: #a1a1aa; }
+  .step-module.is-active .scan-laser { opacity: 1; }
+  @keyframes scanUpDown { 0%, 100% { top: 0; } 50% { top: 100%; } }
+
+  /* Sim 2: Neural Flow */
+  .neural-network-sim { display: flex; align-items: center; gap: 8px; }
+  .n-dot { width: 10px; height: 10px; border-radius: 50%; background: #3f3f46; transition: background 0.4s; }
+  .n-line { width: 30px; height: 2px; background: #27272a; position: relative; overflow: hidden; }
+  .n-line::after { content:''; position: absolute; left:-100%; top:0; width:100%; height:100%; background: linear-gradient(90deg, transparent, #d4a843, transparent); }
+  .step-module.is-active .n-dot { background: #4ecdc4; box-shadow: 0 0 10px #4ecdc4; }
+  .step-module.is-active .n-dot.d2 { background: #d4a843; box-shadow: 0 0 10px #d4a843; }
+  .step-module.is-active .n-line::after { animation: dataFlowSim 1s linear infinite; }
+  @keyframes dataFlowSim { 100% { left: 100%; } }
+
+  /* Sim 3: Success Launch */
+  .success-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(78, 205, 196, 0.1); display: flex; align-items: center; justify-content: center; transform: scale(0.8); opacity: 0.5; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  .launch-btn-sim { font-size: 0.75rem; font-weight: 700; color: #fff; background: #27272a; padding: 8px 24px; border-radius: 8px; transition: background 0.4s; }
+  .step-module.is-active .success-icon { transform: scale(1); opacity: 1; box-shadow: 0 0 20px rgba(78,205,196,0.3); }
+  .step-module.is-active .launch-btn-sim { background: #fff; color: #000; box-shadow: 0 0 15px rgba(255,255,255,0.4); }
+
+  /* Scroll Animasyon Sınıfları */
+  .reveal-trigger { opacity: 0; transform: translateY(30px); filter: blur(5px); transition: opacity 0.8s, transform 0.8s, filter 0.8s; }
+  .reveal-trigger.is-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+  /* Responsive Tasarım */
+  @media (max-width: 768px) {
+    .pipeline-track { left: 24px; }
+    .pipeline-glow { left: 24px; }
+    .step-module { flex-direction: column !important; align-items: flex-start; margin-bottom: 4rem; padding-left: 60px; }
+    .step-node { left: 24px; }
+    .step-card { width: 100%; }
+  }
+</style>
+
+<script>
+  // --- 1. Temel Görünürlük Animasyonları ---
+  const setupVisibility = () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal-trigger').forEach(el => observer.observe(el));
+  };
+
+  // --- 2. Gelişmiş AI Veri Hattı (Scroll ile Dolan Lazer) ---
+  const setupPipelineScroll = () => {
+    const pipelineFill = document.getElementById('pipeline-fill');
+    const pipelineGlow = document.getElementById('pipeline-glow');
+    const stepModules = document.querySelectorAll('.step-module');
+    
+    // Veri hattının başlangıç ve bitiş noktalarını hesapla
+    const calculateProgress = () => {
+      const wrapper = document.querySelector('.pipeline-wrapper');
+      if (!wrapper || !pipelineFill || !pipelineGlow) return;
+
+      const rect = wrapper.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Çizginin dolmaya başlayacağı nokta (Ekranın ortasına geldiğinde)
+      const startTrigger = windowHeight * 0.6; 
+      
+      let progress = 0;
+      
+      if (rect.top < startTrigger) {
+        // Ne kadar scroll ettik
+        const scrolled = startTrigger - rect.top;
+        // Çizginin toplam uzunluğu
+        const total = rect.height;
+        progress = Math.min(100, Math.max(0, (scrolled / total) * 100));
+      }
+
+      // Lazer çizgisini doldur
+      pipelineFill.style.height = `${progress}%`;
+      
+      // Glow (Parlama) efektini çizginin ucuna sabitle
+      pipelineGlow.style.top = `${progress}%`;
+      pipelineGlow.style.opacity = progress > 0 && progress < 100 ? '1' : '0';
+
+      // Hangi adıma ulaştıysak o adımı "Aktif" yapıp mini simülasyonunu başlat
+      stepModules.forEach((module, index) => {
+        // Her adımın timeline üzerindeki yaklaşık % konumu
+        const triggerPoints = [15, 50, 85]; 
+        
+        if (progress > triggerPoints[index]) {
+          module.classList.add('is-active');
+        } else {
+          module.classList.remove('is-active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', calculateProgress);
+    // Sayfa yenilendiğinde ilk pozisyonu kontrol et
+    calculateProgress();
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setupVisibility();
+    setupPipelineScroll();
+  });
+</script>

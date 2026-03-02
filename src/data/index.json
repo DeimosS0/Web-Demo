@@ -1,0 +1,2329 @@
+{
+  "version": 5,
+  "generatedAt": "2026-03-01T11:30:04Z",
+  "totalPackages": 258,
+  "packages": {
+    "1003890": {
+      "name": "Blacksad: Under the Skin",
+      "v": "2026-02-21",
+      "sizeBytes": 10583236,
+      "size": 1660579,
+      "dataUrl": "https://cdn.makineceviri.net/data/1003890.mkpkg",
+      "checksum": "fc5f065842bf1f3c687fa033fe4708189bb84e80df758dccae1a3ce174df65d8",
+      "dirName": "Blacksad - Under the Skin"
+    },
+    "1030300": {
+      "name": "Hollow Knight: Silksong",
+      "v": "2026-02-21",
+      "sizeBytes": 13876540,
+      "size": 9147424,
+      "dataUrl": "https://cdn.makineceviri.net/data/1030300.mkpkg",
+      "checksum": "16b92342aa699fc31924a2a797ddf7976ceec1c924eff1537d7ee2ab5373c65d",
+      "dirName": "Hollow Knight Silksong"
+    },
+    "1030830": {
+      "name": "Mafia II: Definitive Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 7687710,
+      "size": 2859787,
+      "dataUrl": "https://cdn.makineceviri.net/data/1030830.mkpkg",
+      "checksum": "0bbeb64d98398dcaf78af7894bd9e1e3b2c27ffe7aee0802a10370a87da39372",
+      "dirName": "Mafia II Definitive Edition"
+    },
+    "1030840": {
+      "name": "Mafia: Definitive Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 1629299,
+      "size": 635983,
+      "dataUrl": "https://cdn.makineceviri.net/data/1030840.mkpkg",
+      "checksum": "bb696cd9d61c42d311f80ae67479d2e68059372b8469dbe00019044308d90039",
+      "dirName": "Mafia Definitive Edition"
+    },
+    "1042490": {
+      "name": "Call of the Sea",
+      "v": "2026-02-21",
+      "sizeBytes": 301188,
+      "size": 49318,
+      "dataUrl": "https://cdn.makineceviri.net/data/1042490.mkpkg",
+      "checksum": "302106649e9d7a92d7422c765e165e84d8e1e2aaf704ca0611758e5b06514855",
+      "dirName": "Call of the Sea"
+    },
+    "1042780": {
+      "name": "PINE",
+      "v": "2026-02-21",
+      "sizeBytes": 836573,
+      "size": 115202,
+      "dataUrl": "https://cdn.makineceviri.net/data/1042780.mkpkg",
+      "checksum": "f9742c6c7e0d5b9cbc8b03f4ab8902e73ac1f16d1ea01411e069c8eeaca27c46",
+      "dirName": "PINE"
+    },
+    "1057750": {
+      "name": "The Suicide of Rachel Foster",
+      "v": "2026-02-21",
+      "sizeBytes": 258034,
+      "size": 198077,
+      "dataUrl": "https://cdn.makineceviri.net/data/1057750.mkpkg",
+      "checksum": "1449cee0abe66a20799cb9527786903fe9a18ebf4d44afb491b8a6fb2dbcbac2",
+      "dirName": "The Suicide of Rachel Foster"
+    },
+    "1065310": {
+      "name": "Evil West",
+      "v": "2026-02-21",
+      "sizeBytes": 962794,
+      "size": 129907,
+      "dataUrl": "https://cdn.makineceviri.net/data/1065310.mkpkg",
+      "checksum": "70ac1673cea9ab57c5af0a4b193ffa88e1d5549d5e98949c58aacde57663e37b",
+      "dirName": "Evil West"
+    },
+    "1077520": {
+      "name": "The Light Remake",
+      "v": "2026-02-21",
+      "sizeBytes": 38328,
+      "size": 16597,
+      "dataUrl": "https://cdn.makineceviri.net/data/1077520.mkpkg",
+      "checksum": "01716dbba1713ea7c06ecef5437be4371f5a6dcd8f1364fb63af9c58772138a0",
+      "dirName": "The Light Remake"
+    },
+    "108710": {
+      "name": "Alan Wake",
+      "v": "2026-02-21",
+      "sizeBytes": 3934910,
+      "size": 278673,
+      "dataUrl": "https://cdn.makineceviri.net/data/108710.mkpkg",
+      "checksum": "e97bc4086e613c21ccc250332bec1237fac58d1882aa543ce0a780f32fbcdfcc",
+      "dirName": "Alan Wake"
+    },
+    "1105670": {
+      "name": "The Last Spell",
+      "v": "2026-02-21",
+      "sizeBytes": 919946,
+      "size": 311372,
+      "dataUrl": "https://cdn.makineceviri.net/data/1105670.mkpkg",
+      "checksum": "d68cef298b98a0f13abcb2ca1447b861c943073d1e4cc7d8e87dc4dcc7779640",
+      "dirName": "The Last Spell"
+    },
+    "1113560": {
+      "name": "NieR Replicant ver.1.22474487139...",
+      "v": "2026-02-21",
+      "sizeBytes": 20321938,
+      "size": 20322168,
+      "dataUrl": "https://cdn.makineceviri.net/data/1113560.mkpkg",
+      "checksum": "c5b6e384a857509f97bda1915bc11d60cc2071e27a4803d2e9a3d47367542b5d",
+      "dirName": "NieR Replicant"
+    },
+    "1115690": {
+      "name": "Yes, Your Grace",
+      "v": "2026-02-21",
+      "sizeBytes": 23986832,
+      "size": 4696328,
+      "dataUrl": "https://cdn.makineceviri.net/data/1115690.mkpkg",
+      "checksum": "ed9e0da76ba281e5e3142054f951f95e5a360c8f1c9fcdbdff27ab06b41681fd",
+      "dirName": "Yes, Your Grace"
+    },
+    "1123770": {
+      "name": "Curse of the Dead Gods",
+      "v": "2026-02-21",
+      "sizeBytes": 144792,
+      "size": 53086,
+      "dataUrl": "https://cdn.makineceviri.net/data/1123770.mkpkg",
+      "checksum": "cdae1c7b7a9a1af87cb1fe2e2e690d6cab1f3046a12e3b733f2253bd14a11764",
+      "dirName": "Curse of the Dead Gods"
+    },
+    "1126600": {
+      "name": "Before I Forget",
+      "v": "2026-02-21",
+      "sizeBytes": 87436,
+      "size": 36455,
+      "dataUrl": "https://cdn.makineceviri.net/data/1126600.mkpkg",
+      "checksum": "34fa9cdb3ceb1344bb8cde48876417f70de5a0fb65c32f7983ee84a9d8602471",
+      "dirName": "Before I Forget"
+    },
+    "1142390": {
+      "name": "Remothered: Broken Porcelain",
+      "v": "2026-02-21",
+      "sizeBytes": 104639,
+      "size": 104628,
+      "dataUrl": "https://cdn.makineceviri.net/data/1142390.mkpkg",
+      "checksum": "1d65bda6715bf24b6090bfa49c8ba82c8c771c6c15cc80653ee8080397541969",
+      "dirName": "Remothered Broken Porcelain"
+    },
+    "1145360": {
+      "name": "Hades",
+      "v": "2026-03-02",
+      "sizeBytes": 9218655,
+      "size": 1253414,
+      "dataUrl": "https://cdn.makineceviri.net/data/1145360.mkpkg",
+      "checksum": "a4285afc4d93455fb021a8404de7330223217d0ae6105ff78a8d92892072a2ec",
+      "dirName": "Hades"
+    },
+    "1154030": {
+      "name": "Titan Quest 2",
+      "v": "2026-02-21",
+      "sizeBytes": 1950938,
+      "size": 553016,
+      "dataUrl": "https://cdn.makineceviri.net/data/1154030.mkpkg",
+      "checksum": "a5f2a867c3a1bd031660c6e6d8e4eb9002bac0c7aa11cfbe50b7230dfa7fc787",
+      "dirName": "Titan Quest 2"
+    },
+    "1172380": {
+      "name": "Star Wars Jedi: Fallen Order",
+      "v": "2026-02-21",
+      "sizeBytes": 2689439,
+      "size": 2680783,
+      "dataUrl": "https://cdn.makineceviri.net/data/1172380.mkpkg",
+      "checksum": "08789735b1b8ee6a6fa55adc0ba3968d3f42f2dc45379ad9bc15b4f741be188a",
+      "dirName": "Star Wars Jedi Fallen Order"
+    },
+    "1174180": {
+      "name": "Red Dead Redemption 2",
+      "v": "2026-02-21",
+      "sizeBytes": 42416824,
+      "size": 10076592,
+      "dataUrl": "https://cdn.makineceviri.net/data/1174180.mkpkg",
+      "checksum": "32e472693af3d4d94d16d6709f82234b1893f70f7e3fbfa801531df433a8d60c",
+      "dirName": "Red Dead Redemption 2"
+    },
+    "1180660": {
+      "name": "Tell Me Why",
+      "v": "2026-03-01",
+      "sizeBytes": 2046140,
+      "size": 922472,
+      "dataUrl": "https://cdn.makineceviri.net/data/1180660.mkpkg",
+      "checksum": "cdf9dc5c928e1f3db1a29345f088534daf7c10f744ab86c79ea0a372837c7dce",
+      "dirName": "Tell Me Why"
+    },
+    "1182900": {
+      "name": "A Plague Tale: Requiem",
+      "v": "2026-02-21",
+      "sizeBytes": 475716785,
+      "size": 452785952,
+      "dataUrl": "https://cdn.makineceviri.net/data/1182900.mkpkg",
+      "checksum": "5ef502f3f5adf1459e77ff82490ff44c387c74f65de6c27c8465f4e44b19e96c",
+      "dirName": "A Plague Tale Requiem"
+    },
+    "1196590": {
+      "name": "Resident Evil Village",
+      "v": "2026-02-21",
+      "sizeBytes": 16277170,
+      "size": 16275851,
+      "dataUrl": "https://cdn.makineceviri.net/data/1196590.mkpkg",
+      "checksum": "df128f461c3ff28c11404ca518651b3f9f5e5700174573df0b585bd86983ddff",
+      "dirName": "Resident Evil 8 Village"
+    },
+    "12200": {
+      "name": "Bully: Scholarship Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 2544432,
+      "size": 431824,
+      "dataUrl": "https://cdn.makineceviri.net/data/12200.mkpkg",
+      "checksum": "e77c3522ac807f5db7087cd78da47512c556e0d46c5f26b36644034623451bf3",
+      "dirName": "Bully Scholarship Edition"
+    },
+    "12210": {
+      "name": "Grand Theft Auto IV: The Complete Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 9064846,
+      "size": 2732710,
+      "dataUrl": "https://cdn.makineceviri.net/data/12210.mkpkg",
+      "checksum": "75c817901241ff134f22373b70781a6dcfa899417157dc8a8457ca5bb1a42fc8",
+      "dirName": "Grand Theft Auto IV The Complete Edition"
+    },
+    "1222670": {
+      "name": "The Sims 4",
+      "v": "2026-02-21",
+      "sizeBytes": 10238876,
+      "size": 10237114,
+      "dataUrl": "https://cdn.makineceviri.net/data/1222670.mkpkg",
+      "checksum": "d9b7d3896cdfed351d1802c5b671152a5fc2a699462232d8aabd9ce5d7cc0b4f",
+      "dirName": "The Sims 4"
+    },
+    "1222700": {
+      "name": "A Way Out",
+      "v": "2026-03-01",
+      "sizeBytes": 506219,
+      "size": 974790,
+      "dataUrl": "https://cdn.makineceviri.net/data/1222700.mkpkg",
+      "checksum": "89a598236b0f8975eed5a54cf6d3de42d752669bd7e35137f935e798207a6b47",
+      "dirName": "A Way Out"
+    },
+    "1238000": {
+      "name": "Mass Effect: Andromeda",
+      "v": "2026-02-25",
+      "sizeBytes": 10072600,
+      "size": 6720209,
+      "dataUrl": "https://cdn.makineceviri.net/data/1238000.mkpkg",
+      "checksum": "aa1ff746062e70f89534ceca08a2b6a713de3b25a13a946270c70174e459264b",
+      "dirName": "Mass Effect Andromeda"
+    },
+    "1245620": {
+      "name": "Elden Ring",
+      "v": "2026-02-21",
+      "sizeBytes": 353223619,
+      "size": 342799510,
+      "dataUrl": "https://cdn.makineceviri.net/data/1245620.mkpkg",
+      "checksum": "132aa5a2ad99b7c64175eb33a1eb9d46557eb258687a99319268282260f86586",
+      "dirName": "Elden Ring"
+    },
+    "1249040": {
+      "name": "American Arcadia",
+      "v": "2026-02-21",
+      "sizeBytes": 421747,
+      "size": 114167,
+      "dataUrl": "https://cdn.makineceviri.net/data/1249040.mkpkg",
+      "checksum": "8e152273dad2d93beb02e79c4ea861d0f6904bc7a5a6239b0cb1f735e13ecf8d",
+      "dirName": "American Arcadia"
+    },
+    "1252330": {
+      "name": "DEATHLOOP",
+      "v": "2026-02-21",
+      "sizeBytes": 131215919,
+      "size": 12713149,
+      "dataUrl": "https://cdn.makineceviri.net/data/1252330.mkpkg",
+      "checksum": "19a7611ffd7b3e1f5d9ed59d1431700530070582064f2cf475b957924763d35d",
+      "dirName": "DEATHLOOP"
+    },
+    "1265920": {
+      "name": "Life is Strange Remastered",
+      "v": "2026-02-21",
+      "sizeBytes": 2282752,
+      "size": 964228,
+      "dataUrl": "https://cdn.makineceviri.net/data/1265920.mkpkg",
+      "checksum": "b0d076128ccad1938f8779dca2faec04492c89767b18242965545137cfb4eece",
+      "dirName": "Life is Strange Remastered"
+    },
+    "1272160": {
+      "name": "The Life and Suffering of Sir Brante",
+      "v": "2026-02-21",
+      "sizeBytes": 332257624,
+      "size": 167433817,
+      "dataUrl": "https://cdn.makineceviri.net/data/1272160.mkpkg",
+      "checksum": "db9ea2bd6be6ed3e8b44b473915c8ebd3ff425c167865271b11f44c1c5a66e5c",
+      "dirName": "The Life and Suffering of Sir Brante"
+    },
+    "1281590": {
+      "name": "The Dark Pictures Anthology: House of Ashes",
+      "v": "2026-02-21",
+      "sizeBytes": 119679518,
+      "size": 117104501,
+      "dataUrl": "https://cdn.makineceviri.net/data/1281590.mkpkg",
+      "checksum": "90b272af96607060e725d739004817a7c8e941b4cc282fafcf633c2bac5bd43d",
+      "dirName": "The Dark Pictures Anthology House of Ashes"
+    },
+    "1299510": {
+      "name": "Vampire: The Masquerade - Swansong",
+      "v": "2026-02-21",
+      "sizeBytes": 2973714,
+      "size": 1486151,
+      "dataUrl": "https://cdn.makineceviri.net/data/1299510.mkpkg",
+      "checksum": "8ad5271f64f98914cfc668bfb7d9d5ed82ea4b5b4be8a55846ead3e36ed57096",
+      "dirName": "Vampire The Masquerade Swansong"
+    },
+    "1310410": {
+      "name": "Alone in the Dark",
+      "v": "2026-02-21",
+      "sizeBytes": 758667,
+      "size": 199727,
+      "dataUrl": "https://cdn.makineceviri.net/data/1310410.mkpkg",
+      "checksum": "1257ced01e81b1abe99d12ff7fa7c2a0d3dadd07337c9f1d8a17f2fe8785c7ae",
+      "dirName": "Alone in The Dark"
+    },
+    "1313140": {
+      "name": "Cult of the Lamb",
+      "v": "2026-02-21",
+      "sizeBytes": 44989688,
+      "size": 6976309,
+      "dataUrl": "https://cdn.makineceviri.net/data/1313140.mkpkg",
+      "checksum": "cb74989bb762a795a3a2458d1a4d26fd25d323f4c04b99c00e588af52ae16a7d",
+      "dirName": "Cult of the Lamb"
+    },
+    "1328670": {
+      "name": "Mass Effect Legendary Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 666937954,
+      "size": 596784582,
+      "dataUrl": "https://cdn.makineceviri.net/data/1328670.mkpkg",
+      "checksum": "b8972413424fad5398ed06835bdaa472285c2c9a326f5463363e3c2c6add777f",
+      "dirName": "Mass Effect Legendary Edition"
+    },
+    "1345890": {
+      "name": "Deliver Us Mars",
+      "v": "2026-02-21",
+      "sizeBytes": 3965686,
+      "size": 942189,
+      "dataUrl": "https://cdn.makineceviri.net/data/1345890.mkpkg",
+      "checksum": "676b7e324f4e1e3a69cbbfb828b1267cac5375fcd19eef341d6fd7dbff15b54b",
+      "dirName": "Deliver Us Mars"
+    },
+    "1367590": {
+      "name": "Tormented Souls",
+      "v": "2026-02-21",
+      "sizeBytes": 103378446,
+      "size": 54250117,
+      "dataUrl": "https://cdn.makineceviri.net/data/1367590.mkpkg",
+      "checksum": "30c369925bb004638696ad966f24ff76ae645bf07a5b76d287287ac6142b0aa4",
+      "dirName": "Tormented Souls"
+    },
+    "1392860": {
+      "name": "Little Nightmares III",
+      "v": "2026-02-21",
+      "sizeBytes": 521048,
+      "size": 59742,
+      "dataUrl": "https://cdn.makineceviri.net/data/1392860.mkpkg",
+      "checksum": "ceefe3ee912c1807379a2ef83332333ac12129f5715651d5bec477912fffa9ee",
+      "dirName": "Little Nightmares III"
+    },
+    "1426210": {
+      "name": "It Takes Two",
+      "v": "2026-02-21",
+      "sizeBytes": 41554070,
+      "size": 9305243,
+      "dataUrl": "https://cdn.makineceviri.net/data/1426210.mkpkg",
+      "checksum": "c240d46f70d19b9dbcc6ef806fd41d330b1d9c8728dedb52bfd5cf8028832b3c",
+      "dirName": "It Takes Two"
+    },
+    "1449110": {
+      "name": "The Outer Worlds 2",
+      "v": "2026-02-21",
+      "sizeBytes": 34997158,
+      "size": 8176670,
+      "dataUrl": "https://cdn.makineceviri.net/data/1449110.mkpkg",
+      "checksum": "72a09d883cd4b1a1132935e1cce4a3354262b01f4d64e49a744cb11f6c3199b0",
+      "dirName": "The Outer Worlds 2"
+    },
+    "1449690": {
+      "name": "The Walking Dead: The Telltale Definitive Series",
+      "v": "2026-03-01",
+      "sizeBytes": 1655783153,
+      "size": 531200613,
+      "dataUrl": "https://cdn.makineceviri.net/data/1449690.mkpkg",
+      "checksum": "64c09c961b0156776ef94cbd13a7c70f973dec1d7ca62f0a28da8eb12d5d3cdf",
+      "dirName": "The Walking Dead The Telltale Definitive Series"
+    },
+    "1458140": {
+      "name": "Pacific Drive",
+      "v": "2026-02-21",
+      "sizeBytes": 1626918,
+      "size": 473927,
+      "dataUrl": "https://cdn.makineceviri.net/data/1458140.mkpkg",
+      "checksum": "889005a820739687a4fd12a0d03e8e1f4d29b39b76bd15d7aad17d0561441fa2",
+      "dirName": "Pacific Drive"
+    },
+    "1462040": {
+      "name": "Final Fantasy VII Remake Intergrade",
+      "v": "2026-02-21",
+      "sizeBytes": 6504685,
+      "size": 2751782,
+      "dataUrl": "https://cdn.makineceviri.net/data/1462040.mkpkg",
+      "checksum": "7486e66ab5218ebfbe8825473e9e85d5a9fdc41f2db3a8286b0567a08e3735ba",
+      "dirName": "Final Fantasy 7 Remake İntergrade"
+    },
+    "1466640": {
+      "name": "Road 96",
+      "v": "2026-02-21",
+      "sizeBytes": 248503544,
+      "size": 89278856,
+      "dataUrl": "https://cdn.makineceviri.net/data/1466640.mkpkg",
+      "checksum": "73feece7328cf07d77265a9c35ee90ef8b6f472b9979501761fd7bbfa6778c4d",
+      "dirName": "Road 96"
+    },
+    "1475810": {
+      "name": "Ghostwire: Tokyo",
+      "v": "2026-03-01",
+      "sizeBytes": 6947180,
+      "size": 1227606,
+      "dataUrl": "https://cdn.makineceviri.net/data/1475810.mkpkg",
+      "checksum": "7f6066642d29412b9eb099a74597bc3a5669f5765a487f70d5a90ae3953a155d",
+      "dirName": "Ghostwire Tokyo"
+    },
+    "1493640": {
+      "name": "Banishers: Ghosts of New Eden",
+      "v": "2026-02-21",
+      "sizeBytes": 38950004,
+      "size": 3455975,
+      "dataUrl": "https://cdn.makineceviri.net/data/1493640.mkpkg",
+      "checksum": "86c2586c1eff452060da156f7fcb14540f279104bd74bbee955220dac53c71d7",
+      "dirName": "Banishers Ghosts of New Eden"
+    },
+    "1497360": {
+      "name": "Open Roads",
+      "v": "2026-02-21",
+      "sizeBytes": 42225008,
+      "size": 16675771,
+      "dataUrl": "https://cdn.makineceviri.net/data/1497360.mkpkg",
+      "checksum": "a120745b52c2f0dd500f6eaf2423d80c428bbf4548a7593906bbcd2fe1ca1d0b",
+      "dirName": "Open Roads"
+    },
+    "1527950": {
+      "name": "Wartales",
+      "v": "2026-02-21",
+      "sizeBytes": 8341885,
+      "size": 963847,
+      "dataUrl": "https://cdn.makineceviri.net/data/1527950.mkpkg",
+      "checksum": "7c16cf6539e71589e23f4788678fb4232854135a327025c9efa4967ed63637bd",
+      "dirName": "Wartales"
+    },
+    "1544020": {
+      "name": "The Callisto Protocol",
+      "v": "2026-02-21",
+      "sizeBytes": 8320222,
+      "size": 3411909,
+      "dataUrl": "https://cdn.makineceviri.net/data/1544020.mkpkg",
+      "checksum": "fa6032736aceeadb79a8692081473b8e6e8752a66ac872d5868839908287b2e0",
+      "dirName": "The Callisto Protocol"
+    },
+    "1547000": {
+      "name": "Grand Theft Auto: The Trilogy - The Definitive Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 48745455,
+      "size": 48567481,
+      "dataUrl": "https://cdn.makineceviri.net/data/1547000.mkpkg",
+      "checksum": "36d25736ab4cfc4701539177910a381898d3f30105dad371105fdd32703ce19e",
+      "dirName": "Grand Theft Auto The Trilogy - The Definitive Edition"
+    },
+    "1552810": {
+      "name": "Twin Mirror",
+      "v": "2026-02-21",
+      "sizeBytes": 2613609,
+      "size": 316205,
+      "dataUrl": "https://cdn.makineceviri.net/data/1552810.mkpkg",
+      "checksum": "dec13054507859628d601e627004861ce6d2e093ede7dcc5cf13619faaa34045",
+      "dirName": "Twin Mirror"
+    },
+    "1562430": {
+      "name": "DREDGE",
+      "v": "2026-02-21",
+      "sizeBytes": 22802128,
+      "size": 1431358,
+      "dataUrl": "https://cdn.makineceviri.net/data/1562430.mkpkg",
+      "checksum": "7355235a693476b76c0e2c15548b6e6b8c220879f942d6cc8c404a6b5f783e93",
+      "dirName": "DREDGE"
+    },
+    "1567020": {
+      "name": "The Dark Pictures Anthology: The Devil in Me",
+      "v": "2026-02-21",
+      "sizeBytes": 94460484,
+      "size": 92690885,
+      "dataUrl": "https://cdn.makineceviri.net/data/1567020.mkpkg",
+      "checksum": "ca62d2aa5611e75825012776c631c395ecd26056fe072f3d73f8671a598aec3b",
+      "dirName": "The Dark Pictures Anthology The Devil in Me"
+    },
+    "1583230": {
+      "name": "High On Life",
+      "v": "2026-02-25",
+      "sizeBytes": 7002523,
+      "size": 1735708,
+      "dataUrl": "https://cdn.makineceviri.net/data/1583230.mkpkg",
+      "checksum": "53b758718112097d7febb351544fc1ae577ba68e81dea66a8cd766431d6af9f0",
+      "dirName": "High On Life"
+    },
+    "1588550": {
+      "name": "Cairn",
+      "v": "2026-02-21",
+      "sizeBytes": 29840348,
+      "size": 3549148,
+      "dataUrl": "https://cdn.makineceviri.net/data/1588550.mkpkg",
+      "checksum": "be3d1deef7dbd7089bfdf0920d149d1fa095d9a6101e1c7dd67eed552c6120e5",
+      "dirName": "Cairn"
+    },
+    "1622910": {
+      "name": "Still Wakes the Deep",
+      "v": "2026-02-21",
+      "sizeBytes": 836138,
+      "size": 367835,
+      "dataUrl": "https://cdn.makineceviri.net/data/1622910.mkpkg",
+      "checksum": "87e084dd2e420ba03fd132fef37c80a19bc30d00103f8e9bfaf120bd057052e8",
+      "dirName": "Still Wakes the Deep"
+    },
+    "1627720": {
+      "name": "Lies of P",
+      "v": "2026-02-21",
+      "sizeBytes": 541991,
+      "size": 543470,
+      "dataUrl": "https://cdn.makineceviri.net/data/1627720.mkpkg",
+      "checksum": "abf0875fc4f43f745e84aa7aee352960daf750a7f9e1bbbc169e81f3fa85beeb",
+      "dirName": "Lies of P"
+    },
+    "1634150": {
+      "name": "Behind the Frame: The Finest Scenery",
+      "v": "2026-02-21",
+      "sizeBytes": 108660788,
+      "size": 28010782,
+      "dataUrl": "https://cdn.makineceviri.net/data/1634150.mkpkg",
+      "checksum": "f155fbef94156c0c1504b1476298077b3f71764cd120306a8a8f7702f952c83e",
+      "dirName": "Behind the Frame The Finest Scenery"
+    },
+    "1649240": {
+      "name": "Returnal",
+      "v": "2026-02-21",
+      "sizeBytes": 359628,
+      "size": 361017,
+      "dataUrl": "https://cdn.makineceviri.net/data/1649240.mkpkg",
+      "checksum": "c986c3e393221d6e83a45c3a4fccaf8a93bea8572d13df8f0332172daf1edc50",
+      "dirName": "Returnal"
+    },
+    "1671210": {
+      "name": "DELTARUNE",
+      "v": "2026-02-21",
+      "sizeBytes": 379524361,
+      "size": 243676351,
+      "dataUrl": "https://cdn.makineceviri.net/data/1671210.mkpkg",
+      "checksum": "743d3598a626a0573769111121bbe249586c7b014b5a06bea1cc5348939a4dc8",
+      "dirName": "DELTARUNE"
+    },
+    "1671340": {
+      "name": "Fears to Fathom - Home Alone",
+      "v": "2026-02-21",
+      "sizeBytes": 85885956,
+      "size": 30442843,
+      "dataUrl": "https://cdn.makineceviri.net/data/1671340.mkpkg",
+      "checksum": "c487f09671c77e7cc3e083a69fc90e4126fe1ccdf62f82d3f09dd3ab431008a8",
+      "dirName": "Fears to Fathom - Episode 1"
+    },
+    "1684400": {
+      "name": "Best Month Ever!",
+      "v": "2026-02-21",
+      "sizeBytes": 75655335,
+      "size": 27533859,
+      "dataUrl": "https://cdn.makineceviri.net/data/1684400.mkpkg",
+      "checksum": "867a56c4969a8f6b91cfabb55ad4b6695492f56a877a070bf699159c19e53557",
+      "dirName": "Best Month Ever!"
+    },
+    "1708010": {
+      "name": "The Expanse: A Telltale Series",
+      "v": "2026-02-21",
+      "sizeBytes": 1640009,
+      "size": 1446371,
+      "dataUrl": "https://cdn.makineceviri.net/data/1708010.mkpkg",
+      "checksum": "2fb2f0f4448ce470b1aa37d77010f624d75da4277adb7ab89d02e20c8e543dd5",
+      "dirName": "The Expanse a Telltale Series"
+    },
+    "1716740": {
+      "name": "Starfield",
+      "v": "2026-02-21",
+      "sizeBytes": 18889663,
+      "size": 7166627,
+      "dataUrl": "https://cdn.makineceviri.net/data/1716740.mkpkg",
+      "checksum": "d7e4b3cc3cfda0d3789daf20d8dec4a9eda6badba1f6bfda21143d73b36032ef",
+      "dirName": "Starfield"
+    },
+    "1721060": {
+      "name": "Mandragora",
+      "v": "2026-02-21",
+      "sizeBytes": 530729,
+      "size": 532072,
+      "dataUrl": "https://cdn.makineceviri.net/data/1721060.mkpkg",
+      "checksum": "ddc8ef102a65cb02188866c75e6d02216bb2c3289d3b1e61d40be0d4e825e9a9",
+      "dirName": "Mandragora Whispers of The Witch"
+    },
+    "1721470": {
+      "name": "Poppy Playtime",
+      "v": "2026-02-21",
+      "sizeBytes": 33947153,
+      "size": 28429412,
+      "dataUrl": "https://cdn.makineceviri.net/data/1721470.mkpkg",
+      "checksum": "9e1fa537142cafecfa5e48078d4343dd44908e855dfe88af533ff4aae0ca70f9",
+      "dirName": "Poppy Playtime"
+    },
+    "1728610": {
+      "name": "Beyond The Darkness",
+      "v": "2026-02-21",
+      "sizeBytes": 7549781,
+      "size": 1649913,
+      "dataUrl": "https://cdn.makineceviri.net/data/1728610.mkpkg",
+      "checksum": "db2bd2fed62e2e5a860687bb37fe9b6e477284ed874f575e82b08ae3c60f2899",
+      "dirName": "Beyond The Darkness"
+    },
+    "1729740": {
+      "name": "Luto",
+      "v": "2026-03-01",
+      "sizeBytes": 22585656,
+      "size": 21978673,
+      "dataUrl": "https://cdn.makineceviri.net/data/1729740.mkpkg",
+      "checksum": "f9f3c6870899946de363bbe86f225f47c8f04eeaa13170ce9ba1539e0a9dfe98",
+      "dirName": "LUTO"
+    },
+    "1730590": {
+      "name": "The Entropy Centre",
+      "v": "2026-03-01",
+      "sizeBytes": 97557,
+      "size": 183881,
+      "dataUrl": "https://cdn.makineceviri.net/data/1730590.mkpkg",
+      "checksum": "ded15191a0cf34f5d9f561f045ac67b5a26b0d995c7129f23ec5d3b2c330e666",
+      "dirName": "The Entropy Centre"
+    },
+    "1731070": {
+      "name": "Asterigos: Curse of the Stars",
+      "v": "2026-02-21",
+      "sizeBytes": 1159034,
+      "size": 1158088,
+      "dataUrl": "https://cdn.makineceviri.net/data/1731070.mkpkg",
+      "checksum": "14ab734e7da3d653e4f0097c256abd6430cd92966d1059ac94a719b29db56a70",
+      "dirName": "Asterigos"
+    },
+    "17390": {
+      "name": "SPORE",
+      "v": "2026-02-21",
+      "sizeBytes": 1005762,
+      "size": 759866,
+      "dataUrl": "https://cdn.makineceviri.net/data/17390.mkpkg",
+      "checksum": "73696d640b5ac6c50c5125229a9b8610c195cd4236e6e6ef1346e7ef3fad07e5",
+      "dirName": "SPORE"
+    },
+    "17470": {
+      "name": "Dead Space",
+      "v": "2026-02-21",
+      "sizeBytes": 2230498,
+      "size": 1054902,
+      "dataUrl": "https://cdn.makineceviri.net/data/17470.mkpkg",
+      "checksum": "ed5485a949b8685c5612eedad7b020de48728b3707c837dc8e426821efb74988",
+      "dirName": "Dead Space (2008)"
+    },
+    "1755340": {
+      "name": "Inner Ashes",
+      "v": "2026-02-21",
+      "sizeBytes": 18395385,
+      "size": 5100286,
+      "dataUrl": "https://cdn.makineceviri.net/data/1755340.mkpkg",
+      "checksum": "c743550941993983c9fdd907925435a94ae76016499981f1bb082be4cc8c2a92",
+      "dirName": "Inner Ashes"
+    },
+    "1774580": {
+      "name": "Star Wars Jedi: Survivor",
+      "v": "2026-02-21",
+      "sizeBytes": 8516338,
+      "size": 1963739,
+      "dataUrl": "https://cdn.makineceviri.net/data/1774580.mkpkg",
+      "checksum": "95408e84025ba61e0c1da4c11e02da0177bfe9827b2dca69b3f648d2b7a19d2c",
+      "dirName": "Star Wars Jedi Survivor"
+    },
+    "1817070": {
+      "name": "Marvel's Spider-Man Remastered",
+      "v": "2026-02-21",
+      "sizeBytes": 7061662,
+      "size": 1888150,
+      "dataUrl": "https://cdn.makineceviri.net/data/1817070.mkpkg",
+      "checksum": "a4ef522905ea189cdf9a6bc2c56cc4c260700db9952e83361ffc915cc61b8865",
+      "dirName": "Marvel's Spider-Man Remastered"
+    },
+    "1817190": {
+      "name": "Marvel's Spider-Man: Miles Morales",
+      "v": "2026-02-21",
+      "sizeBytes": 9592796,
+      "size": 9212385,
+      "dataUrl": "https://cdn.makineceviri.net/data/1817190.mkpkg",
+      "checksum": "515e8d342dde8dc107ae53bf668e3d6bb26364ff3bf6f9c6ec811eb3132138a2",
+      "dirName": "Marvel’s Spider-Man Miles Morales"
+    },
+    "1845910": {
+      "name": "Dragon Age: The Veilguard",
+      "v": "2026-02-21",
+      "sizeBytes": 10401600,
+      "size": 9958651,
+      "dataUrl": "https://cdn.makineceviri.net/data/1845910.mkpkg",
+      "checksum": "efed2cf58efd3999634c5be594096c4ec3191baac0f65a37743261a9ce35d239",
+      "dirName": "Dragon Age The Veilguard"
+    },
+    "1868140": {
+      "name": "Dave the Diver",
+      "v": "2026-02-21",
+      "sizeBytes": 27493273,
+      "size": 5587066,
+      "dataUrl": "https://cdn.makineceviri.net/data/1868140.mkpkg",
+      "checksum": "34e54fb418e76c5edca7a32cf2d901c10af75e61e160790c5a53005fe659a222",
+      "dirName": "Dave the Diver"
+    },
+    "1880610": {
+      "name": "Deliver At All Costs",
+      "v": "2026-02-21",
+      "sizeBytes": 1945751,
+      "size": 475501,
+      "dataUrl": "https://cdn.makineceviri.net/data/1880610.mkpkg",
+      "checksum": "77f1315e86ce84f4aee0e4f224602136eef5a2a37dde7be2fd197f318812817c",
+      "dirName": "Deliver At All Costs"
+    },
+    "1894730": {
+      "name": "Asterix & Obelix XXXL: The Ram From Hibernia",
+      "v": "2026-03-01",
+      "sizeBytes": 60672,
+      "size": 123102,
+      "dataUrl": "https://cdn.makineceviri.net/data/1894730.mkpkg",
+      "checksum": "aa453ff0bf23c9729fff9725dd9f4629877a53120cb3a076b5a8699f30badc8f",
+      "dirName": "Asterix and Obelix XXXL - The Ram of Hibernia"
+    },
+    "1902960": {
+      "name": "Lost Records: Bloom & Rage",
+      "v": "2026-03-01",
+      "sizeBytes": 3245118,
+      "size": 1070927,
+      "dataUrl": "https://cdn.makineceviri.net/data/1902960.mkpkg",
+      "checksum": "59b0753fa67ae5459a385faacb85a4960245dcedde6659b0e9d9162a34955bc4",
+      "dirName": "Lost Records Bloom & Rage"
+    },
+    "1903340": {
+      "name": "Clair Obscur: Expedition 33",
+      "v": "2026-02-21",
+      "sizeBytes": 504838,
+      "size": 506524,
+      "dataUrl": "https://cdn.makineceviri.net/data/1903340.mkpkg",
+      "checksum": "2b6f2ae0b631fd307a83d55fbcc6d4f57b01b857ce49a6629fefb05a1e6f00b4",
+      "dirName": "Expedition 33"
+    },
+    "1920490": {
+      "name": "The Outer Worlds: Spacer's Choice Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 12060854,
+      "size": 5166987,
+      "dataUrl": "https://cdn.makineceviri.net/data/1920490.mkpkg",
+      "checksum": "e4f4ebe7cef09b7227b1d2720941d7cdf722b815459aea1db17e2944384d2476",
+      "dirName": "The Outer Worlds Spacer's Choice Edition"
+    },
+    "1939970": {
+      "name": "Nobody Wants to Die",
+      "v": "2026-02-21",
+      "sizeBytes": 73119076,
+      "size": 13356730,
+      "dataUrl": "https://cdn.makineceviri.net/data/1939970.mkpkg",
+      "checksum": "f7afce6081a75f27e755fd740e28e436469d1ba5d2f79ff5c11185e68357a96e",
+      "dirName": "Nobody Wants to Die"
+    },
+    "1940340": {
+      "name": "Darkest Dungeon II",
+      "v": "2026-02-21",
+      "sizeBytes": 3468153,
+      "size": 598382,
+      "dataUrl": "https://cdn.makineceviri.net/data/1940340.mkpkg",
+      "checksum": "2e748f7ac4f9bd4514b654ec9d28e034c765d8b3a242386ca88e8693ddc84858",
+      "dirName": "Darkest Dungeon 2"
+    },
+    "1941540": {
+      "name": "Mafia: The Old Country",
+      "v": "2026-02-21",
+      "sizeBytes": 951905,
+      "size": 952957,
+      "dataUrl": "https://cdn.makineceviri.net/data/1941540.mkpkg",
+      "checksum": "fee69a474be80b7ecd861dc3e3e7a94825f305c2e9464897baab828b81acf72c",
+      "dirName": "Mafia The Old County"
+    },
+    "1954200": {
+      "name": "Kena: Bridge of Spirits",
+      "v": "2026-02-21",
+      "sizeBytes": 372883,
+      "size": 127840,
+      "dataUrl": "https://cdn.makineceviri.net/data/1954200.mkpkg",
+      "checksum": "11fbc7fb9d2c070a5ebb3fa738550c32b8ea5798a37d390976ba817f3487ecb0",
+      "dirName": "Kena Bridge of Spirits"
+    },
+    "1971870": {
+      "name": "Mortal Kombat 1",
+      "v": "2026-02-21",
+      "sizeBytes": 14464451,
+      "size": 14204852,
+      "dataUrl": "https://cdn.makineceviri.net/data/1971870.mkpkg",
+      "checksum": "82fee67d1d6dc23e74289b73dcef24c197d0143eb9e51c0e0eab4a5dc63144ff",
+      "dirName": "Mortal Kombat 1"
+    },
+    "2001120": {
+      "name": "Split Fiction",
+      "v": "2026-03-01",
+      "sizeBytes": 2035684,
+      "size": 462744,
+      "dataUrl": "https://cdn.makineceviri.net/data/2001120.mkpkg",
+      "checksum": "e5a7f947fc6d60834161f8712a370d283f928f43a89107c1c91be082aa463fd0",
+      "dirName": "Split Fiction"
+    },
+    "201810": {
+      "name": "Wolfenstein: The New Order",
+      "v": "2026-02-21",
+      "sizeBytes": 154693667,
+      "size": 131880646,
+      "dataUrl": "https://cdn.makineceviri.net/data/201810.mkpkg",
+      "checksum": "a01d2776e72099bb2e9f726b5ca6e057fc275d55366f9808165d3ee91933fb97",
+      "dirName": "Wolfenstein The New Order"
+    },
+    "201870": {
+      "name": "Assassin's Creed Revelations",
+      "v": "2026-02-21",
+      "sizeBytes": 306446336,
+      "size": 257050173,
+      "dataUrl": "https://cdn.makineceviri.net/data/201870.mkpkg",
+      "checksum": "758ed1571c0e824b135b6610e0af25b0b4cf5acbbd63b8ef8e4b461105d9faaa",
+      "dirName": "Assassin's Creed Revelations"
+    },
+    "203770": {
+      "name": "Crusader Kings II",
+      "v": "2026-02-21",
+      "sizeBytes": 286643365,
+      "size": 107798458,
+      "dataUrl": "https://cdn.makineceviri.net/data/203770.mkpkg",
+      "checksum": "c4bed2219c690d9e7ea45e2cff7961fa69e16aaab346a0df6671683dafe03c4a",
+      "dirName": "Crusader Kings II"
+    },
+    "2050650": {
+      "name": "Resident Evil 4",
+      "v": "2026-02-21",
+      "sizeBytes": 10955313,
+      "size": 10938732,
+      "dataUrl": "https://cdn.makineceviri.net/data/2050650.mkpkg",
+      "checksum": "d7d89fbc4522fdd704d3c7770cdc3f920aacfb532d8067fbc2c41e2048ea06c2",
+      "dirName": "Resident Evil 4 Remake"
+    },
+    "2054970": {
+      "name": "Dragon's Dogma 2",
+      "v": "2026-02-21",
+      "sizeBytes": 54956302,
+      "size": 54934320,
+      "dataUrl": "https://cdn.makineceviri.net/data/2054970.mkpkg",
+      "checksum": "56310dd7b50978ef7cb278378f8e98616d8a6234c270e26874c01282b0b787ba",
+      "dirName": "Dragon's Dogma 2"
+    },
+    "207610": {
+      "name": "The Walking Dead",
+      "v": "2026-02-21",
+      "sizeBytes": 49988214,
+      "size": 3269798,
+      "dataUrl": "https://cdn.makineceviri.net/data/207610.mkpkg",
+      "checksum": "f26bb5253f411e714793b99de272c93a16e6862cfd6f9568127ca43b505e2cdf",
+      "dirName": "the Walking Dead Telltale Series"
+    },
+    "208650": {
+      "name": "Batman: Arkham Knight",
+      "v": "2026-02-21",
+      "sizeBytes": 5544988,
+      "size": 3644253,
+      "dataUrl": "https://cdn.makineceviri.net/data/208650.mkpkg",
+      "checksum": "59063373f3af7cd951b16675c7584d057abf18bd89914dd475174289edfaf327",
+      "dirName": "Batman Arkham Knight"
+    },
+    "20900": {
+      "name": "The Witcher: Enhanced Edition",
+      "v": "2026-03-01",
+      "sizeBytes": 793923218,
+      "size": 412013066,
+      "dataUrl": "https://cdn.makineceviri.net/data/20900.mkpkg",
+      "checksum": "46904141ebac7d88a3c023e462f383702818ab8b823b40ca4b2ecaa921b15822",
+      "dirName": "The Witcher Enhanced Edition"
+    },
+    "2102450": {
+      "name": "Enotria: The Last Song",
+      "v": "2026-02-21",
+      "sizeBytes": 879492,
+      "size": 241038,
+      "dataUrl": "https://cdn.makineceviri.net/data/2102450.mkpkg",
+      "checksum": "f2f24d17cecd829b4a092a1edfe78488a290f8fa930d0b7e47086c9c9d7f4587",
+      "dirName": "Enotria The Last Song"
+    },
+    "2124490": {
+      "name": "Silent Hill 2",
+      "v": "2026-03-01",
+      "sizeBytes": 877658,
+      "size": 436221,
+      "dataUrl": "https://cdn.makineceviri.net/data/2124490.mkpkg",
+      "checksum": "ec81ab43af6c973d99a3b540a7f7222cf7ccd94f282b110350a3c7de4fa322c1",
+      "dirName": "Silent Hill 2 Remake"
+    },
+    "2129530": {
+      "name": "REANIMAL",
+      "v": "2026-02-21",
+      "sizeBytes": 53772,
+      "size": 20185,
+      "dataUrl": "https://cdn.makineceviri.net/data/2129530.mkpkg",
+      "checksum": "e908224eede576b9cc4a2c46e64d1f7b5fefae8cdce4a01427b5c7f9d7741076",
+      "dirName": "REANIMAL"
+    },
+    "214490": {
+      "name": "Alien: Isolation",
+      "v": "2026-02-21",
+      "sizeBytes": 19429811,
+      "size": 4714032,
+      "dataUrl": "https://cdn.makineceviri.net/data/214490.mkpkg",
+      "checksum": "2650b2d774cac13c2d5445ba7445d11ffee0721193c0de261683724cae4dbcdf",
+      "dirName": "Alien Isolation"
+    },
+    "2153350": {
+      "name": "Brothers: A Tale of Two Sons Remake",
+      "v": "2026-03-01",
+      "sizeBytes": 593608,
+      "size": 615194,
+      "dataUrl": "https://cdn.makineceviri.net/data/2153350.mkpkg",
+      "checksum": "c227db7e26da27fd04e443ee230b9cc63f44e2c2a5609058e0b99aae57d79652",
+      "dirName": "Brothers A Tale of Two Sons Remake"
+    },
+    "220240": {
+      "name": "Far Cry 3",
+      "v": "2026-02-21",
+      "sizeBytes": 487994540,
+      "size": 186526784,
+      "dataUrl": "https://cdn.makineceviri.net/data/220240.mkpkg",
+      "checksum": "6c39a74e8ea463d942947aa08b6668db090f70031fa32a7739c14bc0b6948e93",
+      "dirName": "Far Cry 3"
+    },
+    "2208780": {
+      "name": "Psycho Fear",
+      "v": "2026-02-21",
+      "sizeBytes": 13692874,
+      "size": 1204667,
+      "dataUrl": "https://cdn.makineceviri.net/data/2208780.mkpkg",
+      "checksum": "a0dd706e34e58505882eee3dd1e7e022f2fda46743e9e2696331f9fca2c98302",
+      "dirName": "Psycho Fear"
+    },
+    "2208920": {
+      "name": "Assassin's Creed Valhalla",
+      "v": "2026-02-21",
+      "sizeBytes": 29714936,
+      "size": 9192198,
+      "dataUrl": "https://cdn.makineceviri.net/data/2208920.mkpkg",
+      "checksum": "ca38f2fb6694d8e6b7ea0d9cbb096a96465dc2e3a0c6ed9a8126c8ea849c7dcb",
+      "dirName": "Assassin's Creed Valhalla"
+    },
+    "2233120": {
+      "name": "A Quiet Place: The Road Ahead",
+      "v": "2026-02-21",
+      "sizeBytes": 875090,
+      "size": 261297,
+      "dataUrl": "https://cdn.makineceviri.net/data/2233120.mkpkg",
+      "checksum": "e1dda6ce8c8557d69d28a45d3fbcc45cc96f623d6bad848e09c8224656e593a7",
+      "dirName": "A Quiet Place"
+    },
+    "2239550": {
+      "name": "Watch Dogs: Legion",
+      "v": "2026-02-21",
+      "sizeBytes": 3678148,
+      "size": 3066859,
+      "dataUrl": "https://cdn.makineceviri.net/data/2239550.mkpkg",
+      "checksum": "d0c9a05c3dd80d2f2228a4962e4e88366205b141e207841778c024e1b3ed5536",
+      "dirName": "Watch Dogs Legion"
+    },
+    "225080": {
+      "name": "Brothers: A Tale of Two Sons",
+      "v": "2026-02-28",
+      "sizeBytes": 10444,
+      "size": 2731,
+      "dataUrl": "https://cdn.makineceviri.net/data/225080.mkpkg",
+      "checksum": "a4b8dcaefa817faae8905622caec43a32390d22d71e1c7fc6075ddd491b09e5e",
+      "dirName": "Brothers A Tale of Two Sons"
+    },
+    "2277560": {
+      "name": "WUCHANG: Fallen Feathers",
+      "v": "2026-02-21",
+      "sizeBytes": 7728736,
+      "size": 794559,
+      "dataUrl": "https://cdn.makineceviri.net/data/2277560.mkpkg",
+      "checksum": "54673dcd908d8a0746dd105e223ee3bdc9fad57c506f2f497231912868eedd40",
+      "dirName": "Wuchang Fallen Feathers"
+    },
+    "228300": {
+      "name": "Remember Me",
+      "v": "2026-02-21",
+      "sizeBytes": 1026458,
+      "size": 193220,
+      "dataUrl": "https://cdn.makineceviri.net/data/228300.mkpkg",
+      "checksum": "156c8d756c1e2ee9c11e9f4315fe32fe32081cf845c5a24926b946807c5791ea",
+      "dirName": "Remember Me"
+    },
+    "231430": {
+      "name": "Company of Heroes 2",
+      "v": "2026-02-21",
+      "sizeBytes": 9920354,
+      "size": 1453170,
+      "dataUrl": "https://cdn.makineceviri.net/data/231430.mkpkg",
+      "checksum": "d3325967f798b9af1fb8e4dc2c62e58ae6a2ed2d033dee2ea3063c88b8b815b7",
+      "dirName": "Company of Heroes 2"
+    },
+    "232430": {
+      "name": "Gone Home",
+      "v": "2026-02-21",
+      "sizeBytes": 146061,
+      "size": 62622,
+      "dataUrl": "https://cdn.makineceviri.net/data/232430.mkpkg",
+      "checksum": "6f76c79c7c5d40f93ab2ee78074ac16efe19765609d46dc076751409dd13ace8",
+      "dirName": "Gone Home"
+    },
+    "233860": {
+      "name": "Kenshi",
+      "v": "2026-02-21",
+      "sizeBytes": 8291247,
+      "size": 2401729,
+      "dataUrl": "https://cdn.makineceviri.net/data/233860.mkpkg",
+      "checksum": "6fe0cb3b422691b3ba8e1df4b300731279d7fdcaef614456f4450b0230253994",
+      "dirName": "Kenshi"
+    },
+    "234140": {
+      "name": "Mad Max",
+      "v": "2026-02-21",
+      "sizeBytes": 2500229,
+      "size": 683156,
+      "dataUrl": "https://cdn.makineceviri.net/data/234140.mkpkg",
+      "checksum": "df2bc3fd37f7d7d9bfb2b8d7d3b2ca4c8b392a449fefd0226a2955dbedff0df1",
+      "dirName": "Mad Max"
+    },
+    "2358720": {
+      "name": "Black Myth: Wukong",
+      "v": "2026-02-21",
+      "sizeBytes": 1718523,
+      "size": 1087026,
+      "dataUrl": "https://cdn.makineceviri.net/data/2358720.mkpkg",
+      "checksum": "1213e5e8efdad1628291862ef91e3d4cc97f4d86cf789667479e1da644a8f684",
+      "dirName": "Black Myth Wukong"
+    },
+    "2362060": {
+      "name": "Code Vein 2",
+      "v": "2026-02-21",
+      "sizeBytes": 26581190,
+      "size": 23189058,
+      "dataUrl": "https://cdn.makineceviri.net/data/2362060.mkpkg",
+      "checksum": "5d5edcbb4835529532e76c13f22acf0fc5bd6e2423ec33627e3fa9697660bec0",
+      "dirName": "Code Vein 2"
+    },
+    "2369390": {
+      "name": "Far Cry 6",
+      "v": "2026-02-21",
+      "sizeBytes": 6377946,
+      "size": 4603998,
+      "dataUrl": "https://cdn.makineceviri.net/data/2369390.mkpkg",
+      "checksum": "3de039afd8821a0788f4b85684afa3e9e455ea11f56a02cfa65e3f259d20e697",
+      "dirName": "Far Cry 6"
+    },
+    "2377280": {
+      "name": "Eriksholm: The Stolen Dream",
+      "v": "2026-02-21",
+      "sizeBytes": 11262678,
+      "size": 10023727,
+      "dataUrl": "https://cdn.makineceviri.net/data/2377280.mkpkg",
+      "checksum": "d5bb9b04036878c8cb5c388cb621fdb8946a11fffd0ed4ed20fce17cf151310e",
+      "dirName": "Eriksholm The Stolen Dream"
+    },
+    "238010": {
+      "name": "Deus Ex: Human Revolution - Director's Cut",
+      "v": "2026-02-21",
+      "sizeBytes": 2593827,
+      "size": 907395,
+      "dataUrl": "https://cdn.makineceviri.net/data/238010.mkpkg",
+      "checksum": "1f48ad43427b567fc34350e892a9937262c3e72dec77329c5c17b2cffdb25c4e",
+      "dirName": "Deus Ex Human Revolution – Director’s Cut"
+    },
+    "239160": {
+      "name": "Thief",
+      "v": "2026-02-21",
+      "sizeBytes": 10645281,
+      "size": 1089297,
+      "dataUrl": "https://cdn.makineceviri.net/data/239160.mkpkg",
+      "checksum": "ad67f5ba957d88d55c4d16aacf71cd1987193878b35780bfee95154624329715",
+      "dirName": "Thief"
+    },
+    "239200": {
+      "name": "Amnesia: A Machine for Pigs",
+      "v": "2026-02-21",
+      "sizeBytes": 174456,
+      "size": 52731,
+      "dataUrl": "https://cdn.makineceviri.net/data/239200.mkpkg",
+      "checksum": "baef947ac4b5d5928b668619bf568a9c12458528d5e8e659995b4f9efa879cb3",
+      "dirName": "Amnesia A Machine for Pigs"
+    },
+    "2417610": {
+      "name": "METAL GEAR SOLID: Snake Eater",
+      "v": "2026-02-21",
+      "sizeBytes": 18363119,
+      "size": 9717714,
+      "dataUrl": "https://cdn.makineceviri.net/data/2417610.mkpkg",
+      "checksum": "b5d144db914bffedb56572c26343d4563ef3e3b4d1a0396baf38513882ad54ac",
+      "dirName": "METAL GEAR SOLID SNAKE EATER"
+    },
+    "242050": {
+      "name": "Assassin's Creed IV: Black Flag",
+      "v": "2026-02-21",
+      "sizeBytes": 194787328,
+      "size": 122219589,
+      "dataUrl": "https://cdn.makineceviri.net/data/242050.mkpkg",
+      "checksum": "bc31c2bf0bc6998a9a84f2a04807ea5afec17be102df27e378309d9c32103684",
+      "dirName": "Assassins Creed IV Black Flag"
+    },
+    "243470": {
+      "name": "Watch Dogs",
+      "v": "2026-02-21",
+      "sizeBytes": 452410945,
+      "size": 140743528,
+      "dataUrl": "https://cdn.makineceviri.net/data/243470.mkpkg",
+      "checksum": "4cde937e88778a7b383470fa8ef384a029ae3242db021ec00c52b78c2f465b08",
+      "dirName": "Watch Dogs"
+    },
+    "2453160": {
+      "name": "Sword of the Sea",
+      "v": "2026-02-25",
+      "sizeBytes": 48204,
+      "size": 48198,
+      "dataUrl": "https://cdn.makineceviri.net/data/2453160.mkpkg",
+      "checksum": "cb46a1fef8a14643ce93d025cb7adf7b49152e3def8cc038697f8456e807ce57",
+      "dirName": "Sword of the Sea"
+    },
+    "2456740": {
+      "name": "inZOI",
+      "v": "2026-02-21",
+      "sizeBytes": 17928298,
+      "size": 3148583,
+      "dataUrl": "https://cdn.makineceviri.net/data/2456740.mkpkg",
+      "checksum": "d2401e244a641255f3484a60670e3b22a5f3daf1fe7d6a1e50dda150e8af1d83",
+      "dirName": "inZOI"
+    },
+    "2457220": {
+      "name": "Avowed",
+      "v": "2026-02-21",
+      "sizeBytes": 20332183,
+      "size": 2366627,
+      "dataUrl": "https://cdn.makineceviri.net/data/2457220.mkpkg",
+      "checksum": "a88c608a14c27a2be6b0c8517a62deb12c9410ef8878f3ecbce427e463ed4a24",
+      "dirName": "Avowed"
+    },
+    "2464280": {
+      "name": "Tormented Souls 2",
+      "v": "2026-02-21",
+      "sizeBytes": 3041173,
+      "size": 850056,
+      "dataUrl": "https://cdn.makineceviri.net/data/2464280.mkpkg",
+      "checksum": "78a44b697185ca72ca8afb9eef0ecaf5b8b38e148267e450d0f60ce0feb164a7",
+      "dirName": "Tormented Souls 2"
+    },
+    "250320": {
+      "name": "The Wolf Among Us",
+      "v": "2026-03-01",
+      "sizeBytes": 526609817,
+      "size": 133958650,
+      "dataUrl": "https://cdn.makineceviri.net/data/250320.mkpkg",
+      "checksum": "00d59c299932203bdf1bfe2ba9597c1101baa38fe78a896dc3eb384f8414aca1",
+      "dirName": "The Wolf Among Us"
+    },
+    "2506160": {
+      "name": "Fears to Fathom - Ironbark Lookout",
+      "v": "2026-02-21",
+      "sizeBytes": 166261155,
+      "size": 43213095,
+      "dataUrl": "https://cdn.makineceviri.net/data/2506160.mkpkg",
+      "checksum": "ed2a71d0bb274234b2364ccd3fac0eb1c8a683da064a11a82ddeeddc15ff4759",
+      "dirName": "Fears To Fathom Ironbark Lookout"
+    },
+    "2515020": {
+      "name": "Final Fantasy XVI",
+      "v": "2026-02-21",
+      "sizeBytes": 5919200,
+      "size": 5704847,
+      "dataUrl": "https://cdn.makineceviri.net/data/2515020.mkpkg",
+      "checksum": "6979b550c866fb89088c4dcbc91fea9a0f4d8cfb3bd94223b960a49e4eb2df55",
+      "dirName": "Final Fantasy 16"
+    },
+    "2526310": {
+      "name": "Out of Sight",
+      "v": "2026-02-21",
+      "sizeBytes": 268947,
+      "size": 115339,
+      "dataUrl": "https://cdn.makineceviri.net/data/2526310.mkpkg",
+      "checksum": "a1142465bce44ca6330cc0efef8395d1051bdb5335c527668a5ccc110c24994d",
+      "dirName": "Out Of Sight"
+    },
+    "2527500": {
+      "name": "MiSide",
+      "v": "2026-02-21",
+      "sizeBytes": 8027927,
+      "size": 7743847,
+      "dataUrl": "https://cdn.makineceviri.net/data/2527500.mkpkg",
+      "checksum": "9f8730d11bf8b6d21b70ca1d2495de1285000ac829f86fd125d72da9da38a312",
+      "dirName": "MiSide"
+    },
+    "2536520": {
+      "name": "Diablo II: Resurrected",
+      "v": "2026-02-21",
+      "sizeBytes": 8022891,
+      "size": 8008198,
+      "dataUrl": "https://cdn.makineceviri.net/data/2536520.mkpkg",
+      "checksum": "e4567a2f67038f27c83598a9cb863a4bcbf646679b36a36429388f73000dd792",
+      "dirName": "Diablo II Resurrected"
+    },
+    "255710": {
+      "name": "Cities: Skylines",
+      "v": "2026-02-21",
+      "sizeBytes": 2281450,
+      "size": 446797,
+      "dataUrl": "https://cdn.makineceviri.net/data/255710.mkpkg",
+      "checksum": "c4549228ca33127d531e8609252990eec04bd71fd998a0e4ecb38ffdc1d82532",
+      "dirName": "Cities Skylines"
+    },
+    "2561580": {
+      "name": "Horizon Zero Dawn Remastered",
+      "v": "2026-02-21",
+      "sizeBytes": 8742784,
+      "size": 8478862,
+      "dataUrl": "https://cdn.makineceviri.net/data/2561580.mkpkg",
+      "checksum": "90247bb8dfa22ee5dcdae49aa85c48b283103d4d852556843e659a4050987e08",
+      "dirName": "Horizon Zero Dawn Remastered"
+    },
+    "2567870": {
+      "name": "Chained Together",
+      "v": "2026-03-01",
+      "sizeBytes": 32231701,
+      "size": 17413868,
+      "dataUrl": "https://cdn.makineceviri.net/data/2567870.mkpkg",
+      "checksum": "81471c63ed77462ae1ab68c322b90b17d4c73ddfcd6e33b5a99558ba91e47295",
+      "dirName": "Chained Together"
+    },
+    "257350": {
+      "name": "Baldur's Gate II: Enhanced Edition",
+      "v": "2026-02-25",
+      "sizeBytes": 12418809,
+      "size": 3182499,
+      "dataUrl": "https://cdn.makineceviri.net/data/257350.mkpkg",
+      "checksum": "51b6b94df918ffe998b496e2f192b3032c34eac631ff322befca91177ea22e4f",
+      "dirName": "BALDURS GATE II ENHANCED EDİTİON"
+    },
+    "2592160": {
+      "name": "Dispatch",
+      "v": "2026-02-21",
+      "sizeBytes": 30021740,
+      "size": 3642065,
+      "dataUrl": "https://cdn.makineceviri.net/data/2592160.mkpkg",
+      "checksum": "34d130fb897c83cf857ac9ae1b46d1f7f61909ce3d9b6c42fad43db5be320120",
+      "dirName": "Dispatch"
+    },
+    "2597970": {
+      "name": "Finding Frankie",
+      "v": "2026-02-21",
+      "sizeBytes": 11349734,
+      "size": 776725,
+      "dataUrl": "https://cdn.makineceviri.net/data/2597970.mkpkg",
+      "checksum": "1a803b0935b8db4f9d8fedea9ed17df1e18936f7ab9eae12fe6625404d2ec6c3",
+      "dirName": "Finding Frankie"
+    },
+    "2599300": {
+      "name": "Dead Signal",
+      "v": "2026-02-21",
+      "sizeBytes": 68263,
+      "size": 26697,
+      "dataUrl": "https://cdn.makineceviri.net/data/2599300.mkpkg",
+      "checksum": "fbbdda15c09347a7006fc634f4d0a7afee6020e458cc9fdbdce3abffa67f08fb",
+      "dirName": "Dead Signal"
+    },
+    "2600": {
+      "name": "Vampire: The Masquerade - Bloodlines",
+      "v": "2026-03-01",
+      "sizeBytes": 40450740,
+      "size": 16856128,
+      "dataUrl": "https://cdn.makineceviri.net/data/2600.mkpkg",
+      "checksum": "2e7ec68ac1cfb309982ddb86497c89554b625d6e48431c435a6a5737bb9792fe",
+      "dirName": "Vampire The Masquerade Bloodlines"
+    },
+    "262060": {
+      "name": "Darkest Dungeon",
+      "v": "2026-03-01",
+      "sizeBytes": 1287424,
+      "size": 417142,
+      "dataUrl": "https://cdn.makineceviri.net/data/262060.mkpkg",
+      "checksum": "ae1c1e70ff25b40d2cbcb7a53aa5e84dba83062182b8a2e61a52b18242654303",
+      "dirName": "Darkest Dungeon"
+    },
+    "2623190": {
+      "name": "The Elder Scrolls IV: Oblivion Remastered",
+      "v": "2026-02-21",
+      "sizeBytes": 11671424,
+      "size": 2882913,
+      "dataUrl": "https://cdn.makineceviri.net/data/2623190.mkpkg",
+      "checksum": "41774c5d3f0716bbe9e456248768ff5691741281defadafb92fd9e263cd02593",
+      "dirName": "The Elder Scrolls IV Oblivion Remastered"
+    },
+    "2630": {
+      "name": "Call of Duty 2",
+      "v": "2026-02-21",
+      "sizeBytes": 275336,
+      "size": 236901,
+      "dataUrl": "https://cdn.makineceviri.net/data/2630.mkpkg",
+      "checksum": "9ba9f2deb6ee5cfe57f43783c54e20e348f28bf2a9c48f70f34f6d98e6e70ca2",
+      "dirName": "Call of Duty 2"
+    },
+    "2651280": {
+      "name": "Marvel's Spider-Man 2",
+      "v": "2026-02-21",
+      "sizeBytes": 804586539,
+      "size": 298181807,
+      "dataUrl": "https://cdn.makineceviri.net/data/2651280.mkpkg",
+      "checksum": "9460be56da114b525a4026dbe452fcdeb09fbe365a68d8216ba10adde61d01fc",
+      "dirName": "Marvel's Spider-Man 2"
+    },
+    "266840": {
+      "name": "Age of Mythology: Extended Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 195819073,
+      "size": 158817887,
+      "dataUrl": "https://cdn.makineceviri.net/data/266840.mkpkg",
+      "checksum": "d4c985eaf6ee007766cc16976c44977a66b15926a090a9812a408067376e298a",
+      "dirName": "Age of Mythology Extended Edition"
+    },
+    "2677660": {
+      "name": "Indiana Jones and the Great Circle",
+      "v": "2026-02-21",
+      "sizeBytes": 218827640,
+      "size": 186281602,
+      "dataUrl": "https://cdn.makineceviri.net/data/2677660.mkpkg",
+      "checksum": "747ae2974e9c6d6919549f48a5c39e989917612afbac7785a4da6ae0892a79b9",
+      "dirName": "Indiana Jones and the Great Circle"
+    },
+    "2680010": {
+      "name": "The First Berserker: Khazan",
+      "v": "2026-02-21",
+      "sizeBytes": 20780616,
+      "size": 2232634,
+      "dataUrl": "https://cdn.makineceviri.net/data/2680010.mkpkg",
+      "checksum": "8732ea46b1730e1ed7bb21bc4927bf524b0ec7d294f6f0ba9da709e545f040fa",
+      "dirName": "The First Berserker Khazan"
+    },
+    "268910": {
+      "name": "Cuphead",
+      "v": "2026-02-21",
+      "sizeBytes": 138881040,
+      "size": 27949570,
+      "dataUrl": "https://cdn.makineceviri.net/data/268910.mkpkg",
+      "checksum": "283fd01e44cd8e42d7a409d0c1f5bb63276e7c1598d534f3c43c7abd618af9fd",
+      "dirName": "Cuphead"
+    },
+    "2695570": {
+      "name": "Kindergarten 3",
+      "v": "2026-02-21",
+      "sizeBytes": 25847343,
+      "size": 3095510,
+      "dataUrl": "https://cdn.makineceviri.net/data/2695570.mkpkg",
+      "checksum": "92fc81ca6c4a42c0eafe032acc5af5125f59278642819dd6c0078fa1cc93e498",
+      "dirName": "Kindergarten 3"
+    },
+    "2793710": {
+      "name": "Dollmare",
+      "v": "2026-02-21",
+      "sizeBytes": 1014222,
+      "size": 120671,
+      "dataUrl": "https://cdn.makineceviri.net/data/2793710.mkpkg",
+      "checksum": "ef1a78bb56013bfa6e8a717fb0047b1f0701c5d892fb4200be29360b47e4131b",
+      "dirName": "Dollmare"
+    },
+    "281990": {
+      "name": "Stellaris",
+      "v": "2026-02-21",
+      "sizeBytes": 31311414,
+      "size": 4992586,
+      "dataUrl": "https://cdn.makineceviri.net/data/281990.mkpkg",
+      "checksum": "62138b27826fa98ada19c9f2f6003f2a63b34d519abfb17067ca60422b12ab5c",
+      "dirName": "Stellaris"
+    },
+    "282140": {
+      "name": "SOMA",
+      "v": "2026-02-21",
+      "sizeBytes": 641556,
+      "size": 139326,
+      "dataUrl": "https://cdn.makineceviri.net/data/282140.mkpkg",
+      "checksum": "51db95c938e94c4dded4a9d62390a60c6d019c158454819746c932c3696430ba",
+      "dirName": "SOMA"
+    },
+    "2840770": {
+      "name": "Avatar: Frontiers of Pandora",
+      "v": "2026-02-21",
+      "sizeBytes": 12054532,
+      "size": 4007068,
+      "dataUrl": "https://cdn.makineceviri.net/data/2840770.mkpkg",
+      "checksum": "46709c93c166ff1e6a4f0cf260b8209dbd17c7ad6377f3a5313a10953fef23a3",
+      "dirName": "Avatar Frontiers of Pandora"
+    },
+    "2842040": {
+      "name": "Star Wars Outlaws",
+      "v": "2026-02-21",
+      "sizeBytes": 85947894,
+      "size": 45285276,
+      "dataUrl": "https://cdn.makineceviri.net/data/2842040.mkpkg",
+      "checksum": "2914f773b75107d416a035900e6ab0174c797f2890567abaccecf89fb2c40aec",
+      "dirName": "Star Wars Outlaws"
+    },
+    "2846290": {
+      "name": "Unspoken",
+      "v": "2026-03-01",
+      "sizeBytes": 97862,
+      "size": 86109,
+      "dataUrl": "https://cdn.makineceviri.net/data/2846290.mkpkg",
+      "checksum": "e76bf6184f3f233b3156ecd327e80c81c7a918673c9a649ccb4868f8e664b6c8",
+      "dirName": "Unspoken"
+    },
+    "2863640": {
+      "name": "The Midnight Walk",
+      "v": "2026-02-21",
+      "sizeBytes": 16493107,
+      "size": 9769339,
+      "dataUrl": "https://cdn.makineceviri.net/data/2863640.mkpkg",
+      "checksum": "55b0521e5b137e7932f2f450ec86d4a3bcbb3fc81c18a87747418d92e34a7285",
+      "dirName": "The Midnight Walk"
+    },
+    "289070": {
+      "name": "Sid Meier's Civilization VI",
+      "v": "2026-02-21",
+      "sizeBytes": 9000850,
+      "size": 1590489,
+      "dataUrl": "https://cdn.makineceviri.net/data/289070.mkpkg",
+      "checksum": "dc6ce830b410cdd5dff0abd157518fccc0c827c05653692b2c259f2d5ffd4e4d",
+      "dirName": "Sid Meier’s Civilization® VI"
+    },
+    "289650": {
+      "name": "Assassin's Creed Unity",
+      "v": "2026-02-21",
+      "sizeBytes": 500432896,
+      "size": 379504144,
+      "dataUrl": "https://cdn.makineceviri.net/data/289650.mkpkg",
+      "checksum": "ee88d0dca904433d8f1f1411b36972c5e337a8e37bd6d98ab52a492181e57d87",
+      "dirName": "Assassin's Creed Unity"
+    },
+    "2909400": {
+      "name": "Final Fantasy VII Rebirth",
+      "v": "2026-02-21",
+      "sizeBytes": 12202579,
+      "size": 12146018,
+      "dataUrl": "https://cdn.makineceviri.net/data/2909400.mkpkg",
+      "checksum": "2d9280981034169d0ddc91e89e452bf9352e0e645803258730072a8b19f9abbd",
+      "dirName": "Final Fantasy 7 Remake Rebirth"
+    },
+    "291650": {
+      "name": "Pillars of Eternity - Definitive Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 12880133,
+      "size": 2163392,
+      "dataUrl": "https://cdn.makineceviri.net/data/291650.mkpkg",
+      "checksum": "3825f30441f971d9a4857eb811405e7a8789856b370306de0623d8ff90f03429",
+      "dirName": "Pillars of Eternity - Definitive Edition"
+    },
+    "2947440": {
+      "name": "SILENT HILL f",
+      "v": "2026-02-21",
+      "sizeBytes": 1037076,
+      "size": 1012061,
+      "dataUrl": "https://cdn.makineceviri.net/data/2947440.mkpkg",
+      "checksum": "a5f98ae878aa689997c198e30b4b7a8589202a4bab801427071ac8c9dc64ac06",
+      "dirName": "SILENT HILL f"
+    },
+    "2961530": {
+      "name": "Fears to Fathom - Woodbury Getaway",
+      "v": "2026-03-01",
+      "sizeBytes": 295175859,
+      "size": 110480873,
+      "dataUrl": "https://cdn.makineceviri.net/data/2961530.mkpkg",
+      "checksum": "c324bb25fa5d02b893aacd85529dd0bf7a45605a5cf1fe3c038a6b49e4c62b8d",
+      "dirName": "Fears To Fathom Woodbury Getaway"
+    },
+    "297130": {
+      "name": "Titan Souls",
+      "v": "2026-02-21",
+      "sizeBytes": 166915,
+      "size": 23811,
+      "dataUrl": "https://cdn.makineceviri.net/data/297130.mkpkg",
+      "checksum": "c08e88ceb8711369f0d2fb895559384ce8157b241e45c7edc40f5291dedf8573",
+      "dirName": "Titan Souls"
+    },
+    "299950": {
+      "name": "GET EVEN",
+      "v": "2026-02-21",
+      "sizeBytes": 188619764,
+      "size": 12352734,
+      "dataUrl": "https://cdn.makineceviri.net/data/299950.mkpkg",
+      "checksum": "a15e018c532a4f2293bf7530c1141dfdc7b4eb5b1771cea1b38752d1a52e0523",
+      "dirName": "GET EVEN"
+    },
+    "301560": {
+      "name": "White Night",
+      "v": "2026-02-21",
+      "sizeBytes": 181773,
+      "size": 68650,
+      "dataUrl": "https://cdn.makineceviri.net/data/301560.mkpkg",
+      "checksum": "3a5ae765de3e8454c6b3e1733d98c500915da0eb6ad84883671c5da39e048546",
+      "dirName": "White Night"
+    },
+    "3035570": {
+      "name": "Assassin's Creed Mirage",
+      "v": "2026-02-21",
+      "sizeBytes": 1742687,
+      "size": 879902,
+      "dataUrl": "https://cdn.makineceviri.net/data/3035570.mkpkg",
+      "checksum": "3cf653edbc843f96ef8f443891ff25476bb7ab8fa74d8b6d0d9dd47f8ab36617",
+      "dirName": "Assassin's Creed Mirage"
+    },
+    "307690": {
+      "name": "Sleeping Dogs: Definitive Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 214730968,
+      "size": 134223670,
+      "dataUrl": "https://cdn.makineceviri.net/data/307690.mkpkg",
+      "checksum": "b2f0eadc0b0a180eb9a02564f05607b1758ab65b9bda54c88323b64648ec2f14",
+      "dirName": "Sleeping Dogs Definitive Edition"
+    },
+    "3104540": {
+      "name": "SNAP SNAP",
+      "v": "2026-02-21",
+      "sizeBytes": 66196,
+      "size": 25312,
+      "dataUrl": "https://cdn.makineceviri.net/data/3104540.mkpkg",
+      "checksum": "dfd8f70b7b5d1afabc943786e68e30d3809b9bb80d690f9a56edabeb59528576",
+      "dirName": "Snap Snap"
+    },
+    "312840": {
+      "name": "Fahrenheit: Indigo Prophecy Remastered",
+      "v": "2026-02-21",
+      "sizeBytes": 926164,
+      "size": 167266,
+      "dataUrl": "https://cdn.makineceviri.net/data/312840.mkpkg",
+      "checksum": "5fc842dc9bb1302d185fe908b81288acc2fe82609686cf2a00d08bf40aa77fa6",
+      "dirName": "Fahrenheit Indigo Prophecy Remastered"
+    },
+    "314790": {
+      "name": "Silence: The Whispered World 2",
+      "v": "2026-02-21",
+      "sizeBytes": 388740,
+      "size": 142904,
+      "dataUrl": "https://cdn.makineceviri.net/data/314790.mkpkg",
+      "checksum": "0ce461e220bc40827486a0a2ac66b79e62e705e9b1dcee2eaf1662383a7663c3",
+      "dirName": "Silence"
+    },
+    "316790": {
+      "name": "Grim Fandango Remastered",
+      "v": "2026-02-21",
+      "sizeBytes": 928779,
+      "size": 352438,
+      "dataUrl": "https://cdn.makineceviri.net/data/316790.mkpkg",
+      "checksum": "0ccfca9077dae6d633d589dde85a859cd21f59352c0492d26b3de1e6f515407e",
+      "dirName": "Grim Fandango Remastered"
+    },
+    "3168370": {
+      "name": "Bring Me...",
+      "v": "2026-02-21",
+      "sizeBytes": 13403771,
+      "size": 6993846,
+      "dataUrl": "https://cdn.makineceviri.net/data/3168370.mkpkg",
+      "checksum": "29b8bed462d5d0240359259ea27f4e0d7890c6746182ec85bd97e642e2eef262",
+      "dirName": "Bring Me"
+    },
+    "3232610": {
+      "name": "Bendy: Lone Wolf",
+      "v": "2026-02-21",
+      "sizeBytes": 1220400,
+      "size": 449047,
+      "dataUrl": "https://cdn.makineceviri.net/data/3232610.mkpkg",
+      "checksum": "ac59f98f4dd1b34c8a1beb6faddfc4d598ae348913a8b9da07b6722fcdcbf253",
+      "dirName": "Bendy Lone Wolf"
+    },
+    "3244220": {
+      "name": "A Game About Digging A Hole",
+      "v": "2026-02-21",
+      "sizeBytes": 24081,
+      "size": 10927,
+      "dataUrl": "https://cdn.makineceviri.net/data/3244220.mkpkg",
+      "checksum": "4c4b549f6c684eb99bf0ac2e2dba02e30a101a9e4dc83fdd8f9502f1eebf48cc",
+      "dirName": "A Game About Digging A Hole"
+    },
+    "3292260": {
+      "name": "Amenti",
+      "v": "2026-02-21",
+      "sizeBytes": 121700,
+      "size": 54045,
+      "dataUrl": "https://cdn.makineceviri.net/data/3292260.mkpkg",
+      "checksum": "bbd115c8a8ddd6eb55c6c8d0f2ed495f25515491030cb4ff359e8ee9cb2ea2ec",
+      "dirName": "Amenti"
+    },
+    "330830": {
+      "name": "Tales from the Borderlands",
+      "v": "2026-02-21",
+      "sizeBytes": 21688300,
+      "size": 2871453,
+      "dataUrl": "https://cdn.makineceviri.net/data/330830.mkpkg",
+      "checksum": "13b8f7a8dd4bca072821ec8fdbc988a17b4d1372bc68da31a2fd9e50ba4944b8",
+      "dirName": "Tales from the Borderlands"
+    },
+    "335300": {
+      "name": "Dark Souls II: Scholar of the First Sin",
+      "v": "2026-02-21",
+      "sizeBytes": 10476092,
+      "size": 2169000,
+      "dataUrl": "https://cdn.makineceviri.net/data/335300.mkpkg",
+      "checksum": "eab0aaf4f746483738a1842de42ed2ab99f8d57d80c7b9b5c6110bea39d7a4c9",
+      "dirName": "Dark Souls II Scholar of the First Sin"
+    },
+    "3357650": {
+      "name": "PRAGMATA",
+      "v": "2026-02-21",
+      "sizeBytes": 83506896,
+      "size": 42692863,
+      "dataUrl": "https://cdn.makineceviri.net/data/3357650.mkpkg",
+      "checksum": "91013a23d79a867b27cb9d98255f55047e05ed6017a2c1999ba5b4d22e40e019",
+      "dirName": "PRAGMATA"
+    },
+    "350080": {
+      "name": "Wolfenstein: The Old Blood",
+      "v": "2026-02-21",
+      "sizeBytes": 145537217,
+      "size": 118602461,
+      "dataUrl": "https://cdn.makineceviri.net/data/350080.mkpkg",
+      "checksum": "b8a30a2d466368f6c711790085b05e1a8d956f1f10173cf00bad8d8f0eb6a74f",
+      "dirName": "Wolfenstein The Old Blood"
+    },
+    "3512250": {
+      "name": "Paranormal Torment",
+      "v": "2026-02-21",
+      "sizeBytes": 37264948,
+      "size": 36459532,
+      "dataUrl": "https://cdn.makineceviri.net/data/3512250.mkpkg",
+      "checksum": "2060a1f3b0f03b7a81b8efca66191c04c372d21395e12639a62e00a9f7b66273",
+      "dirName": "Paranormal Torment"
+    },
+    "35140": {
+      "name": "Batman: Arkham Asylum GOTY",
+      "v": "2026-02-21",
+      "sizeBytes": 117167569,
+      "size": 86608758,
+      "dataUrl": "https://cdn.makineceviri.net/data/35140.mkpkg",
+      "checksum": "922ca7ddad689d3ecf24484e1e49c38bbf001a49eb644945cd9927bd58d08d89",
+      "dirName": "Batman Arkham Asylum Game of the Year Edition"
+    },
+    "3527290": {
+      "name": "PEAK",
+      "v": "2026-02-21",
+      "sizeBytes": 999500,
+      "size": 392081,
+      "dataUrl": "https://cdn.makineceviri.net/data/3527290.mkpkg",
+      "checksum": "2f9eda4fb16742b47a86b7927ac2a460ca5d7a87e103abc1ec6ca7b09380fac5",
+      "dirName": "PEAK"
+    },
+    "356190": {
+      "name": "Middle-earth: Shadow of War Definitive Edition",
+      "v": "2026-03-01",
+      "sizeBytes": 22938259,
+      "size": 9280911,
+      "dataUrl": "https://cdn.makineceviri.net/data/356190.mkpkg",
+      "checksum": "a865300df5cd4459835eab015df6100555f8abebd5441bf26df0c8e7618d78f5",
+      "dirName": "Middle-earth Shadow of War Definitive Edition"
+    },
+    "360430": {
+      "name": "Mafia III: Definitive Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 3991920,
+      "size": 2880719,
+      "dataUrl": "https://cdn.makineceviri.net/data/360430.mkpkg",
+      "checksum": "fc090170c0083130db95b14d22e283652f289cf40e0217346d508f9cc8fb104b",
+      "dirName": "Mafia III Definitive Edition"
+    },
+    "3611110": {
+      "name": "Alan Wake 2",
+      "v": "2026-02-21",
+      "sizeBytes": 6815753,
+      "size": 1538242,
+      "dataUrl": "https://cdn.makineceviri.net/data/3611110.mkpkg",
+      "checksum": "88cf7f7b2d2bd223e9cd0e038fec7048f9394b94fa42265ddfd889dace1bfda8",
+      "dirName": "Alan Wake II"
+    },
+    "367520": {
+      "name": "Hollow Knight",
+      "v": "2026-02-21",
+      "sizeBytes": 60451632,
+      "size": 8019899,
+      "dataUrl": "https://cdn.makineceviri.net/data/367520.mkpkg",
+      "checksum": "bb8272132eb975b3509941df02d1554d11461e438dc60c4718f954a207ac934f",
+      "dirName": "Hollow Knight"
+    },
+    "368500": {
+      "name": "Assassin's Creed Syndicate",
+      "v": "2026-02-21",
+      "sizeBytes": 7229625,
+      "size": 5986941,
+      "dataUrl": "https://cdn.makineceviri.net/data/368500.mkpkg",
+      "checksum": "36449e8ded8d5b644fd80198f3986e78f876e59d41f331d0bf94d3088c2648c1",
+      "dirName": "Assassin's Creed Syndicate"
+    },
+    "373420": {
+      "name": "Divinity: Original Sin - Enhanced Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 2011120,
+      "size": 1823850,
+      "dataUrl": "https://cdn.makineceviri.net/data/373420.mkpkg",
+      "checksum": "97e18edc5ebb7a374fc775f6e11f8bad1da0c12e0908a9e6fb82395c4db221b9",
+      "dirName": "Divinity Original Sin Enhanced Edition"
+    },
+    "379720": {
+      "name": "DOOM (2016)",
+      "v": "2026-02-21",
+      "sizeBytes": 20115753,
+      "size": 6458113,
+      "dataUrl": "https://cdn.makineceviri.net/data/379720.mkpkg",
+      "checksum": "7c6a53d84979453af4fc1db0479afdffbc48f062c22a2df4a477d5cf1f7b3076",
+      "dirName": "Doom 2016"
+    },
+    "3830": {
+      "name": "Psychonauts",
+      "v": "2026-02-21",
+      "sizeBytes": 60920641,
+      "size": 58081909,
+      "dataUrl": "https://cdn.makineceviri.net/data/3830.mkpkg",
+      "checksum": "5a923a2d05f10e1811c24f0f8f189acd5ca66950cd5af643c63710576db011aa",
+      "dirName": "Psychonauts"
+    },
+    "383870": {
+      "name": "Firewatch",
+      "v": "2026-02-21",
+      "sizeBytes": 666862,
+      "size": 216917,
+      "dataUrl": "https://cdn.makineceviri.net/data/383870.mkpkg",
+      "checksum": "3502dbb8041125d0d603ad779266e71c1aa77c31327e4fef1a63675b221857f3",
+      "dirName": "Firewatch"
+    },
+    "391540": {
+      "name": "Undertale",
+      "v": "2026-02-21",
+      "sizeBytes": 55799053,
+      "size": 33246688,
+      "dataUrl": "https://cdn.makineceviri.net/data/391540.mkpkg",
+      "checksum": "6d82ea7da9a967520b3a243cc9c0f31b311b295b5e978771102ed193fa9fb1b1",
+      "dirName": "Undertale"
+    },
+    "3949040": {
+      "name": "RV There Yet?",
+      "v": "2026-02-21",
+      "sizeBytes": 204130,
+      "size": 86937,
+      "dataUrl": "https://cdn.makineceviri.net/data/3949040.mkpkg",
+      "checksum": "ad572f36c3e9f8960438807a91a20d37a9a57d607f0a5bbf87fbae654e3805cd",
+      "dirName": "RV There Yet"
+    },
+    "400430": {
+      "name": "The Vanishing of Ethan Carter Redux",
+      "v": "2026-02-21",
+      "sizeBytes": 155920,
+      "size": 24406,
+      "dataUrl": "https://cdn.makineceviri.net/data/400430.mkpkg",
+      "checksum": "ee19348289d764a60d2bac412fcd1d17d5789e45c1bce62d32890a3b21cfb5cc",
+      "dirName": "The Vanishing of Ethan Carter Redux"
+    },
+    "418370": {
+      "name": "RESIDENT EVIL 7 biohazard",
+      "v": "2026-02-21",
+      "sizeBytes": 10128536,
+      "size": 10126260,
+      "dataUrl": "https://cdn.makineceviri.net/data/418370.mkpkg",
+      "checksum": "ff31b5b990e1f0f649bfdde7f31b9e6a0b947c8101110176050a1611f92aeb63",
+      "dirName": "RESIDENT EVIL 7 Biohazard"
+    },
+    "424840": {
+      "name": "Little Nightmares",
+      "v": "2026-02-21",
+      "sizeBytes": 31406,
+      "size": 11368,
+      "dataUrl": "https://cdn.makineceviri.net/data/424840.mkpkg",
+      "checksum": "4a035120fecbba57e5634fbf4c936045ec51f82bd0b435b1407103bd8c51e93f",
+      "dirName": "Little Nightmares"
+    },
+    "427290": {
+      "name": "Vampyr",
+      "v": "2026-03-01",
+      "sizeBytes": 13331484,
+      "size": 1230997,
+      "dataUrl": "https://cdn.makineceviri.net/data/427290.mkpkg",
+      "checksum": "3809bc6e40b2ac864bfdd59eefbb92e7ea09790497d765f67f70c486d8d7fe29",
+      "dirName": "Vampyr"
+    },
+    "428660": {
+      "name": "Deliver Us The Moon",
+      "v": "2026-02-21",
+      "sizeBytes": 127974,
+      "size": 128104,
+      "dataUrl": "https://cdn.makineceviri.net/data/428660.mkpkg",
+      "checksum": "aa8f2442b828abef5de51ddb4d25bccca1b3e60993f1f9c213fd3d294f06cf34",
+      "dirName": "Deliver Us The Moon"
+    },
+    "435150": {
+      "name": "Divinity: Original Sin 2 - Definitive Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 6463231,
+      "size": 5748668,
+      "dataUrl": "https://cdn.makineceviri.net/data/435150.mkpkg",
+      "checksum": "93870a86bf5ad962df8f7f3708e09fdf2592638b014530682283c3ceaf10ed97",
+      "dirName": "Divinity Original Sin 2 - Definitive Edition"
+    },
+    "45740": {
+      "name": "Dead Rising 2",
+      "v": "2026-03-01",
+      "sizeBytes": 783888,
+      "size": 170624,
+      "dataUrl": "https://cdn.makineceviri.net/data/45740.mkpkg",
+      "checksum": "ebb688c365f859301f4cc75adbd6f046baf77ca120bc2b7263ea1c4877205ffc",
+      "dirName": "Dead Rising 2"
+    },
+    "48190": {
+      "name": "Assassin's Creed Brotherhood",
+      "v": "2026-02-21",
+      "sizeBytes": 419987456,
+      "size": 325994247,
+      "dataUrl": "https://cdn.makineceviri.net/data/48190.mkpkg",
+      "checksum": "5272bbf20a536e01a131386a4a19e5d9eb09f51dd3d5d70d0d77921e803a9830",
+      "dirName": "Assassin's Creed Brotherhood"
+    },
+    "485510": {
+      "name": "Nioh: Complete Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 35092480,
+      "size": 6377697,
+      "dataUrl": "https://cdn.makineceviri.net/data/485510.mkpkg",
+      "checksum": "f21a8cef1691f35ef9d4424ddc105c52a8b5b888c48865b14fa81669c72e6033",
+      "dirName": "Nioh Complete Edition"
+    },
+    "489830": {
+      "name": "The Elder Scrolls V: Skyrim Special Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 171273366,
+      "size": 105753827,
+      "dataUrl": "https://cdn.makineceviri.net/data/489830.mkpkg",
+      "checksum": "3d3864141720c509682a5bd2f99489f25fb0f74a3808ea2a20a6d9714cd83d2a",
+      "dirName": "The Elder Scrolls V Skyrim Special Edition"
+    },
+    "490110": {
+      "name": "The Precinct",
+      "v": "2026-02-21",
+      "sizeBytes": 9616173,
+      "size": 8861679,
+      "dataUrl": "https://cdn.makineceviri.net/data/490110.mkpkg",
+      "checksum": "a6fa0f363534142580c48d4488dc74dd9d144de6b0fe0f8353680690e0064df3",
+      "dirName": "The Precinct"
+    },
+    "50300": {
+      "name": "Spec Ops: The Line",
+      "v": "2026-02-21",
+      "sizeBytes": 88022604,
+      "size": 55131693,
+      "dataUrl": "https://cdn.makineceviri.net/data/50300.mkpkg",
+      "checksum": "251a23b3bfeb79c0c32c079e26602608a3c5472f98b93dea7d76eae23504ef87",
+      "dirName": "Spec Ops The Line"
+    },
+    "504230": {
+      "name": "Celeste",
+      "v": "2026-02-21",
+      "sizeBytes": 133905,
+      "size": 41267,
+      "dataUrl": "https://cdn.makineceviri.net/data/504230.mkpkg",
+      "checksum": "a1fe2bc9a0de1fe70a2e348e6a6922aae1dcd523ae214ff18f0c25b81e1e19e4",
+      "dirName": "Celeste"
+    },
+    "524220": {
+      "name": "NieR:Automata",
+      "v": "2026-02-21",
+      "sizeBytes": 149849263,
+      "size": 45767638,
+      "dataUrl": "https://cdn.makineceviri.net/data/524220.mkpkg",
+      "checksum": "b58fadccc9245f376d0526d43ce44563186ddf9271692b7330207cc0730c47a4",
+      "dirName": "Nier Automata"
+    },
+    "532210": {
+      "name": "Life is Strange 2",
+      "v": "2026-02-21",
+      "sizeBytes": 1321686,
+      "size": 1321739,
+      "dataUrl": "https://cdn.makineceviri.net/data/532210.mkpkg",
+      "checksum": "706173432ee0b83e89247b747d87eca8bf843cd513c7e2a9f05f6812a06334c1",
+      "dirName": "Life is Strange 2"
+    },
+    "535930": {
+      "name": "Two Point Hospital",
+      "v": "2026-02-21",
+      "sizeBytes": 247419632,
+      "size": 172345393,
+      "dataUrl": "https://cdn.makineceviri.net/data/535930.mkpkg",
+      "checksum": "b847b0517626cdba2876c846615635c8b8c2ae565ca9c9abc9eb540892fbbe0d",
+      "dirName": "Two Point Hospital"
+    },
+    "536270": {
+      "name": "Ancestors: The Humankind Odyssey",
+      "v": "2026-02-21",
+      "sizeBytes": 410496,
+      "size": 411343,
+      "dataUrl": "https://cdn.makineceviri.net/data/536270.mkpkg",
+      "checksum": "a31e6fbdad5a17b0a1786db9d3467a47fb9e4389106cba40187c343b60fd05b9",
+      "dirName": "Ancestors the humankind Odyssey"
+    },
+    "548570": {
+      "name": "RAGE 2",
+      "v": "2026-02-21",
+      "sizeBytes": 4014747,
+      "size": 1439532,
+      "dataUrl": "https://cdn.makineceviri.net/data/548570.mkpkg",
+      "checksum": "22f80fcee502cf1bdea114e7b8bda75fe371526bca5014b23e9a288fff6538dd",
+      "dirName": "Rage 2"
+    },
+    "560130": {
+      "name": "Pillars of Eternity II: Deadfire",
+      "v": "2026-02-21",
+      "sizeBytes": 96115387,
+      "size": 10209840,
+      "dataUrl": "https://cdn.makineceviri.net/data/560130.mkpkg",
+      "checksum": "f6c4bd82406495040d5c0513bd6e5aea6d0b2857a5ae5fcb5489a09a9ea217d6",
+      "dirName": "Pillars of Eternity II Deadfire"
+    },
+    "570940": {
+      "name": "Dark Souls: Remastered",
+      "v": "2026-02-21",
+      "sizeBytes": 7005160,
+      "size": 4607986,
+      "dataUrl": "https://cdn.makineceviri.net/data/570940.mkpkg",
+      "checksum": "0a91d8d46d948419e183b02edef18028de4c2deafd24ef0eb89c293452c59b5d",
+      "dirName": "Dark Souls Remastered"
+    },
+    "599140": {
+      "name": "Graveyard Keeper",
+      "v": "2026-02-21",
+      "sizeBytes": 93245444,
+      "size": 9613978,
+      "dataUrl": "https://cdn.makineceviri.net/data/599140.mkpkg",
+      "checksum": "cf4a6895e2666f997aeea17e340894886c7d91fe314f8c7f4081b1fbfab862f6",
+      "dirName": "Graveyard Keeper"
+    },
+    "599610": {
+      "name": "Lost Words: Beyond the Page",
+      "v": "2026-02-21",
+      "sizeBytes": 21712884,
+      "size": 5397875,
+      "dataUrl": "https://cdn.makineceviri.net/data/599610.mkpkg",
+      "checksum": "af9b3eb9c869f6172d694c39270ce8e541a29b8612abe8502157bec6bc993171",
+      "dirName": "Lost Words Beyond the Page"
+    },
+    "601150": {
+      "name": "Devil May Cry 5",
+      "v": "2026-02-21",
+      "sizeBytes": 56868468,
+      "size": 23114617,
+      "dataUrl": "https://cdn.makineceviri.net/data/601150.mkpkg",
+      "checksum": "43e00b4f7cb0128a192040fb481d3c2ba568b7f9c18ff8d04c1fc65a907e6d76",
+      "dirName": "Devil May Cry 5"
+    },
+    "610370": {
+      "name": "Desperados III",
+      "v": "2026-02-21",
+      "sizeBytes": 826395,
+      "size": 284186,
+      "dataUrl": "https://cdn.makineceviri.net/data/610370.mkpkg",
+      "checksum": "7e8df22d200ff1ea96310fc3f378aa89ed4155aa4bf1656b113e022c973b9498",
+      "dirName": "Desperados III"
+    },
+    "635320": {
+      "name": "Last Day of June",
+      "v": "2026-02-21",
+      "sizeBytes": 50420404,
+      "size": 26470566,
+      "dataUrl": "https://cdn.makineceviri.net/data/635320.mkpkg",
+      "checksum": "00b1ad4ceb06c81af17619154e3b38f0ef114715fd019225f573f077116ae35b",
+      "dirName": "Last Day Of June"
+    },
+    "648800": {
+      "name": "Raft",
+      "v": "2026-03-01",
+      "sizeBytes": 238972072,
+      "size": 162266532,
+      "dataUrl": "https://cdn.makineceviri.net/data/648800.mkpkg",
+      "checksum": "5889eb8b22caac8ef2e515126eccd4b9b2cc115f87094914ebd37382dcf56621",
+      "dirName": "Raft"
+    },
+    "653530": {
+      "name": "Return of the Obra Dinn",
+      "v": "2026-02-21",
+      "sizeBytes": 3496981,
+      "size": 678921,
+      "dataUrl": "https://cdn.makineceviri.net/data/653530.mkpkg",
+      "checksum": "0c9fc1fcd1eebbdec2d6055e3c24cb98e8adafb76abf18972034440b7c292e4d",
+      "dirName": "ObraDinn"
+    },
+    "668580": {
+      "name": "Atomic Heart",
+      "v": "2026-02-21",
+      "sizeBytes": 3152466,
+      "size": 1574562,
+      "dataUrl": "https://cdn.makineceviri.net/data/668580.mkpkg",
+      "checksum": "de7012baa8788c5bed99167f430ec8757a1ef43ca2554a5a25fede8c3b288c38",
+      "dirName": "Atomic Heart"
+    },
+    "683320": {
+      "name": "GRIS",
+      "v": "2026-02-21",
+      "sizeBytes": 279976,
+      "size": 69389,
+      "dataUrl": "https://cdn.makineceviri.net/data/683320.mkpkg",
+      "checksum": "2e531c8955e91331d8cc4a3058eb0fb430ec75294ff0d747d73f80858b0e0dbe",
+      "dirName": "GRIS"
+    },
+    "6910": {
+      "name": "Deus Ex: Game of the Year Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 295876103,
+      "size": 224711751,
+      "dataUrl": "https://cdn.makineceviri.net/data/6910.mkpkg",
+      "checksum": "3dc4696807680a152bc36b9317d86cdab41f3b17df26d99e7c9e789facfb5075",
+      "dirName": "Deus Ex Game of the Year Edition"
+    },
+    "70": {
+      "name": "Half-Life",
+      "v": "2026-02-21",
+      "sizeBytes": 437274480,
+      "size": 214056750,
+      "dataUrl": "https://cdn.makineceviri.net/data/70.mkpkg",
+      "checksum": "733de70eba68cb40978631fa59316f021934553a0126629f3e041a8f41f8ac64",
+      "dirName": "Half Life"
+    },
+    "719040": {
+      "name": "Wasteland 3",
+      "v": "2026-02-21",
+      "sizeBytes": 141008044,
+      "size": 42173476,
+      "dataUrl": "https://cdn.makineceviri.net/data/719040.mkpkg",
+      "checksum": "b4a11612e05e3d2911342364936885389f6775f4a2495153a61a8e4cc7ea7932",
+      "dirName": "Wasteland 3"
+    },
+    "733790": {
+      "name": "Not Tonight",
+      "v": "2026-02-21",
+      "sizeBytes": 1204485572,
+      "size": 9350566,
+      "dataUrl": "https://cdn.makineceviri.net/data/733790.mkpkg",
+      "checksum": "421f46d8bdfd75f30c3fafddb2e677f6a9724a25dec51bc0608add7b778f0433",
+      "dirName": "Not Tonight"
+    },
+    "752590": {
+      "name": "A Plague Tale: Innocence",
+      "v": "2026-02-21",
+      "sizeBytes": 5323027,
+      "size": 329083,
+      "dataUrl": "https://cdn.makineceviri.net/data/752590.mkpkg",
+      "checksum": "602187e71ec472f2027fc388dbd231ec83519a99402581ae1d2757ab90324a02",
+      "dirName": "A Plague Tale Innocence"
+    },
+    "775500": {
+      "name": "SCARLET NEXUS",
+      "v": "2026-02-21",
+      "sizeBytes": 8944144,
+      "size": 4080259,
+      "dataUrl": "https://cdn.makineceviri.net/data/775500.mkpkg",
+      "checksum": "d98aa0784e08b48520bf30dcf4f0031144da3e9661236b1be7baaa00cfcbea66",
+      "dirName": "SCARLET NEXUS"
+    },
+    "812140": {
+      "name": "Assassin's Creed Odyssey",
+      "v": "2026-02-21",
+      "sizeBytes": 25301629,
+      "size": 11225759,
+      "dataUrl": "https://cdn.makineceviri.net/data/812140.mkpkg",
+      "checksum": "cc826756e5e30f76e35e4f88c62cc52e7dbfcf3b1a67448097f302db434d9cd9",
+      "dirName": "Assassin's Creed Odyssey"
+    },
+    "814380": {
+      "name": "Sekiro: Shadows Die Twice",
+      "v": "2026-02-21",
+      "sizeBytes": 2208147,
+      "size": 1626511,
+      "dataUrl": "https://cdn.makineceviri.net/data/814380.mkpkg",
+      "checksum": "56d0936d6c0c1af0be2b2886e7decd6cd4e6127f0e2a49747c4d7f7f5a4bab63",
+      "dirName": "Sekiro Shadows Die Twice"
+    },
+    "817020": {
+      "name": "Unholy",
+      "v": "2026-02-21",
+      "sizeBytes": 1500303,
+      "size": 642393,
+      "dataUrl": "https://cdn.makineceviri.net/data/817020.mkpkg",
+      "checksum": "581eeb3888d1420032c73d7baa3d59c8336222d6d0446d0ce53514625b0787b6",
+      "dirName": "Unholy"
+    },
+    "860510": {
+      "name": "Little Nightmares II Enhanced Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 793263,
+      "size": 580406,
+      "dataUrl": "https://cdn.makineceviri.net/data/860510.mkpkg",
+      "checksum": "2d1349bfbcd7e61f0e6160bcb37ca84cee9fda957a9ced7f59a29e560d2c0119",
+      "dirName": "Little Nightmares II - Enhanced Edition"
+    },
+    "865610": {
+      "name": "Tails Noir",
+      "v": "2026-02-21",
+      "sizeBytes": 1956823,
+      "size": 757850,
+      "dataUrl": "https://cdn.makineceviri.net/data/865610.mkpkg",
+      "checksum": "4e4f1c7477ff0c6c416ca960eb9a9b23715e0ec433b8e0676cd59a043e3280da",
+      "dirName": "Tails Noir"
+    },
+    "870780": {
+      "name": "Control Ultimate Edition",
+      "v": "2026-02-21",
+      "sizeBytes": 60150387,
+      "size": 56250625,
+      "dataUrl": "https://cdn.makineceviri.net/data/870780.mkpkg",
+      "checksum": "cfac1fb0072f7ea4890c04788554aeb52977e7b48d2bec5bbc16b2071c003256",
+      "dirName": "Control Ultimate Edition"
+    },
+    "874260": {
+      "name": "The Forgotten City",
+      "v": "2026-02-21",
+      "sizeBytes": 4795536,
+      "size": 4770078,
+      "dataUrl": "https://cdn.makineceviri.net/data/874260.mkpkg",
+      "checksum": "1cf740da3c908a5a47090978b37ac90658ff65a11f4c98ab077a6fc501126fea",
+      "dirName": "The Forgotten City"
+    },
+    "883710": {
+      "name": "Resident Evil 2",
+      "v": "2026-02-21",
+      "sizeBytes": 81440012,
+      "size": 53341910,
+      "dataUrl": "https://cdn.makineceviri.net/data/883710.mkpkg",
+      "checksum": "a88f9d86eee7af7a7f3aa09750e7dea694525466e7e57bbb850048114b4dfcb8",
+      "dirName": "Resident Evil 2"
+    },
+    "885970": {
+      "name": "Total War: ROME REMASTERED",
+      "v": "2026-02-21",
+      "sizeBytes": 8278440,
+      "size": 895673,
+      "dataUrl": "https://cdn.makineceviri.net/data/885970.mkpkg",
+      "checksum": "54bfdc9c3c068ba471668f2a1d89b1d521f858734ac3c2e56cdd894d3079d20a",
+      "dirName": "Total War ROME REMASTERED"
+    },
+    "8870": {
+      "name": "BioShock Infinite",
+      "v": "2026-02-21",
+      "sizeBytes": 2361586,
+      "size": 262898,
+      "dataUrl": "https://cdn.makineceviri.net/data/8870.mkpkg",
+      "checksum": "ce25df2ddf39d7e110cb12cd11e23e1761d2be4106306458f3e67a27506e7a66",
+      "dirName": "BioShock Infinite"
+    },
+    "8930": {
+      "name": "Sid Meier's Civilization V",
+      "v": "2026-02-21",
+      "sizeBytes": 3922199,
+      "size": 846053,
+      "dataUrl": "https://cdn.makineceviri.net/data/8930.mkpkg",
+      "checksum": "a690953bbfda447ce075de164182bbc1be85df6830129929dc8cdd555d8f3114",
+      "dirName": "Civilization V"
+    },
+    "893180": {
+      "name": "Catherine Classic",
+      "v": "2026-02-21",
+      "sizeBytes": 150286693,
+      "size": 9818266,
+      "dataUrl": "https://cdn.makineceviri.net/data/893180.mkpkg",
+      "checksum": "0342b1f5accaa4c50dea2c6a54e43614246dfe610027285ad3b1a060ea653d75",
+      "dirName": "Catherine Classic"
+    },
+    "911400": {
+      "name": "Assassin's Creed III Remastered",
+      "v": "2026-02-21",
+      "sizeBytes": 2890174,
+      "size": 681707,
+      "dataUrl": "https://cdn.makineceviri.net/data/911400.mkpkg",
+      "checksum": "613445177d62fbfb9a6eb27875ed331cb9af5cfbb8d2491441e0f65613eec7ae",
+      "dirName": "Assassin's Creed 3 Remastered"
+    },
+    "934700": {
+      "name": "Dead Island 2",
+      "v": "2026-02-21",
+      "sizeBytes": 3282543,
+      "size": 3277510,
+      "dataUrl": "https://cdn.makineceviri.net/data/934700.mkpkg",
+      "checksum": "9365692fc1e597906994f6cff5108d4a7c8e1a397ce19dbd34881d96b227b2fd",
+      "dirName": "Dead Island 2"
+    },
+    "936790": {
+      "name": "Life is Strange: True Colors",
+      "v": "2026-02-21",
+      "sizeBytes": 6244666,
+      "size": 772479,
+      "dataUrl": "https://cdn.makineceviri.net/data/936790.mkpkg",
+      "checksum": "4e67fcdc52f13073afd71e85c9e2c0136bde2b82ed73de7777da0815be50111f",
+      "dirName": "Life is Strange True Colors"
+    },
+    "939850": {
+      "name": "The Dark Pictures Anthology: Man of Medan",
+      "v": "2026-02-21",
+      "sizeBytes": 9497132,
+      "size": 759236,
+      "dataUrl": "https://cdn.makineceviri.net/data/939850.mkpkg",
+      "checksum": "07e62bcedb404021df2bd82cccc6c0b3611c5bd2188e1786a937532d32f40309",
+      "dirName": "The Dark Pictures Anthology Man of Medan"
+    },
+    "949230": {
+      "name": "Cities: Skylines II",
+      "v": "2026-02-21",
+      "sizeBytes": 2213546,
+      "size": 346617,
+      "dataUrl": "https://cdn.makineceviri.net/data/949230.mkpkg",
+      "checksum": "c3e60b0ee9f51ce26cb74dd07f0519ea0f180ed489ced562f26251e706793a50",
+      "dirName": "Cities Skylines II"
+    },
+    "952060": {
+      "name": "Resident Evil 3",
+      "v": "2026-02-21",
+      "sizeBytes": 67295182,
+      "size": 67162959,
+      "dataUrl": "https://cdn.makineceviri.net/data/952060.mkpkg",
+      "checksum": "456dedb18bf43cb585d9996284bc0e09806c7b05a6b96ccf31504cab6d710592",
+      "dirName": "Resident Evil 3 Remake"
+    },
+    "960910": {
+      "name": "Heavy Rain",
+      "v": "2026-02-21",
+      "sizeBytes": 27639776,
+      "size": 7653372,
+      "dataUrl": "https://cdn.makineceviri.net/data/960910.mkpkg",
+      "checksum": "6e90af13579529d4440c6db3291c313ae997ecc3abd8516adb1ed80e08a6a1ed",
+      "dirName": "Heavy Rain"
+    },
+    "968870": {
+      "name": "Close to the Sun",
+      "v": "2026-02-21",
+      "sizeBytes": 574054,
+      "size": 497841,
+      "dataUrl": "https://cdn.makineceviri.net/data/968870.mkpkg",
+      "checksum": "50ec18ee605ce555c1372b1f0506ac2218c1481132037e824837378786a1fdd4",
+      "dirName": "Close to the Sun"
+    },
+    "975370": {
+      "name": "Dwarf Fortress",
+      "v": "2026-02-21",
+      "sizeBytes": 6776884,
+      "size": 3062690,
+      "dataUrl": "https://cdn.makineceviri.net/data/975370.mkpkg",
+      "checksum": "df60fd139a2efc43801072322b592c697040925a190a9c10bc1f6256a2dc9557",
+      "dirName": "Dwarf Fortress"
+    },
+    "979690": {
+      "name": "The Ascent",
+      "v": "2026-02-21",
+      "sizeBytes": 1687045,
+      "size": 463845,
+      "dataUrl": "https://cdn.makineceviri.net/data/979690.mkpkg",
+      "checksum": "26e07bdac8129706fef88e0937eb7c8e0e2d3f63a2779915982573813386c27d",
+      "dirName": "The Ascent"
+    },
+    "990080": {
+      "name": "Hogwarts Legacy",
+      "v": "2026-02-21",
+      "sizeBytes": 1723078,
+      "size": 1718546,
+      "dataUrl": "https://cdn.makineceviri.net/data/990080.mkpkg",
+      "checksum": "569bc45ecff565e8b7a5c0855c41f67d921515a93c2d84a1795c05aafe1decd3",
+      "dirName": "Hogwarts Legacy"
+    },
+    "983970": {
+      "name": "Haven",
+      "v": "2026-03-02",
+      "sizeBytes": 0,
+      "size": 3458418,
+      "dataUrl": "https://cdn.makineceviri.net/data/983970.mkpkg",
+      "checksum": "080aaed5aa6432b841a6aafe66b7a9068aef1c677e7e76a1cc0a14b595625e63",
+      "dirName": "Haven"
+    },
+    "3764200": {
+      "name": "Resident Evil Requiem",
+      "v": "2026-03-02",
+      "sizeBytes": 0,
+      "size": 1659840,
+      "dataUrl": "https://cdn.makineceviri.net/data/3764200.mkpkg",
+      "checksum": "96b05b9222414728d3946343874113e7b97bb659db8df90034eb72f5c6b4a98b",
+      "dirName": "Resident Evil Requiem"
+    }
+  }
+}

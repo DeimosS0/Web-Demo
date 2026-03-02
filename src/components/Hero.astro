@@ -1,0 +1,571 @@
+---
+---
+
+<section class="hero-extreme">
+  <div class="hero-shader" id="ai-core-container"></div>
+  
+  <div class="cyber-grid"></div>
+  <div class="hero-fade-overlay"></div>
+
+  <div class="hero-content-wrapper">
+    <div class="hero-logo-container ai-fade-up">
+      <div class="hero-logo-pulse"></div>
+      <img src="/images/logo.png" alt="Makine Çeviri" class="hero-logo-img" />
+    </div>
+
+    <h1 class="hero-title ai-fade-up ai-delay-1">
+      Oyun Dünyasını <br />
+      <span class="glitch-wrapper">
+        <span class="glitch-text" data-text="Kendi Dilinde">Kendi Dilinde</span>
+      </span>
+      Keşfet.
+    </h1>
+
+    <p class="hero-subtitle ai-fade-up ai-delay-2">
+      MakineAI sinir ağı ile 250'den fazla oyunu saniyeler içinde Türkçe'ye çevir. <br/>
+      <span class="highlight-text">Yama aramak yok, karmaşık kurulumlar yok.</span>
+    </p>
+
+    <div class="ai-terminal-wrapper ai-fade-up ai-delay-3">
+      <div class="ai-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="terminal-title">MakineAI_Engine.exe</span>
+          <div class="terminal-status"><span class="status-dot"></span> AKTİF</div>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          </div>
+      </div>
+    </div>
+
+    <div class="hero-cta-container ai-fade-up ai-delay-4">
+      <a href="#indir" class="cyber-button" id="hero-download-btn">
+        <div class="btn-glow-follower"></div>
+        <div class="btn-border-gradient"></div>
+        <span class="cyber-button-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          SİSTEMİ BAŞLAT
+        </span>
+      </a>
+    </div>
+
+    <div class="hero-stats-grid ai-fade-up ai-delay-5" id="hero-trust">
+      <div class="glass-stat-card magnetic-card">
+        <span class="stat-number" id="stat-members">68.000+</span>
+        <span class="stat-label">Topluluk Üyesi</span>
+      </div>
+      <div class="glass-stat-card magnetic-card active-pulse-card">
+        <span class="stat-number">
+          <span class="pulse-dot"></span>
+          <span id="stat-online-count">—</span>
+        </span>
+        <span class="stat-label">Çevrimiçi Aktif</span>
+      </div>
+      <div class="glass-stat-card magnetic-card">
+        <span class="stat-number">250+</span>
+        <span class="stat-label">Oyun Çevirisi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* --- Extreme Hero Styling --- */
+  .hero-extreme {
+    position: relative; min-height: 100vh; display: flex; align-items: center;
+    justify-content: center; overflow: hidden; background: #050507;
+  }
+
+  .hero-shader { position: absolute; inset: 0; z-index: 0; }
+  
+  .cyber-grid {
+    position: absolute; inset: 0; z-index: 1;
+    background-size: 60px 60px;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 80%);
+  }
+
+  .hero-fade-overlay {
+    position: absolute; inset: 0; z-index: 2;
+    background: radial-gradient(circle at center, transparent 0%, #050507 90%),
+                linear-gradient(to bottom, transparent 60%, #050507 100%);
+    pointer-events: none;
+  }
+
+  .hero-content-wrapper {
+    position: relative; z-index: 3; text-align: center;
+    padding: 120px 20px 40px; max-width: 900px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+
+  .hero-logo-container { position: relative; width: 84px; height: 84px; margin-bottom: 1.5rem; }
+  .hero-logo-pulse {
+    position: absolute; inset: -20px; border-radius: 50%;
+    background: conic-gradient(from 0deg, #d4a843, #8ab648, #4ecdc4, #d4a843);
+    filter: blur(28px); opacity: 0.3; animation: spin 5s linear infinite;
+  }
+  .hero-logo-img { position: relative; width: 100%; height: 100%; filter: drop-shadow(0 0 15px rgba(78, 205, 196, 0.3)); }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 4.5rem); font-weight: 800;
+    letter-spacing: -0.04em; line-height: 1.1; margin: 0; color: #fff;
+  }
+
+  .glitch-wrapper { position: relative; display: inline-block; }
+  .glitch-text {
+    position: relative; display: inline-block;
+    background: linear-gradient(90deg, #d4a843, #4ecdc4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .glitch-text::before, .glitch-text::after {
+    content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: #050507; opacity: 0;
+  }
+  .glitch-text::before {
+    left: 2px; text-shadow: -2px 0 #4ecdc4;
+    animation: glitch-anim-1 4s infinite linear alternate-reverse;
+  }
+  .glitch-text::after {
+    left: -2px; text-shadow: -2px 0 #d4a843;
+    animation: glitch-anim-2 5s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch-anim-1 {
+    0%, 95% { opacity: 0; clip-path: inset(0 0 0 0); }
+    96% { opacity: 1; clip-path: inset(20% 0 80% 0); }
+    97% { opacity: 1; clip-path: inset(60% 0 10% 0); }
+    98%, 100% { opacity: 0; clip-path: inset(0 0 0 0); }
+  }
+  @keyframes glitch-anim-2 {
+    0%, 92% { opacity: 0; clip-path: inset(0 0 0 0); }
+    93% { opacity: 1; clip-path: inset(10% 0 60% 0); }
+    94% { opacity: 1; clip-path: inset(80% 0 5% 0); }
+    95%, 100% { opacity: 0; clip-path: inset(0 0 0 0); }
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem; color: #7d7a73; line-height: 1.7;
+    margin-top: 1.5rem; margin-bottom: 2.5rem; max-width: 650px;
+  }
+  .highlight-text { color: #d4a843; font-weight: 500; }
+
+  /* Canlı AI Terminal */
+  .ai-terminal-wrapper { width: 100%; max-width: 500px; margin-bottom: 3rem; }
+  .ai-terminal {
+    background: rgba(13, 13, 17, 0.7);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(78, 205, 196, 0.05);
+    backdrop-filter: blur(12px); text-align: left;
+  }
+  .terminal-header {
+    background: rgba(255, 255, 255, 0.03); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 16px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .terminal-dots { display: flex; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot.red { background: #ff5f56; } .dot.yellow { background: #ffbd2e; } .dot.green { background: #27c93f; }
+  .terminal-title { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.75rem; color: #7d7a73; }
+  .terminal-status { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.7rem; color: #4ecdc4; display: flex; align-items: center; gap: 6px; }
+  .status-dot { width: 6px; height: 6px; background: #4ecdc4; border-radius: 50%; animation: dotPulse 1.5s infinite; }
+  
+  .terminal-body {
+    padding: 16px; min-height: 140px;
+    font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.6;
+    color: #dedad4;
+  }
+  
+  :global(.t-line) { margin-bottom: 4px; opacity: 0; animation: fadeInTerminal 0.2s forwards; }
+  :global(.t-system) { color: #8ab648; font-weight: 600; margin-right: 8px; }
+  :global(.t-ai) { color: #4ecdc4; font-weight: 600; margin-right: 8px; }
+  :global(.t-success) { color: #d4a843; font-weight: 600; }
+  :global(.t-cursor) { display: inline-block; width: 8px; height: 15px; background: #4ecdc4; vertical-align: middle; margin-left: 4px; animation: blink 1s step-end infinite; }
+  
+  @keyframes fadeInTerminal { to { opacity: 1; } }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* --- Deneysel Cyber Button Stilleri --- */
+  .hero-cta-container { 
+    position: relative; display: inline-block; margin-bottom: 4rem; 
+    perspective: 1000px; /* 3D Manyetik etki için derinlik */
+  }
+  
+  .cyber-button {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    padding: 2px; border-radius: 16px; text-decoration: none;
+    background: rgba(13, 13, 17, 0.4);
+    overflow: hidden;
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px -10px rgba(78, 205, 196, 0.2);
+  }
+  
+  /* Butonun iç yüzeyi */
+  .cyber-button-inner {
+    position: relative; display: flex; align-items: center; gap: 12px;
+    background: #09090b; /* Çok koyu gri/siyah arka plan */
+    padding: 16px 48px; border-radius: 14px; color: #fff;
+    font-weight: 700; font-size: 1.05rem; letter-spacing: 0.08em;
+    z-index: 2; backdrop-filter: blur(10px);
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .cyber-button-inner svg { 
+    width: 20px; height: 20px; color: #4ecdc4; 
+    transition: transform 0.3s, color 0.3s; 
+  }
+  .cyber-button:hover .cyber-button-inner svg { 
+    transform: translateY(-2px); color: #d4a843; 
+  }
+
+  /* Sabit renk geçişli premium ince kenarlık */
+  .btn-border-gradient {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(120deg, rgba(212, 168, 67, 0.6), rgba(78, 205, 196, 0.6), rgba(138, 182, 72, 0.6));
+    border-radius: inherit; opacity: 0.5;
+  }
+
+  /* Farenin takip ettiği iç neon lazer ışığı (Spotlight) */
+  .btn-glow-follower {
+    position: absolute;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.9) 0%, rgba(212, 168, 67, 0.6) 40%, transparent 70%);
+    border-radius: 50%;
+    top: var(--y, 50%);
+    left: var(--x, 50%);
+    transform: translate(-50%, -50%);
+    opacity: 0; z-index: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .cyber-button:hover { box-shadow: 0 15px 40px -5px rgba(78, 205, 196, 0.5); }
+  .cyber-button:hover .btn-glow-follower { opacity: 1; }
+  .cyber-button:hover .cyber-button-inner { background: rgba(9, 9, 11, 0.85); }
+
+  /* 3D Magnetic Stats */
+  .hero-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%; perspective: 1000px; }
+  .glass-stat-card {
+    background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px); border-radius: 20px; padding: 1.5rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    transition: transform 0.1s ease, background 0.3s ease, border-color 0.3s ease;
+    transform-style: preserve-3d;
+  }
+  .glass-stat-card:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(78, 205, 196, 0.2); }
+  .stat-number { font-size: 1.6rem; font-weight: 700; color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; transform: translateZ(20px); }
+  .stat-label { font-size: 0.75rem; color: #7d7a73; text-transform: uppercase; letter-spacing: 0.08em; transform: translateZ(10px); }
+  .pulse-dot { width: 10px; height: 10px; background: #23a55a; border-radius: 50%; box-shadow: 0 0 12px rgba(35, 165, 90, 0.8); animation: dotPulse 2s infinite; }
+
+  /* Animations */
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+  @keyframes dotPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .ai-fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  .ai-delay-1 { animation-delay: 0.1s; } .ai-delay-2 { animation-delay: 0.2s; } 
+  .ai-delay-3 { animation-delay: 0.3s; } .ai-delay-4 { animation-delay: 0.5s; } .ai-delay-5 { animation-delay: 0.6s; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 768px) {
+    .hero-stats-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .ai-terminal-wrapper { display: none; }
+  }
+</style>
+
+<script>
+  import * as THREE from 'three';
+
+  // --- 1. Terminal Animasyonu ---
+  const terminalBody = document.getElementById('terminal-body');
+  const gamesToTranslate = ["Starfield", "Wuthering Waves", "Red Dead Redemption 2", "Cyberpunk 2077", "Elden Ring", "Hogwarts Legacy", "Assassin's Creed Valhalla"];
+  let gameIndex = 0;
+
+  async function typeWriterEffect(text: string, element: HTMLElement, speed = 30) {
+    return new Promise(resolve => {
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        } else {
+          resolve(true);
+        }
+      }
+      type();
+    });
+  }
+
+  async function runTerminalSequence() {
+    if (!terminalBody) return;
+    terminalBody.innerHTML = ''; 
+    
+    const game = gamesToTranslate[gameIndex];
+    gameIndex = (gameIndex + 1) % gamesToTranslate.length;
+
+    const line1 = document.createElement('div');
+    line1.className = 't-line';
+    line1.innerHTML = `<span class="t-system">[SİSTEM]</span>Oyun algılandı: `;
+    terminalBody.appendChild(line1);
+    await typeWriterEffect(game, line1, 50);
+    
+    await new Promise(r => setTimeout(r, 600));
+
+    const line2 = document.createElement('div');
+    line2.className = 't-line';
+    line2.innerHTML = `<span class="t-ai">[MakineAI]</span>`;
+    terminalBody.appendChild(line2);
+    await typeWriterEffect("Dil dosyaları analiz ediliyor...", line2, 30);
+    
+    await new Promise(r => setTimeout(r, 800));
+
+    const line3 = document.createElement('div');
+    line3.className = 't-line';
+    line3.innerHTML = `<span class="t-ai">[MakineAI]</span>`;
+    terminalBody.appendChild(line3);
+    await typeWriterEffect("Çeviri uygulanıyor [%100]", line3, 20);
+
+    await new Promise(r => setTimeout(r, 500));
+
+    const line4 = document.createElement('div');
+    line4.className = 't-line';
+    line4.innerHTML = `<span class="t-success">BAŞARILI: Yama entegre edildi. İyi oyunlar!</span><span class="t-cursor"></span>`;
+    terminalBody.appendChild(line4);
+
+    setTimeout(runTerminalSequence, 4000);
+  }
+  setTimeout(runTerminalSequence, 1500);
+
+  // --- 2. 3D Manyetik Kartlar ---
+  const cards = document.querySelectorAll('.magnetic-card');
+  cards.forEach(card => {
+    const htmlCard = card as HTMLElement;
+    htmlCard.addEventListener('mousemove', (e) => {
+      const rect = htmlCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateX = ((y - (rect.height / 2)) / (rect.height / 2)) * -8;
+      const rotateY = ((x - (rect.width / 2)) / (rect.width / 2)) * 8;
+      htmlCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+    htmlCard.addEventListener('mouseleave', () => {
+      htmlCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    });
+  });
+
+  // --- 3. Cyber Button Spotlight & Manyetik Efekt ---
+  const cyberBtn = document.querySelector('.cyber-button');
+  if (cyberBtn) {
+    const htmlBtn = cyberBtn as HTMLElement;
+    htmlBtn.addEventListener('mousemove', (e) => {
+      const rect = htmlBtn.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      htmlBtn.style.setProperty('--x', `${x}px`);
+      htmlBtn.style.setProperty('--y', `${y}px`);
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -15; 
+      const rotateY = ((x - centerX) / centerX) * 15;
+      
+      htmlBtn.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+    });
+    
+    htmlBtn.addEventListener('mouseleave', () => {
+      htmlBtn.style.transform = `perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    });
+  }
+
+  // --- 4. İstatistik Sayacı ---
+  const format = (n: number) => n.toLocaleString('tr-TR');
+  function countUp(el: HTMLElement, target: number) {
+    let start = performance.now();
+    function tick(now: number) {
+      let progress = Math.min((now - start) / 2000, 1);
+      let ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = format(Math.floor(target * ease));
+      if(progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  setTimeout(async () => {
+    try {
+      const res = await fetch('/api/discord-stats');
+      if (!res.ok) return;
+      const data = await res.json();
+      const mEl = document.getElementById('stat-members');
+      const oEl = document.getElementById('stat-online-count');
+      if (mEl && data.members) countUp(mEl, data.members);
+      if (oEl && data.online) countUp(oEl, data.online);
+    } catch {}
+  }, 1000);
+
+  // --- 5. MakineAI Sinir Ağı (Neural Plexus) Arka Planı ---
+  const container = document.getElementById('ai-core-container');
+  if (container) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 150; 
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+
+    const particleCount = 200; 
+    const maxDistance = 35; 
+    
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlePositions = new Float32Array(particleCount * 3);
+    const particleColors = new Float32Array(particleCount * 3);
+    const velocities: {x: number, y: number, z: number}[] = [];
+    
+    const colors = [
+      new THREE.Color(0xd4a843), // Kehribar
+      new THREE.Color(0x4ecdc4), // Camgöbeği
+      new THREE.Color(0x8ab648)  // Yeşil
+    ];
+
+    for (let i = 0; i < particleCount; i++) {
+      particlePositions[i * 3] = (Math.random() - 0.5) * 350;
+      particlePositions[i * 3 + 1] = (Math.random() - 0.5) * 350;
+      particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 200;
+      
+      velocities.push({
+        x: (Math.random() - 0.5) * 0.5,
+        y: (Math.random() - 0.5) * 0.5,
+        z: (Math.random() - 0.5) * 0.5
+      });
+
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      particleColors[i * 3] = color.r;
+      particleColors[i * 3 + 1] = color.g;
+      particleColors[i * 3 + 2] = color.b;
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+    particlesGeometry.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
+
+    const particlesMaterial = new THREE.PointsMaterial({
+      size: 2.5,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.8,
+      blending: THREE.AdditiveBlending
+    });
+
+    const particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particleSystem);
+
+    const lineCount = (particleCount * (particleCount - 1)) / 2;
+    const linesGeometry = new THREE.BufferGeometry();
+    const linePositions = new Float32Array(lineCount * 6);
+    const lineColors = new Float32Array(lineCount * 6);
+    
+    linesGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3).setUsage(THREE.DynamicDrawUsage));
+    linesGeometry.setAttribute('color', new THREE.BufferAttribute(lineColors, 3).setUsage(THREE.DynamicDrawUsage));
+
+    const linesMaterial = new THREE.LineBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.15,
+      blending: THREE.AdditiveBlending
+    });
+
+    const linesMesh = new THREE.LineSegments(linesGeometry, linesMaterial);
+    scene.add(linesMesh);
+
+    let globalMouseX = 0;
+    let globalMouseY = 0;
+    document.addEventListener('mousemove', (e) => {
+      globalMouseX = (e.clientX / window.innerWidth) * 2 - 1;
+      globalMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    const animate = () => {
+      requestAnimationFrame(animate);
+      
+      let vertexpos = 0;
+      let colorpos = 0;
+      let numConnected = 0;
+      
+      const positions = particleSystem.geometry.attributes.position.array as Float32Array;
+      const pColors = particleSystem.geometry.attributes.color.array as Float32Array;
+
+      for (let i = 0; i < particleCount; i++) {
+        positions[i * 3] += velocities[i].x;
+        positions[i * 3 + 1] += velocities[i].y;
+        positions[i * 3 + 2] += velocities[i].z;
+
+        if (Math.abs(positions[i * 3]) > 250) velocities[i].x *= -1;
+        if (Math.abs(positions[i * 3 + 1]) > 250) velocities[i].y *= -1;
+        if (Math.abs(positions[i * 3 + 2]) > 150) velocities[i].z *= -1;
+      }
+
+      for (let i = 0; i < particleCount; i++) {
+        for (let j = i + 1; j < particleCount; j++) {
+          const dx = positions[i * 3] - positions[j * 3];
+          const dy = positions[i * 3 + 1] - positions[j * 3 + 1];
+          const dz = positions[i * 3 + 2] - positions[j * 3 + 2];
+          const distSq = dx * dx + dy * dy + dz * dz;
+
+          if (distSq < maxDistance * maxDistance) {
+            linePositions[vertexpos++] = positions[i * 3];
+            linePositions[vertexpos++] = positions[i * 3 + 1];
+            linePositions[vertexpos++] = positions[i * 3 + 2];
+
+            linePositions[vertexpos++] = positions[j * 3];
+            linePositions[vertexpos++] = positions[j * 3 + 1];
+            linePositions[vertexpos++] = positions[j * 3 + 2];
+
+            const alpha = 1.0 - Math.sqrt(distSq) / maxDistance;
+            
+            lineColors[colorpos++] = pColors[i * 3] * alpha;
+            lineColors[colorpos++] = pColors[i * 3 + 1] * alpha;
+            lineColors[colorpos++] = pColors[i * 3 + 2] * alpha;
+
+            lineColors[colorpos++] = pColors[j * 3] * alpha;
+            lineColors[colorpos++] = pColors[j * 3 + 1] * alpha;
+            lineColors[colorpos++] = pColors[j * 3 + 2] * alpha;
+
+            numConnected++;
+          }
+        }
+      }
+
+      linesMesh.geometry.setDrawRange(0, numConnected * 2);
+      linesMesh.geometry.attributes.position.needsUpdate = true;
+      linesMesh.geometry.attributes.color.needsUpdate = true;
+      particleSystem.geometry.attributes.position.needsUpdate = true;
+
+      particleSystem.rotation.y += 0.001;
+      linesMesh.rotation.y += 0.001;
+
+      camera.position.x += (globalMouseX * 30 - camera.position.x) * 0.05;
+      camera.position.y += (globalMouseY * 30 - camera.position.y) * 0.05;
+      camera.lookAt(scene.position);
+
+      renderer.render(scene, camera);
+    };
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  }
+</script>

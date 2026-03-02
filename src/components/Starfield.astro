@@ -1,0 +1,196 @@
+---
+---
+
+<canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+
+<script>
+  const canvas = document.getElementById('starfield') as HTMLCanvasElement;
+  if (canvas) {
+    const ctx = canvas.getContext('2d')!;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    const dpr = Math.min(window.devicePixelRatio, 2);
+
+    // Soft palette — matching aurora
+    const tints = [
+      [212, 168, 67],   // amber
+      [138, 182, 72],   // green
+      [78, 205, 196],   // teal
+      [184, 160, 208],  // lavender
+    ];
+
+    interface Star {
+      x: number;
+      y: number;
+      r: number;
+      depth: number;
+      tint: number[] | null;
+      phase: number;
+      speed: number;
+    }
+
+    // Denser — ~1 star per 15000px²
+    const count = Math.floor((width * height) / 15000);
+    const stars: Star[] = [];
+
+    for (let i = 0; i < count; i++) {
+      const depth = 0.3 + Math.random() * 0.7;
+      const hasColor = Math.random() < 0.4;
+
+      stars.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: hasColor ? 0.5 + Math.random() * 0.9 : 0.3 + Math.random() * 0.5,
+        depth: hasColor ? 0.6 + Math.random() * 0.4 : depth,
+        tint: hasColor ? tints[Math.floor(Math.random() * tints.length)] : null,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.6 + Math.random() * 1.8,
+      });
+    }
+
+    // --- Shooting stars ---
+    interface ShootingStar {
+      x: number;
+      y: number;
+      len: number;
+      speed: number;
+      angle: number;
+      tint: number[];
+      life: number;
+      maxLife: number;
+      width: number;
+    }
+
+    const shootingStars: ShootingStar[] = [];
+    const maxShootingStars = 5;
+    let nextSpawnTime = 0;
+
+    function spawnShootingStar(t: number) {
+      const angle = (Math.PI / 6) + Math.random() * (Math.PI / 4); // 30°–75° downward
+      const tint = tints[Math.floor(Math.random() * tints.length)];
+      const maxLife = 0.6 + Math.random() * 0.8;
+
+      // Spawn across full page height, random horizontal position
+      const spawnY = Math.random() * height * 0.6;
+      const spawnX = Math.random() * width;
+
+      shootingStars.push({
+        x: spawnX,
+        y: spawnY,
+        len: 60 + Math.random() * 100,
+        speed: 400 + Math.random() * 500,
+        angle,
+        tint,
+        life: 0,
+        maxLife,
+        width: 0.8 + Math.random() * 0.7,
+      });
+
+      // Next spawn: 0.8–3 seconds
+      nextSpawnTime = t + 0.8 + Math.random() * 2.2;
+    }
+
+    let scrollY = 0;
+    let smoothScroll = 0;
+    let t = 0;
+    let lastTime = performance.now();
+
+    function render(now: number) {
+      const dt = Math.min((now - lastTime) / 1000, 0.05);
+      lastTime = now;
+
+      smoothScroll += (scrollY - smoothScroll) * 0.06;
+      t += 0.018;
+
+      ctx.clearRect(0, 0, width, height);
+
+      // Static stars
+      for (const s of stars) {
+        const parallaxStrength = s.tint ? 0.3 : 0.1;
+        const y = s.y - smoothScroll * s.depth * parallaxStrength;
+        const flicker = 0.3 + 0.7 * ((1 + Math.sin(t * s.speed + s.phase)) * 0.5);
+        const baseAlpha = s.tint ? 0.5 : 0.3;
+        const alpha = flicker * baseAlpha * s.depth;
+
+        if (s.tint) {
+          ctx.fillStyle = `rgba(${s.tint[0]},${s.tint[1]},${s.tint[2]},${alpha.toFixed(3)})`;
+        } else {
+          ctx.fillStyle = `rgba(255,255,255,${(alpha * 0.7).toFixed(3)})`;
+        }
+
+        ctx.beginPath();
+        ctx.arc(s.x, y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Shooting stars — spawn
+      const elapsed = t;
+      if (shootingStars.length < maxShootingStars && elapsed > nextSpawnTime) {
+        spawnShootingStar(elapsed);
+      }
+
+      // Shooting stars — update & draw
+      for (let i = shootingStars.length - 1; i >= 0; i--) {
+        const ss = shootingStars[i];
+        ss.life += dt;
+
+        if (ss.life > ss.maxLife) {
+          shootingStars.splice(i, 1);
+          continue;
+        }
+
+        const progress = ss.life / ss.maxLife;
+        // Fade in quickly, fade out slowly
+        const opacity = progress < 0.1
+          ? progress / 0.1
+          : 1 - Math.pow((progress - 0.1) / 0.9, 2);
+
+        const dist = ss.speed * ss.life;
+        const headX = ss.x + Math.cos(ss.angle) * dist;
+        const headY = ss.y + Math.sin(ss.angle) * dist - smoothScroll * 0.15;
+
+        const tailLen = ss.len * opacity;
+        const tailX = headX - Math.cos(ss.angle) * tailLen;
+        const tailY = headY - Math.sin(ss.angle) * tailLen;
+
+        // Gradient tail
+        const grad = ctx.createLinearGradient(tailX, tailY, headX, headY);
+        grad.addColorStop(0, `rgba(${ss.tint[0]},${ss.tint[1]},${ss.tint[2]},0)`);
+        grad.addColorStop(0.6, `rgba(${ss.tint[0]},${ss.tint[1]},${ss.tint[2]},${(opacity * 0.45).toFixed(3)})`);
+        grad.addColorStop(1, `rgba(255,255,255,${(opacity * 0.75).toFixed(3)})`);
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = ss.width;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(tailX, tailY);
+        ctx.lineTo(headX, headY);
+        ctx.stroke();
+
+        // Bright head dot
+        ctx.fillStyle = `rgba(255,255,255,${(opacity * 0.85).toFixed(3)})`;
+        ctx.beginPath();
+        ctx.arc(headX, headY, ss.width, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      requestAnimationFrame(render);
+    }
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
+    window.addEventListener('resize', resize);
+    resize();
+    nextSpawnTime = 1 + Math.random() * 2; // First shooting star after 1-3s
+    requestAnimationFrame(render);
+  }
+</script>

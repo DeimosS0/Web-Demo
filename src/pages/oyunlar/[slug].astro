@@ -1,0 +1,214 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+interface GamePackage {
+  name: string;
+  v: string;
+  sizeBytes: number;
+  size: number;
+  dataUrl: string;
+  checksum: string;
+  dirName: string;
+}
+
+function formatDate(dateStr: string): string {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function formatSize(bytes: number): string {
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+export async function getStaticPaths() {
+  function slugify(name: string): string {
+    const trMap: Record<string, string> = {
+      'ç': 'c',
+      'Ç': 'c',
+      'ş': 's',
+      'Ş': 's',
+      'ğ': 'g',
+      'Ğ': 'g',
+      'ü': 'u',
+      'Ü': 'u',
+      'ö': 'o',
+      'Ö': 'o',
+      'ı': 'i',
+      'İ': 'i',
+    };
+    return name
+      .toLowerCase()
+      .split('')
+      .map(c => trMap[c] || c)
+      .join('')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+  const catalog = (await import('../../data/index.json')).default as {
+    packages: Record<string, GamePackage>;
+  };
+
+  const slugMap = new Map<string, string>();
+  const paths: { params: { slug: string }; props: { appId: string } & GamePackage }[] = [];
+
+  for (const [appId, pkg] of Object.entries(catalog.packages)) {
+    let slug = slugify(pkg.name);
+    if (slugMap.has(slug)) slug = `${slug}-${appId}`;
+    slugMap.set(slug, appId);
+    paths.push({ params: { slug }, props: { appId, ...pkg } });
+  }
+  return paths;
+}
+
+const { appId, name, v, sizeBytes, size, checksum } = Astro.props;
+const slug = Astro.params.slug;
+
+let genres: string[] = [];
+try {
+  const genreData = (await import('../../data/genres.json')).default as Record<string, string[]>;
+  genres = genreData[appId] || [];
+} catch { /* genres.json not yet generated */ }
+
+const siteUrl = 'https://makineceviri.net';
+const pageUrl = `${siteUrl}/oyunlar/${slug}`;
+const steamUrl = `https://store.steampowered.com/app/${appId}`;
+const coverImg = `https://cdn.makineceviri.net/assets/images/${appId}.png`;
+const heroImg = `https://cdn.akamai.steamstatic.com/steam/apps/${appId}/library_hero.jpg`;
+const pageTitle = `${name} Türkçe Yama — Makine Çeviri`;
+const pageDesc = `${name} için Türkçe yama indir. MakineAI ile tek tıkla kur. Ücretsiz.`;
+const shortHash = checksum.slice(0, 16) + '...';
+
+const structuredData = [{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": name,
+  "gamePlatform": "PC",
+  "operatingSystem": "Windows",
+  "url": steamUrl,
+  "image": coverImg,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "TRY",
+    "description": `${name} Türkçe yama - MakineAI ile ücretsiz kur`,
+    "url": `${siteUrl}/download`,
+  },
+}];
+---
+
+<Layout title={pageTitle} description={pageDesc} canonical={pageUrl} ogImage={coverImg} structuredData={structuredData}>
+  <Navbar />
+
+  <div class="gd">
+    <div class="gd-hero">
+      <img src={heroImg} alt="" class="gd-hero__bg" loading="eager" onerror={`this.onerror=null;this.src="${coverImg}"`} />
+      <div class="gd-hero__fade"></div>
+
+      <div class="gd-hero__content">
+        <a href="/oyunlar/" class="gd-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="15 18 9 12 15 6"/></svg>
+          Tüm Oyunlar
+        </a>
+
+        <div class="gd-hero__bottom">
+          <div class="gd-heading">
+            <h1 class="gd-heading__title">{name}</h1>
+            <div class="gd-heading__row">
+              <span class="gd-ptag">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M11.979 0C5.678 0 .511 4.86.022 10.934l6.467 2.67a3.395 3.395 0 0 1 1.924-.596c.065 0 .129.002.192.006l2.879-4.166v-.058a4.533 4.533 0 0 1 4.533-4.533 4.534 4.534 0 0 1 4.534 4.533 4.534 4.534 0 0 1-4.534 4.534h-.106l-4.1 2.925c0 .053.003.106.003.159a3.403 3.403 0 0 1-3.4 3.4 3.404 3.404 0 0 1-3.33-2.727L.464 14.463C1.725 19.876 6.397 24 11.979 24c6.627 0 12-5.373 12-12S18.606 0 11.979 0z"/></svg>
+                Steam
+              </span>
+              <span class="gd-ptag gd-ptag--teal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>
+                Güncel Sürüm
+              </span>
+            </div>
+          </div>
+
+          <div class="gd-panel">
+            <div class="gd-panel__main">
+              <div class="gd-meta">
+                <div class="gd-meta__item">
+                  <span class="gd-meta__label">Oyun Türü</span>
+                  <span class="gd-meta__value">{genres.length > 0 ? genres.join(', ') : '—'}</span>
+                </div>
+                <div class="gd-meta__item">
+                  <span class="gd-meta__label">Son Güncelleme</span>
+                  <span class="gd-meta__value">{formatDate(v)}</span>
+                </div>
+                <div class="gd-meta__item">
+                  <span class="gd-meta__label">Paket Boyutu</span>
+                  <span class="gd-meta__value">{formatSize(sizeBytes)}</span>
+                </div>
+              </div>
+            </div>
+            <div class="gd-panel__side">
+              <a href="/" class="gd-cta__btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                MakineAI Launcher İndir
+              </a>
+              <a href={steamUrl} target="_blank" rel="noopener noreferrer" class="gd-cta__steam" aria-label="Steam">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M11.979 0C5.678 0 .511 4.86.022 10.934l6.467 2.67a3.395 3.395 0 0 1 1.924-.596c.065 0 .129.002.192.006l2.879-4.166v-.058a4.533 4.533 0 0 1 4.533-4.533 4.534 4.534 0 0 1 4.534 4.533 4.534 4.534 0 0 1-4.534 4.534h-.106l-4.1 2.925c0 .053.003.106.003.159a3.403 3.403 0 0 1-3.4 3.4 3.404 3.404 0 0 1-3.33-2.727L.464 14.463C1.725 19.876 6.397 24 11.979 24c6.627 0 12-5.373 12-12S18.606 0 11.979 0z"/></svg>
+              </a>
+              <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(name + " Türkçe Yama")}&url=${encodeURIComponent(pageUrl)}`} target="_blank" rel="noopener noreferrer" class="gd-cta__share" aria-label="Paylaş">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gd-body">
+      <div class="gd-seo">
+        <h2>{name} Hakkında</h2>
+        <p><strong>{name}</strong> Türkçe yama, Makine Çeviri topluluğu tarafından hazırlanmıştır. Türkçe çeviri yamasını kurmak için MakineAI Launcher'ı kullanabilirsiniz. Launcher, oyunu otomatik tespit eder ve Türkçe yama dosyalarını güvenli bir şekilde indirir.</p>
+        <p>Makine Çeviri, 250'den fazla oyun için Türkçe çeviri ve yama sunan, tamamen ücretsiz bir topluluk projesidir.</p>
+      </div>
+      <div class="gd-howto">
+        <h2 class="gd-section__title">Nasıl Çalışır?</h2>
+        <div class="gd-howto__steps">
+          <div class="gd-step">
+            <div class="gd-step__num">1</div>
+            <h3 class="gd-step__title">MakineAI İndir</h3>
+            <p class="gd-step__desc">Ücretsiz launcher'ı indirip bilgisayarınıza kurun.</p>
+          </div>
+          <div class="gd-step">
+            <div class="gd-step__num">2</div>
+            <h3 class="gd-step__title">Oyunu Bul</h3>
+            <p class="gd-step__desc">MakineAI, Steam kütüphanenizi otomatik tarar ve <strong>{name}</strong> oyununu bulur.</p>
+          </div>
+          <div class="gd-step">
+            <div class="gd-step__num">3</div>
+            <h3 class="gd-step__title">Türkçe Yama Kur</h3>
+            <p class="gd-step__desc">"Kur" butonuna tıklayın. Türkçe yama otomatik indirilip kurulacaktır.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gd-trust">
+        <div class="gd-trust__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="gd-trust__text">
+          <h3 class="gd-trust__title">Güvenli İndirme</h3>
+          <p class="gd-trust__desc">Tüm çeviri paketleri <strong>AES-256</strong> şifreleme ile korunur, <strong>SHA-256</strong> doğrulamadan geçer. Orijinal dosyalarınız otomatik yedeklenir.</p>
+        </div>
+        <code class="gd-trust__hash">{shortHash}</code>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<script>
+  document.querySelectorAll('[data-copy-url]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const url = (btn as HTMLElement).dataset.copyUrl || window.location.href;
+      navigator.clipboard.writeText(url);
+    });
+  });
+</script>

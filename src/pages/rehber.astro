@@ -1,0 +1,366 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Starfield from '../components/Starfield.astro';
+
+const siteUrl = 'https://makineceviri.net';
+const pageUrl = `${siteUrl}/rehber`;
+const pageTitle = 'Kullanım Rehberi — Makine Çeviri';
+const pageDesc = 'MakineAI Launcher kurulum ve kullanım rehberi. Türkçe yama nasıl kurulur, güncellenir ve kaldırılır.';
+---
+
+<Layout title={pageTitle} description={pageDesc} canonical={pageUrl}>
+  <Starfield />
+  <Navbar />
+
+  <div class="guide">
+    <div class="guide__hero">
+      <h1 class="guide__title">Kullanım Rehberi</h1>
+    </div>
+
+    <nav class="guide__toc glass-card">
+      <h2 class="guide__toc-title">Bu sayfada ne var?</h2>
+      <ol class="guide__toc-list">
+        <li><a href="#nedir">MakineAI ne?</a></li>
+        <li><a href="#gereksinimler">Bilgisayarım yeterli mi?</a></li>
+        <li><a href="#kurulum">Nasıl kurarım?</a></li>
+        <li><a href="#ilk-ceviri">Türkçe yama nasıl kurarım?</a></li>
+        <li><a href="#yonetim">Yamayı nasıl yönetirim?</a></li>
+        <li><a href="#sorun-giderme">Sorun yaşıyorum</a></li>
+        <li><a href="#sss">Sık sorulan sorular</a></li>
+      </ol>
+    </nav>
+
+    <div class="guide__body">
+
+      <!-- MakineAI Nedir? -->
+      <section class="guide__section glass-card" id="nedir">
+        <h2>MakineAI ne?</h2>
+        <p>Bilgisayarındaki oyunlara <strong>Türkçe yama kuran</strong> bir program. Tamamen <strong>ücretsiz</strong>.</p>
+        <p>Sen sadece "Kur" butonuna bas, gerisini MakineAI halleder. Oyununu bulmaktan Türkçe yamayı kurmaya kadar her şeyi otomatik yapar.</p>
+        <div class="guide__features">
+          <div class="guide__feature glass-card--inner">
+            <div class="guide__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17.25a6.25 6.25 0 1 1 0-12.5 6.25 6.25 0 0 1 0 12.5z"/><path d="M16 16l4.5 4.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <strong>Oyunlarını otomatik bulur</strong>
+              <p>Steam, Epic Games, GOG... hepsini tarar.</p>
+            </div>
+          </div>
+          <div class="guide__feature glass-card--inner">
+            <div class="guide__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <div>
+              <strong>Tek tıkla Türkçe yama</strong>
+              <p>Dosya kopyalama, ayar değiştirme yok. Sadece tıkla.</p>
+            </div>
+          </div>
+          <div class="guide__feature glass-card--inner">
+            <div class="guide__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <strong>Oyununa zarar vermez</strong>
+              <p>Her şeyi yedekler. Beğenmezsen tek tıkla geri al.</p>
+            </div>
+          </div>
+          <div class="guide__feature glass-card--inner">
+            <div class="guide__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <div>
+              <strong>Otomatik güncelleme</strong>
+              <p>Oyun güncellenince yama da güncellenir.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sistem Gereksinimleri -->
+      <section class="guide__section glass-card" id="gereksinimler">
+        <h2>Bilgisayarım yeterli mi?</h2>
+        <p>Windows 10 veya 11 kullanıyorsan, muhtemelen evet. Detaylar:</p>
+        <div class="guide__req-grid">
+          <div class="guide__req-card glass-card--inner">
+            <h3>Minimum</h3>
+            <table class="guide__req-table">
+              <tbody>
+                <tr><td>İşletim Sistemi</td><td>Windows 10 1903+ (64-bit)</td></tr>
+                <tr><td>Disk (Uygulama)</td><td>~90 MB</td></tr>
+                <tr><td>Ağ</td><td>İnternet bağlantısı</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="guide__req-card guide__req-card--rec glass-card--inner">
+            <div class="guide__req-badge">Tavsiye</div>
+            <h3>Önerilen</h3>
+            <table class="guide__req-table">
+              <tbody>
+                <tr><td>İşletim Sistemi</td><td>Windows 11</td></tr>
+                <tr><td>RAM</td><td>4 GB+</td></tr>
+                <tr><td>Disk</td><td>2 GB+ boş</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kurulum -->
+      <section class="guide__section glass-card" id="kurulum">
+        <h2>MakineAI nasıl kurulur?</h2>
+        <p>3 adımda bitti:</p>
+        <div class="guide__steps">
+          <div class="guide__step">
+            <div class="guide__step-num">1</div>
+            <div class="guide__step-content">
+              <h3>İndir</h3>
+              <p>Aşağıdaki butona tıkla, ZIP dosyasını indir.</p>
+              <a href="/" class="guide__step-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                MakineAI'yı İndir
+              </a>
+            </div>
+          </div>
+          <div class="guide__step">
+            <div class="guide__step-num">2</div>
+            <div class="guide__step-content">
+              <h3>ZIP'i aç</h3>
+              <p>İndirdiğin dosyaya <strong>sağ tıkla</strong> ve <strong>"Tümünü ayıkla..."</strong> de. Nereye çıkartacağını sor, istediğin yere çıkart.</p>
+              <div class="guide__tip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span>Masaüstüne de çıkartabilirsin, sorun olmaz.</span>
+              </div>
+            </div>
+          </div>
+          <div class="guide__step">
+            <div class="guide__step-num">3</div>
+            <div class="guide__step-content">
+              <h3>Çalıştır</h3>
+              <p><strong>MakineAI.exe</strong> dosyasına çift tıkla. Program açılacak.</p>
+              <div class="guide__tip guide__tip--warn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <span>Windows <strong>"Bu dosya güvenli olmayabilir"</strong> diyebilir. <strong>"Yine de çalıştır"</strong> butonuna bas. Bu normal, zararsız.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- İlk Çeviriniz -->
+      <section class="guide__section glass-card" id="ilk-ceviri">
+        <h2>Türkçe yama nasıl kurulur?</h2>
+        <p>MakineAI'yı açtıktan sonra 2 dakikada Türkçe oynarsın:</p>
+        <div class="guide__steps">
+          <div class="guide__step">
+            <div class="guide__step-num">1</div>
+            <div class="guide__step-content">
+              <h3>Oyunların otomatik bulunur</h3>
+              <p>MakineAI açılınca Steam, Epic, GOG kütüphanelerini tarar. Türkçe yama olan oyunların listede görünür.</p>
+            </div>
+          </div>
+          <div class="guide__step">
+            <div class="guide__step-num">2</div>
+            <div class="guide__step-content">
+              <h3>Oyuna tıkla</h3>
+              <p>Listeden Türkçe yapmak istediğin oyuna tıkla.</p>
+            </div>
+          </div>
+          <div class="guide__step">
+            <div class="guide__step-num">3</div>
+            <div class="guide__step-content">
+              <h3>"Kur" butonuna bas</h3>
+              <p>Türkçe yama otomatik indirilip kurulacak. 10-30 saniye sürer.</p>
+            </div>
+          </div>
+          <div class="guide__step">
+            <div class="guide__step-num">4</div>
+            <div class="guide__step-content">
+              <h3>Oyunu aç, Türkçe oyna!</h3>
+              <p>Bitti! Oyununu Steam'den veya Epic'ten normal şekilde aç. Türkçe olacak.</p>
+            </div>
+          </div>
+        </div>
+        <div class="guide__callout">
+          <strong>Oyunun listede yok mu?</strong>
+          <p>Ana ekranda <strong>"Oyun Ekle"</strong> butonuna bas. Oyunun kurulu olduğu klasörü seç. MakineAI gerisini halleder.</p>
+        </div>
+      </section>
+
+      <!-- Çeviri Yönetimi -->
+      <section class="guide__section glass-card" id="yonetim">
+        <h2>Yama yönetimi</h2>
+        <p>Yamayı kurduktan sonra istediğin zaman güncelleyebilir veya kaldırabilirsin:</p>
+
+        <div class="guide__mgmt-grid">
+          <div class="guide__mgmt-card glass-card--inner">
+            <div class="guide__mgmt-icon guide__mgmt-icon--install">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <h3>Kur</h3>
+            <p>"Kur" butonuna bas. Yama indirilir ve oyuna uygulanır. Orijinal dosyalar yedeklenir.</p>
+          </div>
+
+          <div class="guide__mgmt-card glass-card--inner">
+            <div class="guide__mgmt-icon guide__mgmt-icon--update">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <h3>Güncelle</h3>
+            <p>Yeni sürüm varsa "Güncelle" butonuna bas. Sadece değişen dosyalar güncellenir, hızlıdır.</p>
+          </div>
+
+          <div class="guide__mgmt-card glass-card--inner">
+            <div class="guide__mgmt-icon guide__mgmt-icon--remove">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </div>
+            <h3>Kaldır</h3>
+            <p>"Kaldır" butonuna bas. Oyun orijinal haline döner. Hiçbir iz kalmaz.</p>
+          </div>
+        </div>
+
+        <div class="guide__info-box glass-card--inner">
+          <h3>Yama ne yapıyor aslında?</h3>
+          <p>Merak ediyorsan: yama oyunun metin dosyalarını Türkçe versiyonlarıyla değiştiriyor. Bazı oyunlara Türkçe font da ekliyor (ş, ç, ğ harfleri için). Birkaç oyunda Türkçe seslendirme bile var!</p>
+        </div>
+      </section>
+
+      <!-- Sorun Giderme -->
+      <section class="guide__section glass-card" id="sorun-giderme">
+        <h2>Sorun mu var?</h2>
+        <p>Aşağıdaki yaygın sorunlardan birini yaşıyor olabilirsin. Tıkla, çözümü oku:</p>
+        <div class="guide__trouble-list">
+          <details class="guide__trouble">
+            <summary>
+              <span>Windows "Bu dosya güvenli olmayabilir" diyor</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p><strong>"Daha fazla bilgi"</strong> yazısına tıkla, sonra <strong>"Yine de çalıştır"</strong> butonuna bas. MakineAI güvenlidir, Windows sadece tanımadığı programlar için böyle uyarı verir.</p>
+            </div>
+          </details>
+
+          <details class="guide__trouble">
+            <summary>
+              <span>Antivirüs engelliyor</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p>Antivirüsün ayarlarından MakineAI klasörünü <strong>"istisna"</strong> veya <strong>"güvenilir"</strong> olarak ekle. Her antivirüste farklıdır ama genellikle Ayarlar &gt; İstisnalar bölümünde bulursun.</p>
+            </div>
+          </details>
+
+          <details class="guide__trouble">
+            <summary>
+              <span>"DLL bulunamadı" hatası alıyorum</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p><a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank" rel="noopener noreferrer">Bu linke tıkla</a>, indirilen dosyayı çalıştır ve kur. Sonra MakineAI'yı tekrar aç.</p>
+            </div>
+          </details>
+
+          <details class="guide__trouble">
+            <summary>
+              <span>Yama kurarken "dosya kilitli" diyor</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p>Oyunu kapat. Steam'i de kapat. Sonra tekrar dene. Oyun açıkken dosyalar kilitli kalıyor, o yüzden yama kurulamıyor.</p>
+            </div>
+          </details>
+
+          <details class="guide__trouble">
+            <summary>
+              <span>"Yazma izni yok" hatası</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p>MakineAI simgesine <strong>sağ tıkla</strong> ve <strong>"Yönetici olarak çalıştır"</strong> seç. Bu, programa dosya yazma izni verir.</p>
+            </div>
+          </details>
+
+          <details class="guide__trouble">
+            <summary>
+              <span>MakineAI çöktü, oyunum bozuldu mu?</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p><strong>Hayır, bozulmadı.</strong> MakineAI'yı tekrar aç, kurtarma ekranı gelecek. "Onar" butonuna bas, oyun eski haline döner.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- SSS -->
+      <section class="guide__section glass-card" id="sss">
+        <h2>Sık sorulan sorular</h2>
+        <div class="guide__trouble-list">
+          <details class="guide__trouble">
+            <summary>
+              <span>Yama oyunumu bozar mı?</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p><strong>Hayır.</strong> Her dosya kurulmadan önce yedekleniyor. Yamayı kaldırırsan oyun orijinal haline dönüyor. Steam'den de "dosya doğrulama" yapabilirsin.</p>
+            </div>
+          </details>
+
+          <details class="guide__trouble">
+            <summary>
+              <span>Oyun güncellendi, yama bozulur mu?</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p>Bozulabilir ama sorun değil. MakineAI sana haber verir. Yamayı tekrar kurmak yeterli, 10 saniye sürer.</p>
+            </div>
+          </details>
+
+          <details class="guide__trouble">
+            <summary>
+              <span>"Türkçe Yama" ve "Türkçe Dublaj" ne farkı var?</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p><strong>Türkçe Yama:</strong> Menüler, diyaloglar, alt yazılar Türkçe olur.<br><strong>Türkçe Dublaj:</strong> Karakterler Türkçe konuşur. İkisini ayrı ayrı veya birlikte kurabilirsin.</p>
+            </div>
+          </details>
+
+          <details class="guide__trouble">
+            <summary>
+              <span>Yamayı kaldırıp tekrar kurabilir miyim?</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p><strong>Evet.</strong> İstediğin kadar kaldır, tekrar kur. Dosyalar bilgisayarında önbellekte duruyor, tekrar indirmen bile gerekmez.</p>
+            </div>
+          </details>
+
+          <details class="guide__trouble">
+            <summary>
+              <span>Para ödeyecek miyim?</span>
+              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="guide__trouble-answer">
+              <p><strong>Hayır.</strong> MakineAI tamamen ücretsiz. Topluluk projesi. Reklam da yok.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Destek -->
+      <div class="guide__support glass-card">
+        <h2>Hâlâ çözemediysen</h2>
+        <p>Discord sunucumuza gel, sana yardım edelim. 68.000+ kişilik topluluk var.</p>
+        <a href="https://discord.com/invite/QDezpy4QtV" target="_blank" rel="noopener noreferrer" class="guide__support-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/></svg>
+          Discord'a Katıl
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,18 @@
+{
+  "name": "Makine Çeviri — Oyun Türkçe Yama Topluluğu",
+  "short_name": "Makine Çeviri",
+  "description": "Oyunlarına Türkçe yama kur. 258+ oyun çevirisi, tek tıkla kurulum.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050507",
+  "theme_color": "#d4a843",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
