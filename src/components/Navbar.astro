@@ -1,41 +1,224 @@
 ---
-interface Props {
-  showSearch?: boolean;
-}
-const { showSearch = false } = Astro.props;
+// Mevcut sayfa yolunu alarak aktif linki belirlemek için
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // baştaki '/' işaretini kaldırır
 ---
 
-<nav class="navbar" aria-label="Ana navigasyon">
-  <div class="container-wide">
-    <a href="/" class="nav-brand">
-      <img src="/images/logo.png" alt="Makine Çeviri" class="nav-logo" />
-      <span class="nav-name">Makine Çeviri</span>
+<header id="cyber-navbar" class="floating-nav">
+  <div class="nav-container">
+    
+    <a href="/" class="nav-logo">
+      <div class="logo-glow"></div>
+      <img src="/images/logo.png" alt="MakineAI Logo" />
+      <span class="logo-text">MAKINE<span class="cyan">.AI</span></span>
     </a>
 
-    {showSearch && (
-      <div class="nav-search">
-        <svg class="nav-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" class="nav-search__input" id="gl-search" placeholder="Oyun ara…" autocomplete="off" />
-        <kbd class="nav-search__kbd">/</kbd>
-      </div>
-    )}
-
-    <div class="nav-links">
-      <a href="/oyunlar/" class="nav-link">Oyunlar</a>
-      <a href="/rehber/" class="nav-link">Rehber</a>
-      <a href="/iletisim/" class="nav-link">İletişim</a>
-      <a href="https://discord.com/invite/QDezpy4QtV" target="_blank" rel="noopener noreferrer" class="nav-social nav-social--discord" aria-label="Discord">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
-        </svg>
+    <nav class="nav-links">
+      <a href="/" class={`nav-link ${currentPath === '' ? 'active' : ''}`}>
+        <span class="link-text">Sistem</span>
+        <span class="link-glow"></span>
       </a>
+      <a href="/oyunlar" class={`nav-link ${currentPath.includes('oyunlar') ? 'active' : ''}`}>
+        <span class="link-text">Veritabanı</span>
+        <span class="link-glow"></span>
+      </a>
+      <a href="/rehber" class={`nav-link ${currentPath.includes('rehber') ? 'active' : ''}`}>
+        <span class="link-text">Protokol</span>
+        <span class="link-glow"></span>
+      </a>
+      <a href="/iletisim" class={`nav-link ${currentPath.includes('iletisim') ? 'active' : ''}`}>
+        <span class="link-text">Ağ Geçidi</span>
+        <span class="link-glow"></span>
+      </a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="/#indir" class="nav-cta-btn">
+        <span class="cta-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-dl-icon">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          SİSTEMİ İNDİR
+        </span>
+      </a>
+      
+      <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Menüyü Aç">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12" class="top-line"></line>
+          <line x1="3" y1="6" x2="21" y2="6" class="mid-line"></line>
+          <line x1="3" y1="18" x2="21" y2="18" class="bot-line"></line>
+        </svg>
+      </button>
     </div>
 
-    <button class="mobile-menu-btn" aria-label="Menü">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </div>
-</nav>
 
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-nav-links">
+      <a href="/" class="m-link">Sistem</a>
+      <a href="/oyunlar" class="m-link">Veritabanı (Oyunlar)</a>
+      <a href="/rehber" class="m-link">Protokol (Rehber)</a>
+      <a href="/iletisim" class="m-link">Ağ Geçidi (İletişim)</a>
+      <a href="/#indir" class="m-cta">SİSTEMİ İNDİR</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* --- Floating Navbar Stilleri --- */
+  .floating-nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    padding: 24px 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .floating-nav.scrolled { padding: 12px 0; }
+  
+  .nav-container {
+    max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px; border-radius: 16px; border: 1px solid transparent;
+    transition: all 0.4s ease;
+  }
+
+  .floating-nav.scrolled .nav-container {
+    background: rgba(9, 9, 11, 0.7); backdrop-filter: blur(20px);
+    border-color: rgba(78, 205, 196, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.02);
+    padding: 0 20px;
+  }
+
+  /* Logo Kısmı (Basıklık Düzeltildi) */
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; position: relative; }
+  .logo-glow { position: absolute; inset: -10px; background: radial-gradient(circle, rgba(78,205,196,0.3) 0%, transparent 70%); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+  .nav-logo:hover .logo-glow { opacity: 1; }
+  
+  .nav-logo img { 
+    height: 36px; 
+    width: auto; /* Logo artık büzülmeyecek, kendi genişliğini ayarlayacak */
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(78,205,196,0.4)); transition: transform 0.3s; 
+  }
+  
+  .nav-logo:hover img { transform: scale(1.05) rotate(-5deg); }
+  .logo-text { font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: 0.05em; font-family: 'SF Mono', monospace; }
+  .logo-text .cyan { color: #4ecdc4; }
+
+  /* Orta Linkler */
+  .nav-links { display: flex; align-items: center; gap: 8px; }
+  
+  .nav-link {
+    position: relative; text-decoration: none; padding: 8px 16px;
+    border-radius: 8px; overflow: hidden;
+  }
+  .link-text { position: relative; z-index: 2; font-size: 0.9rem; font-weight: 600; color: #a1a1aa; transition: color 0.3s; letter-spacing: 0.02em; }
+  .link-glow { position: absolute; inset: 0; background: rgba(255,255,255,0.05); border-radius: 8px; transform: translateY(100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1; }
+  
+  .nav-link:hover .link-text { color: #fff; }
+  .nav-link:hover .link-glow { transform: translateY(0); }
+  
+  .nav-link.active .link-text { color: #4ecdc4; }
+  .nav-link.active::after {
+    content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+    width: 4px; height: 4px; border-radius: 50%; background: #4ecdc4; box-shadow: 0 0 8px #4ecdc4;
+  }
+
+  /* Sağ Aksiyon Butonu (Temaya Uygun Dönen Lazer Çerçeve) */
+  .nav-actions { display: flex; align-items: center; gap: 16px; }
+  
+  .nav-cta-btn {
+    position: relative; text-decoration: none; display: flex; align-items: center; justify-content: center;
+    padding: 2px; border-radius: 12px; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .nav-cta-btn::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: conic-gradient(transparent, transparent, transparent, #4ecdc4, #d4a843, #8ab648);
+    animation: spin 4s linear infinite;
+  }
+  .cta-inner {
+    position: relative; z-index: 2; background: #09090b; padding: 10px 24px;
+    border-radius: 10px; font-size: 0.85rem; font-weight: 700; color: #fff;
+    letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;
+    transition: background 0.3s;
+  }
+  
+  .nav-dl-icon { width: 16px; height: 16px; color: #4ecdc4; transition: transform 0.3s, color 0.3s; }
+  
+  .nav-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(78, 205, 196, 0.2); }
+  .nav-cta-btn:hover .cta-inner { background: rgba(9, 9, 11, 0.85); }
+  .nav-cta-btn:hover .nav-dl-icon { transform: translateY(2px); color: #d4a843; }
+
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+
+  /* Mobil Menü Butonu */
+  .mobile-toggle {
+    display: none; background: transparent; border: none; color: #e4e4e7;
+    cursor: pointer; padding: 4px; z-index: 1001;
+  }
+  .mobile-toggle svg { width: 28px; height: 28px; transition: transform 0.3s; }
+  .mobile-toggle.is-active .top-line { transform: translateY(6px) rotate(45deg); transform-origin: center; color: #4ecdc4; }
+  .mobile-toggle.is-active .mid-line { opacity: 0; }
+  .mobile-toggle.is-active .bot-line { transform: translateY(-6px) rotate(-45deg); transform-origin: center; color: #4ecdc4; }
+
+  /* Mobil Menü Çekmecesi */
+  .mobile-menu {
+    position: fixed; inset: 0; background: rgba(5, 5, 7, 0.95); backdrop-filter: blur(15px);
+    z-index: 999; display: flex; flex-direction: column; justify-content: center;
+    align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+  }
+  .mobile-menu.is-active { opacity: 1; pointer-events: auto; }
+  
+  .mobile-nav-links { display: flex; flex-direction: column; gap: 24px; text-align: center; transform: translateY(20px); transition: transform 0.4s ease; }
+  .mobile-menu.is-active .mobile-nav-links { transform: translateY(0); }
+  
+  .m-link { font-size: 1.5rem; font-weight: 700; color: #a1a1aa; text-decoration: none; transition: color 0.3s; }
+  .m-link:hover { color: #4ecdc4; }
+  
+  .m-cta { 
+    margin-top: 1rem; padding: 14px 32px; background: rgba(78, 205, 196, 0.1); 
+    border: 1px solid #4ecdc4; color: #4ecdc4; border-radius: 12px; font-weight: 700; 
+    text-decoration: none; box-shadow: 0 0 20px rgba(78, 205, 196, 0.2); 
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+
+  /* Responsive Kurallar */
+  @media (max-width: 992px) {
+    .nav-links { display: none; }
+    .nav-cta-btn { display: none; }
+    .mobile-toggle { display: block; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Scroll animasyonu (Cam kapsüle dönüşme)
+    const navbar = document.getElementById('cyber-navbar');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+    });
+
+    // 2. Mobil Menü Tetikleyici
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.m-link, .m-cta');
+
+    const toggleMenu = () => {
+      mobileBtn?.classList.toggle('is-active');
+      mobileMenu?.classList.toggle('is-active');
+      document.body.style.overflow = mobileMenu?.classList.contains('is-active') ? 'hidden' : '';
+    };
+
+    mobileBtn?.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', toggleMenu);
+    });
+  });
+</script>
