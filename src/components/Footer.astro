@@ -2,230 +2,227 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="cyber-footer">
-  <div class="footer-laser-top">
-    <div class="laser-flare"></div>
-  </div>
-
-  <div class="footer-grid"></div>
-
-  <div class="footer-container">
-    <div class="footer-content">
+<footer class="spacious-footer">
+  <div class="footer-wrapper">
+    
+    <div class="footer-top-grid">
       
-      <div class="footer-brand">
-        <a href="/" class="f-logo">
-          <img src="/images/logo.png" alt="MakineAI Logo" />
-          <span class="logo-text">MAKINE<span class="cyan">.AI</span></span>
+      <div class="brand-column">
+        <a href="/" class="brand-logo">
+          Makine Çeviri
         </a>
         <p class="brand-desc">
-          Oyun dünyasındaki dil sınırlarını yapay zeka ve sinir ağları ile yıkan, sıfır performans kayıplı yeni nesil çeviri motoru.
+          Oyun dünyasını ana dilinizde keşfedin. Orijinal dosyalara dokunmadan, performans kaybı yaşatmayan yüksek kaliteli Türkçe dil paketi altyapısı.
         </p>
-        
-        <div class="premium-status">
-          <div class="status-icon">
-            <svg class="spin-ring" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10" stroke-dasharray="12 12" stroke-linecap="round"/>
-            </svg>
-            <span class="core-dot"></span>
-          </div>
-          <div class="status-texts">
-            <span class="s-label">AĞ TELEMETRİSİ</span>
-            <span class="s-value">BÜTÜN DÜĞÜMLER AKTİF<span class="blinking-cursor">_</span></span>
-          </div>
-          <div class="status-graph">
-             <span class="bar b1"></span>
-             <span class="bar b2"></span>
-             <span class="bar b3"></span>
-             <span class="bar b4"></span>
-          </div>
-        </div>
       </div>
 
-      <div class="footer-links-wrapper">
-        <div class="link-column">
-          <h4 class="col-title">VERİTABANI</h4>
-          <nav class="f-nav">
-            <a href="/" class="f-link"><span class="arr">></span> Ana Sistem</a>
-            <a href="/oyunlar" class="f-link"><span class="arr">></span> Desteklenen Oyunlar</a>
-            <a href="/rehber" class="f-link"><span class="arr">></span> Kurulum Protokolü</a>
-            <a href="/#indir" class="f-link highlight"><span class="arr">></span> Motoru İndir</a>
-          </nav>
-        </div>
+      <div class="links-column">
+        <h4 class="col-heading">Platform</h4>
+        <ul class="clean-list">
+          <li><a href="/oyunlar">Oyun Kütüphanesi</a></li>
+          <li><a href="/#indir">İstemciyi İndir</a></li>
+          <li><a href="#">Sürüm Notları</a></li>
+        </ul>
+      </div>
 
-        <div class="link-column">
-          <h4 class="col-title">BAĞLANTILAR</h4>
-          <nav class="f-nav">
-            <a href="/iletisim" class="f-link"><span class="arr">></span> Ağ Geçidi (İletişim)</a>
-            <a href="#" class="f-link"><span class="arr">></span> Topluluk Discord'u</a>
-            <a href="#" class="f-link"><span class="arr">></span> GitHub Repoları</a>
-            <a href="#" class="f-link"><span class="arr">></span> Gizlilik Sözleşmesi</a>
-          </nav>
-        </div>
+      <div class="links-column">
+        <h4 class="col-heading">Topluluk</h4>
+        <ul class="clean-list">
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Discord Sunucusu</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Github Repoları</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Patreon Destek</a></li>
+        </ul>
+      </div>
+
+      <div class="links-column">
+        <h4 class="col-heading">Yasal</h4>
+        <ul class="clean-list">
+          <li><a href="#">Gizlilik Politikası</a></li>
+          <li><a href="#">Kullanım Koşulları</a></li>
+          <li><a href="#">İletişim</a></li>
+        </ul>
       </div>
 
     </div>
 
-    <div class="footer-bottom">
-      <div class="copyright">
-        &copy; {currentYear} MAKINE.AI_ENGINE. Tüm hakları ve verileri şifrelenmiştir.
+    <div class="footer-bottom-row">
+      <div class="copyright-text">
+        &copy; {currentYear} Makine Çeviri. Tüm hakları saklıdır.
       </div>
-      <div class="signature">
-        <span class="tech-tag">Powered by Deep Learning</span>
+      
+      <div class="social-flex">
+        <a href="#" aria-label="Discord" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        </a>
+        <a href="#" aria-label="GitHub" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
       </div>
     </div>
+
   </div>
 </footer>
 
 <style>
-  .cyber-footer {
-    position: relative; background: #020203; 
-    border-top: 1px solid rgba(255, 255, 255, 0.02); overflow: hidden;
-    padding-top: 5rem; z-index: 10;
+  /* --- GENEL FOOTER YAPISI --- */
+  .spacious-footer {
+    background: #09090b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 6rem 0 3rem;
+    color: #a1a1aa;
+    font-family: inherit;
+    margin-top: auto;
   }
 
-  /* Üstten Akan Neon Lazer */
-  .footer-laser-top {
-    position: absolute; top: 0; left: 0; width: 100%; height: 1px;
-    background: rgba(78, 205, 196, 0.15);
-  }
-  .laser-flare {
-    position: absolute; top: -1px; left: -100px; width: 200px; height: 3px;
-    background: linear-gradient(90deg, transparent, #4ecdc4, #d4a843, transparent);
-    box-shadow: 0 0 15px #4ecdc4; animation: laserScan 6s ease-in-out infinite;
-  }
-  @keyframes laserScan { 0% { left: -200px; } 100% { left: 100%; } }
-
-  /* Zemin Grid'i */
-  .footer-grid {
-    position: absolute; inset: 0; z-index: 0; opacity: 0.3;
-    background-size: 30px 30px;
-    background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-    mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+  .footer-wrapper {
+    max-width: 1400px; 
+    margin: 0 auto;
+    padding: 0 40px; 
   }
 
-  .footer-container {
-    max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2;
+  /* --- ÜST BÖLÜM (IZGARA) --- */
+  .footer-top-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 2fr) repeat(3, 1fr);
+    gap: 6rem; 
+    margin-bottom: 5rem;
   }
 
-  .footer-content {
-    display: flex; justify-content: space-between; gap: 4rem; margin-bottom: 4rem;
+  /* Marka Alanı */
+  .brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  /* Sol: Marka */
-  .footer-brand { flex: 1.5; max-width: 400px; }
+  /* TİPOGRAFİK LOGO: Sadece metin ama çok güçlü ve tok */
+  .brand-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+    transition: color 0.2s;
+  }
+  .brand-logo:hover {
+    color: #e4e4e7;
+  }
+
+  .brand-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 380px;
+    color: #71717a; 
+  }
+
+  /* Link Sütunları */
+  .links-column {
+    display: flex;
+    flex-direction: column;
+  }
   
-  .f-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 1.5rem; }
-  .f-logo img { height: 40px; width: auto; filter: drop-shadow(0 0 10px rgba(78,205,196,0.2)); transition: transform 0.3s; }
-  .f-logo:hover img { transform: scale(1.05) rotate(5deg); }
-  .logo-text { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: 0.05em; font-family: 'SF Mono', monospace; }
-  .logo-text .cyan { color: #4ecdc4; }
-
-  .brand-desc { font-size: 0.95rem; color: #71717a; line-height: 1.7; margin-bottom: 2rem; }
-
-  /* --- Zarif Canlı Telemetri Paneli --- */
-  .premium-status {
-    display: inline-flex; align-items: center; gap: 14px;
-    padding: 8px 24px 8px 12px;
-    background: rgba(16, 185, 129, 0.04); 
-    border: 1px solid rgba(16, 185, 129, 0.15);
-    border-radius: 100px; /* Tam yuvarlak kapsül */
-    backdrop-filter: blur(10px);
-    box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.02);
-    transition: background 0.3s, border-color 0.3s;
-  }
-  .premium-status:hover {
-    background: rgba(16, 185, 129, 0.08);
-    border-color: rgba(16, 185, 129, 0.3);
+  .col-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: 0.02em;
   }
 
-  .status-icon {
-    position: relative; width: 26px; height: 26px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .spin-ring {
-    position: absolute; inset: 0; color: #10b981; opacity: 0.6;
-    animation: spinSlow 6s linear infinite;
-  }
-  .core-dot {
-    width: 6px; height: 6px; background: #10b981; border-radius: 50%;
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
-    animation: pulseGlow 2s ease-in-out infinite alternate;
+  .clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
   }
 
-  .status-texts {
-    display: flex; flex-direction: column; justify-content: center; gap: 2px;
+  .clean-list a {
+    color: #a1a1aa;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
   }
-  .s-label { 
-    font-size: 0.65rem; color: #71717a; letter-spacing: 0.15em; 
-    font-family: 'SF Mono', 'Fira Code', monospace; 
-  }
-  .s-value { 
-    font-size: 0.75rem; font-weight: 700; color: #10b981; 
-    letter-spacing: 0.05em; font-family: 'SF Mono', 'Fira Code', monospace; 
-    display: flex; align-items: center; 
-  }
-  .blinking-cursor { 
-    display: inline-block; width: 6px; height: 12px; background: #10b981; 
-    margin-left: 4px; animation: blink 1s step-end infinite; 
+  .clean-list a:hover {
+    color: #fff;
   }
 
-  /* Mini Veri Grafiği (Equalizer) */
-  .status-graph { 
-    display: flex; align-items: flex-end; gap: 3px; 
-    height: 14px; margin-left: 8px; opacity: 0.6; 
+  /* --- ALT BÖLÜM (YASAL & SOSYAL) --- */
+  .footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
-  .bar { width: 2px; background: #10b981; border-radius: 1px; }
-  .b1 { height: 40%; animation: eq 1s ease-in-out infinite alternate; }
-  .b2 { height: 80%; animation: eq 1.2s ease-in-out infinite alternate-reverse; }
-  .b3 { height: 60%; animation: eq 0.8s ease-in-out infinite alternate; }
-  .b4 { height: 100%; animation: eq 1.5s ease-in-out infinite alternate-reverse; }
 
-  @keyframes spinSlow { 100% { transform: rotate(360deg); } }
-  @keyframes pulseGlow { 
-    0% { box-shadow: 0 0 5px rgba(16,185,129,0.5); transform: scale(0.9); } 
-    100% { box-shadow: 0 0 15px rgba(16,185,129,1); transform: scale(1.1); } 
+  .copyright-text {
+    font-size: 0.9rem;
+    color: #71717a;
+    margin: 0;
   }
-  @keyframes eq { 0% { height: 30%; } 100% { height: 100%; } }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-  /* Orta: Linkler */
-  .footer-links-wrapper { flex: 2; display: flex; gap: 4rem; justify-content: flex-end; }
-  .link-column { min-width: 150px; }
+  /* Sosyal İkonlar */
+  .social-flex {
+    display: flex;
+    gap: 20px;
+  }
   
-  .col-title { font-size: 0.85rem; font-weight: 700; color: #fff; letter-spacing: 0.1em; margin-bottom: 1.5rem; font-family: 'SF Mono', monospace; }
-  
-  .f-nav { display: flex; flex-direction: column; gap: 12px; }
-  .f-link { 
-    font-size: 0.95rem; color: #a1a1aa; text-decoration: none; transition: all 0.2s;
-    display: flex; align-items: center; gap: 8px;
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #71717a;
+    transition: color 0.2s, transform 0.2s;
   }
-  .f-link .arr { color: #3f3f46; font-family: monospace; font-size: 0.8rem; transition: color 0.2s, transform 0.2s; }
-  
-  .f-link:hover { color: #fff; transform: translateX(5px); }
-  .f-link:hover .arr { color: #4ecdc4; transform: translateX(3px); }
-  .f-link.highlight { color: #4ecdc4; font-weight: 500; }
-  .f-link.highlight .arr { color: #d4a843; }
-
-  /* Alt: İmza */
-  .footer-bottom {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 24px 0; border-top: 1px dashed rgba(255, 255, 255, 0.05);
+  .social-btn svg {
+    width: 22px;
+    height: 22px;
   }
-  .copyright { font-size: 0.8rem; color: #71717a; font-family: 'SF Mono', monospace; }
-  
-  .signature { display: flex; align-items: center; gap: 10px; }
-  .tech-tag {
-    font-size: 0.75rem; color: #d4a843; border: 1px solid rgba(212, 168, 67, 0.2);
-    padding: 4px 10px; border-radius: 6px; background: rgba(212, 168, 67, 0.05);
-    font-family: 'SF Mono', monospace;
+  .social-btn:hover {
+    color: #fff;
+    transform: translateY(-2px);
   }
 
-  @media (max-width: 768px) {
-    .footer-content { flex-direction: column; gap: 3rem; }
-    .footer-brand { max-width: 100%; }
-    .footer-links-wrapper { flex-direction: column; gap: 2.5rem; justify-content: flex-start; }
-    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  /* --- RESPONSIVE TASARIM --- */
+  @media (max-width: 1024px) {
+    .footer-top-grid {
+      grid-template-columns: 1fr 1fr; 
+      gap: 4rem;
+    }
+    .brand-column {
+      grid-column: span 2; 
+      max-width: 100%;
+    }
+    .brand-desc {
+      max-width: 600px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .spacious-footer {
+      padding: 4rem 0 2rem;
+    }
+    .footer-wrapper {
+      padding: 0 24px;
+    }
+    .footer-top-grid {
+      grid-template-columns: 1fr; 
+      gap: 3rem;
+    }
+    .brand-column {
+      grid-column: span 1;
+    }
+    .footer-bottom-row {
+      flex-direction: column-reverse; 
+      gap: 2rem;
+      text-align: center;
+    }
   }
 </style>

@@ -2,154 +2,352 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import Starfield from '../components/Starfield.astro';
 
 const siteUrl = 'https://makineceviri.net';
 const pageUrl = `${siteUrl}/iletisim`;
-const pageTitle = 'İletişim — Makine Çeviri';
-const pageDesc = 'Makine Çeviri topluluğuyla iletişime geçin. Discord, GitHub ve LinkedIn üzerinden bize ulaşın.';
+const pageTitle = 'İletişim Ağı — Makine Çeviri';
+const pageDesc = 'Makine Çeviri ekibiyle doğrudan iletişime geçin. Destek, işbirliği ve geri bildirimleriniz için sistemimizi kullanın.';
 ---
 
 <Layout title={pageTitle} description={pageDesc} canonical={pageUrl}>
-  <Starfield />
-  <Navbar />
+  <Navbar showSearch={false} />
 
-  <div class="contact">
-    <div class="contact__hero">
-      <h1 class="contact__title">İletişim</h1>
-      <p class="contact__subtitle">Soru, öneri veya katkı — her zaman burdayız.</p>
+  <main class="galaxy-contact-main">
+    
+    <div class="galaxy-bg">
+      <div class="nebula-blob nebula-1"></div>
+      <div class="nebula-blob nebula-2"></div>
+      <div class="stars layer-1"></div>
+      <div class="stars layer-2"></div>
     </div>
 
-    <div class="contact__body">
-      <!-- Left: Form -->
-      <div class="contact__form-wrap glass-card">
-        <h2 class="contact__form-heading">Bize yazın</h2>
-        <form class="contact__form" id="contact-form">
-          <div class="contact__field">
-            <label for="c-name">Adınız</label>
-            <input type="text" id="c-name" name="name" required autocomplete="name" />
-          </div>
-          <div class="contact__field">
-            <label for="c-email">E-posta</label>
-            <input type="email" id="c-email" name="email" required autocomplete="email" />
-          </div>
-          <div class="contact__field">
-            <label for="c-subject">Konu</label>
-            <input type="text" id="c-subject" name="subject" required />
-          </div>
-          <div class="contact__field">
-            <label for="c-message">Mesaj</label>
-            <textarea id="c-message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="contact__submit">Mesaj Gönder</button>
-        </form>
-      </div>
+    <div class="contact-container">
+      
+      <header class="contact-header ai-fade-up">
+        <div class="hero-badge">
+          <span class="ping-dot"></span>
+        </div>
+        <h1 class="header-title">
+          BİR SORUNUZ <span class="text-cyan">MU VAR ?</span>
+        </h1>
+        <p class="header-desc">
+          Sorularınız, projeleriniz veya hata bildirimleriniz için ana ağımıza bağlanın. Ekibimiz sinyalinizi alır almaz dönüş yapacaktır.
+        </p>
+      </header>
 
-      <!-- Right: Info + Socials -->
-      <div class="contact__info">
-        <div class="contact__info-card glass-card">
-          <h2 class="contact__info-heading">Doğrudan ulaşın</h2>
-          <p class="contact__info-text">Form yerine doğrudan e-posta göndermek isterseniz:</p>
-          <a href="mailto:iletisim@makineceviri.net" class="contact__email">iletisim@makineceviri.net</a>
+      <section class="contact-interface ai-fade-up delay-1">
+        
+        <div class="form-board tilt-effect" id="form-board">
+          <div class="glass-form">
+            <div class="hardware-glow" id="f-glow"></div>
+
+            <form id="cyber-contact-form" class="cyber-form">
+              
+              <div class="form-row">
+                <div class="input-wrapper">
+                  <input type="text" id="c-name" required autocomplete="off" />
+                  <label for="c-name">Kimlik (Ad Soyad)</label>
+                  <div class="bottom-glow-line"></div>
+                </div>
+                <div class="input-wrapper">
+                  <input type="email" id="c-email" required autocomplete="off" />
+                  <label for="c-email">Sinyal Rotası (E-Posta)</label>
+                  <div class="bottom-glow-line"></div>
+                </div>
+              </div>
+
+              <div class="input-wrapper">
+                <input type="text" id="c-subject" required autocomplete="off" />
+                <label for="c-subject">İletişim Nedeni (Konu)</label>
+                <div class="bottom-glow-line"></div>
+              </div>
+
+              <div class="input-wrapper">
+                <textarea id="c-message" rows="4" required></textarea>
+                <label for="c-message">Mesajınız (Veri Paketi)</label>
+                <div class="bottom-glow-line"></div>
+              </div>
+
+              <button type="submit" class="cyber-submit-btn" id="submit-btn">
+                <span class="btn-text">GÖNDER</span>
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg class="btn-spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+              </button>
+
+              <div class="success-overlay" id="success-screen">
+                <div class="success-content">
+                  <div class="hologram-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" class="draw-check"></polyline></svg>
+                    <div class="halo-ring"></div>
+                  </div>
+                  <h3>SİNYAL İLETİLDİ</h3>
+                  <p>Veri paketiniz ana sunucularımıza ulaştı. En kısa sürede dönüş sağlanacaktır.</p>
+                  <button type="button" class="reset-protocol" id="reset-btn">YENİ MESAJ OLUŞTUR</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
 
-        <div class="contact__socials glass-card">
-          <h2 class="contact__info-heading">Sosyal medya</h2>
-          <div class="contact__social-list">
-            <a href="https://discord.com/invite/QDezpy4QtV" target="_blank" rel="noopener noreferrer" class="contact__social-link">
-              <div class="contact__social-icon contact__social-icon--discord">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/></svg>
-              </div>
-              <div class="contact__social-info">
-                <span class="contact__social-name">Discord</span>
-                <span class="contact__social-desc">Toplulukla sohbet et, yardım al</span>
-              </div>
-              <span class="contact__social-arrow">&rarr;</span>
-            </a>
+        <div class="contact-nodes">
+          
+          <a href="mailto:iletisim@makineceviri.net" class="cyber-node-card email-node">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="node-info">
+              <h4>Resmi E-Posta</h4>
+              <p>iletisim@makineceviri.net</p>
+            </div>
+            <div class="node-action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </a>
 
-            <a href="https://github.com/MakineCeviri" target="_blank" rel="noopener noreferrer" class="contact__social-link">
-              <div class="contact__social-icon contact__social-icon--github">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-              </div>
-              <div class="contact__social-info">
-                <span class="contact__social-name">GitHub</span>
-                <span class="contact__social-desc">Kaynak kodu, hata bildirimi</span>
-              </div>
-              <span class="contact__social-arrow">&rarr;</span>
-            </a>
+          <a href="https://discord.com/invite/QDezpy4QtV" target="_blank" class="cyber-node-card discord-node">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+            </div>
+            <div class="node-info">
+              <h4>Ana Ağ (Discord)</h4>
+              <p>Topluluk ve canlı destek</p>
+            </div>
+            <div class="node-action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          </a>
 
-            <a href="https://www.linkedin.com/company/makineceviri" target="_blank" rel="noopener noreferrer" class="contact__social-link">
-              <div class="contact__social-icon contact__social-icon--linkedin">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </div>
-              <div class="contact__social-info">
-                <span class="contact__social-name">LinkedIn</span>
-                <span class="contact__social-desc">Profesyonel güncellemeler</span>
-              </div>
-              <span class="contact__social-arrow">&rarr;</span>
-            </a>
-          </div>
         </div>
-      </div>
+
+      </section>
+
     </div>
-  </div>
+  </main>
 
   <Footer />
 </Layout>
 
-<script>
-  const form = document.getElementById('contact-form') as HTMLFormElement;
-  const submitBtn = form?.querySelector('.contact__submit') as HTMLButtonElement;
+<style>
+  /* --- 1. GALAKSİ ARKA PLAN (HIZLI VE ETKİLEYİCİ) --- */
+  .galaxy-contact-main { position: relative; min-height: 100vh; padding-top: 150px; padding-bottom: 100px; background: #030305; color: #fafafa; font-family: inherit; overflow: hidden; }
+  
+  .galaxy-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .nebula-blob { position: absolute; border-radius: 50%; mix-blend-mode: screen; }
+  .nebula-1 { top: -20%; left: -10%; width: 70vw; height: 70vw; background: radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 60%); }
+  .nebula-2 { bottom: -20%; right: -10%; width: 80vw; height: 80vw; background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 60%); }
+  .stars { position: absolute; inset: -50%; background-image: radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)), radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0,0,0,0)), radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)); background-repeat: repeat; background-size: 200px 200px; animation: starTwinkle 5s infinite alternate; }
+  .layer-1 { opacity: 0.5; }
+  .layer-2 { background-size: 350px 350px; opacity: 0.3; animation-delay: 2s; transform: rotate(20deg); }
+  @keyframes starTwinkle { 0% { opacity: 0.2; } 100% { opacity: 0.6; } }
 
-  if (form && submitBtn) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const fd = new FormData(form);
+  .contact-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Gönderiliyor…';
+  /* --- 2. BAŞLIK BÖLÜMÜ --- */
+  .contact-header { text-align: center; margin-bottom: 4rem; display: flex; flex-direction: column; align-items: center; }
+  
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; font-family: 'SF Mono', monospace; font-size: 0.85rem; font-weight: 700; color: #4ecdc4; background: rgba(78, 205, 196, 0.1); border: 1px solid rgba(78, 205, 196, 0.2); padding: 8px 16px; border-radius: 100px; margin-bottom: 1.5rem; letter-spacing: 0.05em; }
+  .ping-dot { width: 8px; height: 8px; background: #4ecdc4; border-radius: 50%; box-shadow: 0 0 10px #4ecdc4; animation: ping 2s infinite; }
+  @keyframes ping { 75%, 100% { transform: scale(2.5); opacity: 0; } }
 
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: fd.get('name'),
-            email: fd.get('email'),
-            subject: fd.get('subject'),
-            message: fd.get('message'),
-          }),
-        });
+  .header-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1rem; color: #fff; }
+  .text-cyan { color: #4ecdc4; text-shadow: 0 0 20px rgba(78,205,196,0.3); }
+  .header-desc { font-size: 1.15rem; color: #a1a1aa; max-width: 600px; line-height: 1.6; }
 
-        const data = await res.json();
+  /* --- 3. DÜZEN VE SAĞ/SOL AYRIMI --- */
+  .contact-interface { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: start; }
 
-        if (data.ok) {
-          submitBtn.textContent = 'Gönderildi!';
-          submitBtn.style.background = '#4ecdc4';
-          form.reset();
-          setTimeout(() => {
-            submitBtn.textContent = 'Mesaj Gönder';
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
-          }, 3000);
-        } else {
-          submitBtn.textContent = data.error || 'Bir hata oluştu';
-          submitBtn.style.background = '#e74c3c';
-          setTimeout(() => {
-            submitBtn.textContent = 'Mesaj Gönder';
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
-          }, 3000);
-        }
-      } catch {
-        submitBtn.textContent = 'Bağlantı hatası';
-        submitBtn.style.background = '#e74c3c';
-        setTimeout(() => {
-          submitBtn.textContent = 'Mesaj Gönder';
-          submitBtn.style.background = '';
-          submitBtn.disabled = false;
-        }, 3000);
-      }
-    });
+  /* --- 4. SOL: SİBER CAM FORM --- */
+  .form-board { perspective: 1000px; width: 100%; }
+  
+  .glass-form {
+    position: relative; background: rgba(9, 9, 11, 0.7); border: 1px solid rgba(255,255,255,0.08); 
+    border-radius: 24px; padding: 3rem; backdrop-filter: blur(24px); box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    overflow: hidden; transform-style: preserve-3d;
   }
+  
+  /* Donanımsal Işık Takibi (Kasmaz) */
+  .hardware-glow { position: absolute; left: 0; top: 0; width: 400px; height: 400px; margin-left: -200px; margin-top: -200px; background: radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none; opacity: 0; transition: opacity 0.3s; z-index: 1; will-change: transform; }
+  .glass-form:hover .hardware-glow { opacity: 1; }
+
+  /* Form Üst Barı (Siberpunk Detay) */
+  .form-top-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem; margin-bottom: 2rem; position: relative; z-index: 2; }
+  .t-dots { display: flex; gap: 6px; } .t-dots span { width: 10px; height: 10px; border-radius: 50%; background: #3f3f46; } .t-dots span:nth-child(1) { background: #ff5f56; } .t-dots span:nth-child(2) { background: #ffbd2e; } .t-dots span:nth-child(3) { background: #27c93f; }
+  .t-text { font-family: 'SF Mono', monospace; font-size: 0.75rem; color: #4ecdc4; letter-spacing: 0.1em; opacity: 0.7; }
+
+  .cyber-form { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  /* Yüzen Etiketli Modern Inputlar */
+  .input-wrapper { position: relative; }
+  .input-wrapper input, .input-wrapper textarea { width: 100%; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; color: #fff; font-size: 1rem; padding: 18px 20px; font-family: inherit; resize: none; transition: all 0.3s; outline: none; }
+  
+  .input-wrapper label { position: absolute; left: 20px; top: 18px; font-size: 1rem; color: #71717a; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
+  
+  /* Alt Kısımda Yanan Neon Çizgi */
+  .bottom-glow-line { position: absolute; bottom: 0; left: 10px; right: 10px; height: 2px; background: #4ecdc4; transform: scaleX(0); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 -2px 10px rgba(78,205,196,0.5); border-radius: 2px; }
+
+  /* Focus Durumları */
+  .input-wrapper input:focus, .input-wrapper textarea:focus { background: rgba(255,255,255,0.04); border-color: rgba(78,205,196,0.3); }
+  .input-wrapper input:focus ~ label, .input-wrapper input:valid ~ label,
+  .input-wrapper textarea:focus ~ label, .input-wrapper textarea:valid ~ label { transform: translateY(-34px) scale(0.85); color: #4ecdc4; left: 5px; }
+  .input-wrapper input:focus ~ .bottom-glow-line, .input-wrapper textarea:focus ~ .bottom-glow-line { transform: scaleX(1); }
+
+  /* Havalı Gönder Butonu */
+  .cyber-submit-btn { display: flex; justify-content: center; align-items: center; gap: 12px; background: #fff; color: #000; font-size: 1.05rem; font-weight: 800; letter-spacing: 0.05em; padding: 20px; border-radius: 12px; border: none; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; margin-top: 1rem; box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
+  .btn-arrow { width: 22px; height: 22px; transition: transform 0.3s; }
+  .cyber-submit-btn:hover { background: #4ecdc4; box-shadow: 0 15px 40px rgba(78, 205, 196, 0.4); transform: translateY(-3px); }
+  .cyber-submit-btn:hover .btn-arrow { transform: translateX(5px); }
+
+  /* Yükleniyor Durumu */
+  .btn-spinner { display: none; width: 24px; height: 24px; animation: spin 1s linear infinite; }
+  .cyber-submit-btn.loading { background: rgba(78,205,196,0.1); color: #4ecdc4; border: 1px solid rgba(78,205,196,0.3); box-shadow: none; pointer-events: none; transform: none; }
+  .cyber-submit-btn.loading .btn-text { display: none; }
+  .cyber-submit-btn.loading .btn-arrow { display: none; }
+  .cyber-submit-btn.loading .btn-spinner { display: block; }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+
+  /* Başarı Ekranı (Hologram) */
+  .success-overlay { position: absolute; inset: 0; background: rgba(9, 9, 11, 0.95); backdrop-filter: blur(15px); z-index: 10; display: flex; align-items: center; justify-content: center; text-align: center; opacity: 0; visibility: hidden; transition: all 0.5s ease; border-radius: 24px; }
+  .success-overlay.show { opacity: 1; visibility: visible; }
+  .success-content { display: flex; flex-direction: column; align-items: center; transform: scale(0.9); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .success-overlay.show .success-content { transform: scale(1); }
+  
+  .hologram-check { position: relative; width: 80px; height: 80px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: #4ecdc4; }
+  .hologram-check svg { width: 50px; height: 50px; position: relative; z-index: 2; filter: drop-shadow(0 0 10px rgba(78,205,196,0.5)); }
+  .draw-check { stroke-dasharray: 50; stroke-dashoffset: 50; }
+  .success-overlay.show .draw-check { stroke-dashoffset: 0; transition: stroke-dashoffset 0.6s ease 0.4s; }
+  .halo-ring { position: absolute; inset: 0; border: 2px dashed rgba(78,205,196,0.5); border-radius: 50%; animation: spinHalo 10s linear infinite; }
+  @keyframes spinHalo { to { transform: rotate(360deg); } }
+
+  .success-content h3 { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+  .success-content p { color: #a1a1aa; line-height: 1.6; margin-bottom: 2.5rem; }
+  
+  .reset-protocol { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 14px 32px; border-radius: 100px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; letter-spacing: 0.05em; }
+  .reset-protocol:hover { background: #fff; color: #000; box-shadow: 0 10px 20px rgba(255,255,255,0.2); }
+
+  /* --- 5. SAĞ: İLETİŞİM NODLARI (Network Nodes) --- */
+  .contact-nodes { display: flex; flex-direction: column; gap: 1.5rem; }
+  
+  .cyber-node-card { display: flex; align-items: center; gap: 20px; padding: 24px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; text-decoration: none; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden; position: relative; }
+  
+  /* Hover Efektleri */
+  .cyber-node-card:hover { transform: translateX(-10px); background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+  .email-node:hover { border-color: rgba(78,205,196,0.3); background: rgba(78,205,196,0.05); }
+  .discord-node:hover { border-color: rgba(88, 101, 242, 0.3); background: rgba(88, 101, 242, 0.05); }
+  
+  .node-icon { width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: all 0.4s; flex-shrink: 0; }
+  .node-icon svg { width: 26px; height: 26px; }
+  
+  .email-node:hover .node-icon { background: #4ecdc4; color: #000; box-shadow: 0 10px 20px rgba(78,205,196,0.4); transform: scale(1.05); }
+  .discord-node:hover .node-icon { background: #5865F2; color: #fff; box-shadow: 0 10px 20px rgba(88, 101, 242, 0.4); transform: scale(1.05); }
+  
+  .node-info flex: 1;
+  .node-info h4 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 6px; transition: color 0.3s; }
+  .node-info p { font-size: 0.95rem; color: #71717a; margin: 0; }
+  
+  .node-action { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; opacity: 0; transform: translateX(-20px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  .node-action svg { width: 20px; height: 20px; }
+  .cyber-node-card:hover .node-action { opacity: 1; transform: translateX(0); background: #fff; color: #000; }
+
+  /* Canlı Sistem Durumu Nodu */
+  .status-node { border-style: dashed; cursor: default; }
+  .status-node:hover { transform: none; background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.05); box-shadow: none; }
+  .radar-container { position: relative; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; }
+  .radar-core { width: 14px; height: 14px; background: #4ecdc4; border-radius: 50%; box-shadow: 0 0 15px #4ecdc4; z-index: 2; }
+  .radar-ring { position: absolute; inset: 0; border: 2px solid rgba(78, 205, 196, 0.5); border-radius: 50%; animation: radarPulse 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+  @keyframes radarPulse { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+
+  /* Animasyonlar & Responsive */
+  .ai-fade-up { opacity: 0; transform: translateY(30px); animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  .delay-1 { animation-delay: 0.1s; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 992px) {
+    .contact-interface { grid-template-columns: 1fr; gap: 4rem; }
+    .form-board { order: 2; }
+    .contact-nodes { order: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .cyber-node-card:hover { transform: translateY(-5px); }
+    .status-node { grid-column: span 2; }
+  }
+  @media (max-width: 640px) {
+    .header-title { font-size: 2.5rem; }
+    .glass-form { padding: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-nodes { grid-template-columns: 1fr; }
+    .status-node { grid-column: span 1; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. SİNYAL GÖNDERİM SİMÜLASYONU (Kusursuz Animasyon) ---
+    const form = document.getElementById('cyber-contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const successScreen = document.getElementById('success-screen');
+    const resetBtn = document.getElementById('reset-btn');
+
+    if (form && submitBtn && successScreen) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Gerçek form gönderimini engelle
+        
+        // Yükleniyor Durumu
+        submitBtn.classList.add('loading');
+
+        // 1.5 Saniye sonra başarı hologramını göster
+        setTimeout(() => {
+          successScreen.classList.add('show');
+          submitBtn.classList.remove('loading');
+          form.reset(); // Formu temizle
+        }, 1500);
+      });
+    }
+
+    // --- 2. YENİ PROTOKOL (Sıfırlama) ---
+    if (resetBtn && successScreen) {
+      resetBtn.addEventListener('click', () => {
+        successScreen.classList.remove('show');
+      });
+    }
+
+    // --- 3. DONANIMSAL MANYETİK PARLAMA VE KART EĞİMİ (Tilt) ---
+    const formBoard = document.getElementById('form-board');
+    const glow = document.getElementById('f-glow');
+    const glassForm = document.querySelector('.glass-form') as HTMLElement;
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let isHovering = false;
+
+    // requestAnimationFrame ile sıfır fps düşüşü
+    const updateGlow = () => {
+      if (isHovering && glow) {
+        glow.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        requestAnimationFrame(updateGlow);
+      }
+    };
+
+    if (formBoard && glow && glassForm) {
+      formBoard.addEventListener('mousemove', (e) => {
+        const rect = formBoard.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+
+        // Çok Hafif 3D Tilt Efekti
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((mouseY - centerY) / centerY) * -2; 
+        const rotateY = ((mouseX - centerX) / centerX) * 2;
+        
+        glassForm.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+      });
+
+      formBoard.addEventListener('mouseenter', () => {
+        isHovering = true;
+        requestAnimationFrame(updateGlow);
+      });
+
+      formBoard.addEventListener('mouseleave', () => {
+        isHovering = false;
+        glassForm.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    }
+
+  });
 </script>

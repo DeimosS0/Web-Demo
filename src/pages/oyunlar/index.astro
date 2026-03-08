@@ -54,7 +54,6 @@ const games = Object.entries(catalog.packages)
 
 const uniqueGenres = Array.from(allGenres).sort();
 
-// Arka planda net ve doğal renkleriyle dönecek yüksek kaliteli Steam görselleri
 const bgImages = [
   "1174180", "1245620", "2358720", "2651280", "990080"
 ].map(id => `https://cdn.akamai.steamstatic.com/steam/apps/${id}/library_hero.jpg`);
@@ -102,13 +101,20 @@ const clientGames = JSON.stringify(games.map(g => ({ name: g.name, appId: g.appI
             <p class="d-desc">Bir tür seçin, kütüphanemizden size en uygun oyunu rastgele çekelim.</p>
             
             <div class="d-actions">
-              <div class="select-wrapper">
-                <select id="genre-select">
-                  <option value="all">Tüm Türler</option>
-                  {uniqueGenres.map(g => <option value={g}>{g}</option>)}
-                </select>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              
+              <div class="custom-dropdown" id="genre-dropdown">
+                <div class="dropdown-header">
+                  <span id="selected-genre-text">Tüm Türler</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <ul class="dropdown-list">
+                  <li class="dropdown-item active" data-value="all">Tüm Türler</li>
+                  {uniqueGenres.map(g => (
+                    <li class="dropdown-item" data-value={g}>{g}</li>
+                  ))}
+                </ul>
               </div>
+
               <button id="btn-suggest" class="btn-primary">Oyunu Çek</button>
             </div>
           </div>
@@ -150,22 +156,17 @@ const clientGames = JSON.stringify(games.map(g => ({ name: g.name, appId: g.appI
         <div class="library-grid" id="library-grid">
           {games.map((game) => (
             <a href={`/oyunlar/${game.slug}`} class="game-card" data-name={game.name.toLowerCase()}>
-              
               <div class="card-visual">
                 <img src={`https://cdn.akamai.steamstatic.com/steam/apps/${game.appId}/header.jpg`} alt={game.name} loading="lazy" onerror={`this.onerror=null;this.src="https://cdn.makineceviri.net/assets/images/${game.appId}.png"`} />
-                
                 {dubPool.has(game.appId) && <div class="dub-tag">Dublaj</div>}
-                
                 <div class="hover-overlay">
                   <span class="hover-pill">İncele</span>
                 </div>
               </div>
-
               <div class="card-meta">
                 <h4 class="g-name" title={game.name}>{game.name}</h4>
                 <span class="g-genre">{game.genres[0] || 'Oyun'}</span>
               </div>
-              
             </a>
           ))}
         </div>
@@ -183,135 +184,119 @@ const clientGames = JSON.stringify(games.map(g => ({ name: g.name, appId: g.appI
   <Footer />
 </Layout>
 
-<script>
-  declare global { interface Window { GAMES_DATA: any; } }
-</script>
 <script define:vars={{ clientGames }}>
   window.GAMES_DATA = JSON.parse(clientGames);
 </script>
 
 <style>
-  /* --- 1. TEMİZ ARKA PLAN (KIRMIZI ÇORBA YOK, BLUR YOK) --- */
-  .clean-store-main {
-    position: relative; min-height: 100vh; padding-top: 130px; padding-bottom: 100px;
-    background: #09090b; color: #fafafa;
-  }
+  .clean-store-main { position: relative; min-height: 100vh; padding-top: 130px; padding-bottom: 100px; background: #09090b; color: #fafafa; }
 
   .hero-bg-container { position: absolute; top: 0; left: 0; width: 100%; height: 80vh; z-index: 0; overflow: hidden; pointer-events: none; }
-  
-  .hero-slide {
-    position: absolute; inset: 0; background-size: cover; background-position: center top;
-    opacity: 0; transition: opacity 1.5s ease-in-out;
-    /* Blur yok. Saturate yok. Resim doğal renginde ama hafif karanlık. */
-    filter: brightness(0.4); 
-    will-change: opacity;
-  }
+  .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center top; opacity: 0; transition: opacity 1.5s ease-in-out; filter: brightness(0.4); will-change: opacity; }
   .hero-slide.active { opacity: 1; }
-  
-  /* Siyaha doğru pürüzsüzce eriten maske */
-  .hero-vignette {
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(9,9,11,0) 0%, rgba(9,9,11,0.6) 40%, #09090b 100%);
-  }
+  .hero-vignette { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(9,9,11,0) 0%, rgba(9,9,11,0.6) 40%, #09090b 100%); }
 
   .store-container { max-width: 1300px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
 
-  /* --- 2. BAŞLIK VE ARAMA --- */
   .store-header { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 4rem; }
   .display-title { font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
   .display-subtitle { font-size: 1.15rem; color: #a1a1aa; font-weight: 400; margin-bottom: 2.5rem; }
 
-  /* Tok ve sağlam arama çubuğu */
-  .solid-search {
-    width: 100%; max-width: 550px; display: flex; align-items: center;
-    background: rgba(24, 24, 27, 0.8); border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px; padding: 0 24px; transition: all 0.3s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  }
+  .solid-search { width: 100%; max-width: 550px; display: flex; align-items: center; background: rgba(24, 24, 27, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 0 24px; transition: all 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
   .solid-search:focus-within { background: rgba(39, 39, 42, 0.9); border-color: #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.5); transform: translateY(-2px); }
   .solid-search svg { width: 22px; height: 22px; color: #a1a1aa; margin-right: 14px; transition: color 0.3s; }
   .solid-search:focus-within svg { color: #fff; }
   .solid-search input { flex: 1; height: 60px; background: transparent; border: none; outline: none; color: #fff; font-size: 1.1rem; }
   .solid-search input::placeholder { color: #71717a; }
 
-  /* --- 3. AKILLI ASİSTAN (SABİT YÜKSEKLİK, ŞOV ANİMASYON) --- */
-  .smart-discovery { margin-bottom: 5rem; }
+  .smart-discovery { position: relative; z-index: 100; margin-bottom: 5rem; }
+  
   .discovery-panel {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch;
     background: #18181b; border: 1px solid rgba(255,255,255,0.05);
     border-radius: 20px; padding: 3rem; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   }
   
+  .d-content { position: relative; z-index: 50; display: flex; flex-direction: column; justify-content: center; }
   .d-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.2; color: #fff; }
   .d-desc { color: #a1a1aa; font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.5; }
-
   .d-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
   
-  .select-wrapper { position: relative; flex: 1; min-width: 200px; }
-  .select-wrapper select {
-    appearance: none; width: 100%; height: 52px; background: #09090b;
-    border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 0 20px;
-    color: #fff; font-size: 1rem; cursor: pointer; transition: border-color 0.3s;
-  }
-  .select-wrapper select:focus { border-color: #4ecdc4; outline: none; }
-  .select-wrapper svg { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: #a1a1aa; pointer-events: none; }
+  .custom-dropdown { position: relative; flex: 1; min-width: 220px; font-family: inherit; z-index: 100; }
+  .dropdown-header { display: flex; justify-content: space-between; align-items: center; height: 52px; background: #09090b; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 0 20px; color: #fff; font-size: 0.95rem; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s; }
+  .dropdown-header:hover { border-color: rgba(255,255,255,0.3); }
+  .custom-dropdown.open .dropdown-header { border-color: #4ecdc4; box-shadow: 0 0 0 3px rgba(78,205,196,0.15); }
+  .dropdown-header svg { width: 16px; height: 16px; color: #a1a1aa; transition: transform 0.3s; }
+  .custom-dropdown.open .dropdown-header svg { transform: rotate(180deg); color: #4ecdc4; }
   
-  .btn-primary {
-    height: 52px; padding: 0 28px; background: #fff; color: #000; font-weight: 700; font-size: 1rem;
-    border: none; border-radius: 12px; cursor: pointer; transition: all 0.3s; white-space: nowrap;
+  .dropdown-list {
+    position: absolute; top: calc(100% + 8px); left: 0; width: 100%;
+    background: rgba(24, 24, 27, 0.98); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 8px; backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.9); z-index: 9999;
+    max-height: 240px; overflow-y: auto; list-style: none; margin: 0;
+    opacity: 0; pointer-events: none; transform: translateY(-10px); transition: all 0.2s ease-out;
   }
+  .custom-dropdown.open .dropdown-list { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .dropdown-list::-webkit-scrollbar { width: 6px; }
+  .dropdown-list::-webkit-scrollbar-track { background: transparent; }
+  .dropdown-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+  
+  .dropdown-item { padding: 12px 16px; border-radius: 8px; color: #d4d4d8; font-size: 0.95rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
+  .dropdown-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
+  .dropdown-item.active { background: rgba(212, 168, 67, 0.15); color: #d4a843; font-weight: 600; }
+  
+  .btn-primary { height: 52px; padding: 0 28px; background: #fff; color: #000; font-weight: 700; font-size: 1rem; border: none; border-radius: 12px; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,255,255,0.2); background: #e4e4e7; }
 
-  /* Sonuç Alanı - Yükseklik SABİT. Asla zıplamaz. */
-  .d-result-area {
-    position: relative; height: 140px; background: #09090b; border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.05); overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
+  /* GÖRSEL ALANI: İç boşluk yok (padding:0), resim tam oturur */
+  .d-result-area { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; /* Sol kısımla aynı boy */
+    min-height: 220px; 
+    background: #09090b; 
+    border-radius: 16px; 
+    border: 1px solid rgba(255,255,255,0.05); 
+    overflow: hidden; 
+    display: flex; align-items: center; justify-content: center; 
+    z-index: 10; 
+    padding: 0 !important; 
   }
   
-  .empty-placeholder { display: flex; align-items: center; gap: 10px; color: #71717a; font-size: 1.05rem; font-weight: 500; }
-  .empty-placeholder svg { width: 24px; height: 24px; }
+  .empty-placeholder { display: flex; flex-direction: column; align-items: center; gap: 12px; color: #71717a; font-size: 1.05rem; font-weight: 500; }
+  .empty-placeholder svg { width: 32px; height: 32px; opacity: 0.5; }
   
-  /* Slot Reel Animasyon Stilleri (JS ile basılacak) */
-  .slot-reel { position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-  .slot-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: blur(2px); }
-  .slot-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
-  .slot-text { position: relative; z-index: 2; font-size: 1.5rem; font-weight: 800; color: #fff; text-align: center; padding: 0 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 4px 10px rgba(0,0,0,0.8); }
-  
-  /* Slot Patlama Flaş Efekti */
   .slot-flash { position: absolute; inset: 0; background: #fff; z-index: 10; opacity: 0; pointer-events: none; }
   .slot-flash.active { animation: flashFade 0.5s ease-out forwards; }
   @keyframes flashFade { 0% { opacity: 1; } 100% { opacity: 0; } }
 
-  /* Kazanan Kart (Yatay 16:9 Oran) */
+  /* KAZANAN KART KUTUSU: Sınırları tam kaplar */
   .suggested-card {
-    display: flex; width: 100%; height: 100%; text-decoration: none; align-items: center; gap: 1.5rem;
-    padding: 12px; background: transparent; transition: background 0.3s;
+    position: absolute; inset: 0; width: 100%; height: 100%; 
+    display: block; text-decoration: none; z-index: 20;
+    opacity: 0; transform: scale(0.95); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #000; border-radius: inherit;
   }
-  .suggested-card:hover { background: rgba(255,255,255,0.03); }
+  .suggested-card.show { opacity: 1; transform: scale(1); }
   
-  .suggested-card img { height: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-  .s-info { display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
-  .s-badge { background: #fff; color: #000; font-size: 0.7rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; margin-bottom: 6px; width: fit-content; }
-  .s-info h4 { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .s-link { font-size: 0.95rem; font-weight: 600; color: #a1a1aa; transition: color 0.3s; }
-  .suggested-card:hover .s-link { color: #fff; }
+  /* KAZANAN RESİM: object-fit: cover ile boşlukları %100 yok eder */
+  .s-bg-img { 
+    width: 100%; height: 100%; 
+    object-fit: cover !important; 
+    object-position: center; 
+    transition: transform 0.6s ease; display: block; 
+  }
+  .suggested-card:hover .s-bg-img { transform: scale(1.05); }
 
-  /* --- 4. ORTAK BÖLÜM STİLLERİ --- */
-  .section-block { margin-bottom: 5rem; }
+  .section-block { position: relative; z-index: 10; margin-bottom: 5rem; }
   .section-heading { font-size: 1.6rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
 
-  /* Öne Çıkanlar */
   .showcase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
   .showcase-item { position: relative; display: block; text-decoration: none; perspective: 1000px; }
-  .showcase-visual {
-    position: relative; width: 100%; aspect-ratio: 21/9; border-radius: 16px; overflow: hidden;
-    background: #18181b; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-    transform-style: preserve-3d; transition: transform 0.2s ease-out, border-color 0.3s, box-shadow 0.3s;
-  }
+  .showcase-visual { position: relative; width: 100%; aspect-ratio: 21/9; border-radius: 16px; overflow: hidden; background: #18181b; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4); transform-style: preserve-3d; transition: transform 0.2s ease-out, border-color 0.3s, box-shadow 0.3s; }
   .sc-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); filter: brightness(0.85); }
   .sc-fade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(9,9,11,0.95) 0%, transparent 60%); pointer-events: none; }
-  
   .sc-data { position: absolute; bottom: 0; left: 0; padding: 2rem; transform: translateZ(20px); }
   .sc-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: #fff; margin-bottom: 1rem; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
   .sc-btn { display: inline-flex; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: #fff; font-weight: 600; font-size: 0.9rem; padding: 10px 24px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s; }
@@ -320,28 +305,17 @@ const clientGames = JSON.stringify(games.map(g => ({ name: g.name, appId: g.appI
   .showcase-item:hover .sc-img { transform: scale(1.05); filter: brightness(1); }
   .showcase-item:hover .sc-btn { background: #fff; color: #000; border-color: #fff; }
 
-  /* Kütüphane Izgarası (Kesilmeyen 16:9 Kartlar) */
   .catalog-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; }
   .game-count { color: #71717a; font-size: 1.1rem; }
-
   .library-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2.5rem 1.5rem; }
-
   .game-card { text-decoration: none; display: flex; flex-direction: column; gap: 12px; }
-  
-  /* KESİLMEYİ ÖNLEYEN 16:9 KUTU */
-  .card-visual {
-    position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden;
-    background: #18181b; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s;
-  }
+  .card-visual { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; background: #18181b; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, border-color 0.4s; }
   .card-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; filter: brightness(0.9); }
-  
   .dub-tag { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.95); color: #000; font-size: 0.7rem; font-weight: 800; padding: 4px 8px; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2; }
-
   .hover-overlay { position: absolute; inset: 0; background: rgba(9,9,11,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; backdrop-filter: blur(2px); z-index: 3; }
   .hover-pill { background: #fff; color: #000; font-size: 0.9rem; font-weight: 700; padding: 10px 24px; border-radius: 100px; transform: translateY(15px); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-  .game-card:hover .card-visual { transform: translateY(-6px); border-color: rgba(255,255,255,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+  .game-card:hover .card-visual { transform: translateY(-6px); border-color: rgba(255,255,255,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
   .game-card:hover img { transform: scale(1.05); filter: brightness(1.1); }
   .game-card:hover .hover-overlay { opacity: 1; }
   .game-card:hover .hover-pill { transform: translateY(0); }
@@ -352,7 +326,6 @@ const clientGames = JSON.stringify(games.map(g => ({ name: g.name, appId: g.appI
   .game-card:hover .g-name { color: #fff; }
   .g-genre { font-size: 0.85rem; color: #71717a; }
 
-  /* Bulunamadı */
   .empty-state { text-align: center; padding: 6rem 0; color: #a1a1aa; }
   .empty-state svg { width: 48px; height: 48px; margin-bottom: 1rem; color: #52525b; }
   .empty-state h3 { color: #fff; font-size: 1.4rem; margin-bottom: 0.5rem; font-weight: 500; }
@@ -369,14 +342,12 @@ const clientGames = JSON.stringify(games.map(g => ({ name: g.name, appId: g.appI
   @media (max-width: 768px) {
     .display-title { font-size: 2.5rem; }
     .library-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
-    .suggested-card img { width: 120px; }
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. ARKA PLAN GEÇİŞİ ---
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
     if (slides.length > 1) {
@@ -387,27 +358,54 @@ const clientGames = JSON.stringify(games.map(g => ({ name: g.name, appId: g.appI
       }, 7000); 
     }
 
-    // --- 2. GERÇEK SLOT MAKİNESİ (ŞOV ANİMASYONU) ---
-    const gamesData = window.GAMES_DATA || [];
+    const dropdown = document.getElementById('genre-dropdown');
+    let currentGenre = 'all'; 
+    
+    if (dropdown) {
+      const header = dropdown.querySelector('.dropdown-header') as HTMLElement;
+      const selectedText = document.getElementById('selected-genre-text') as HTMLElement;
+      const items = dropdown.querySelectorAll('.dropdown-item');
+
+      header.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
+
+      items.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          items.forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+          currentGenre = (item as HTMLElement).dataset.value || 'all';
+          selectedText.textContent = item.textContent;
+          dropdown.classList.remove('open');
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target as Node)) {
+          dropdown.classList.remove('open');
+        }
+      });
+    }
+
+    // --- SIFIR BOŞLUK BIRAKAN JAVASCRIPT GÜNCELLEMESİ ---
+    const gamesData = (window as any).GAMES_DATA || [];
     const btnSuggest = document.getElementById('btn-suggest');
-    const genreSelect = document.getElementById('genre-select') as HTMLSelectElement;
     const resultArea = document.getElementById('result-area');
 
     if (btnSuggest && resultArea && gamesData.length > 0) {
       btnSuggest.addEventListener('click', () => {
-        const selectedGenre = genreSelect.value;
-        let filteredGames = gamesData;
         
-        if (selectedGenre !== 'all') {
-          filteredGames = gamesData.filter((g: any) => g.genres.includes(selectedGenre));
+        let filteredGames = gamesData;
+        if (currentGenre !== 'all') {
+          filteredGames = gamesData.filter((g: any) => g.genres.includes(currentGenre));
         }
         if (filteredGames.length === 0) filteredGames = gamesData;
 
-        // UI Kilitleniyor, ZIPLAMA YOK.
         btnSuggest.style.pointerEvents = 'none';
         btnSuggest.textContent = 'Oyun Seçiliyor...';
         
-        // Slot Flaşı İçin Element Oluştur
         let flash = document.createElement('div');
         flash.className = 'slot-flash';
         resultArea.appendChild(flash);
@@ -415,56 +413,51 @@ const clientGames = JSON.stringify(games.map(g => ({ name: g.name, appId: g.appI
         let counter = 0;
         const maxTicks = 18; 
         
-        // Slot Çevirme Animasyonu
         const spinTimer = setInterval(() => {
           const randomGame = filteredGames[Math.floor(Math.random() * filteredGames.length)];
           const bgImg = `https://cdn.akamai.steamstatic.com/steam/apps/${randomGame.appId}/header.jpg`;
           const fallbackImg = `https://cdn.makineceviri.net/assets/images/${randomGame.appId}.png`;
 
+          // Dönerken de boşluk bırakmaması için JS içine %100 Cover kodu gömüldü!
           resultArea.innerHTML = `
-            <div class="slot-reel">
-              <img src="${bgImg}" class="slot-img" onerror="this.onerror=null;this.src='${fallbackImg}'" />
-              <div class="slot-overlay"></div>
-              <span class="slot-text">${randomGame.name}</span>
+            <div class="slot-reel" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+              <img src="${bgImg}" class="slot-img" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.onerror=null;this.src='${fallbackImg}';" />
             </div>
             <div class="slot-flash"></div>
           `;
           
           counter++;
 
-          // Çevirme bittiğinde
           if (counter >= maxTicks) {
             clearInterval(spinTimer);
             const finalGame = filteredGames[Math.floor(Math.random() * filteredGames.length)];
+            
             const finalImg = `https://cdn.akamai.steamstatic.com/steam/apps/${finalGame.appId}/header.jpg`;
             const finalFallback = `https://cdn.makineceviri.net/assets/images/${finalGame.appId}.png`;
             
-            // Flaş patlat
             const finalFlash = resultArea.querySelector('.slot-flash') as HTMLElement;
             if (finalFlash) finalFlash.classList.add('active');
 
-            // Sonucu Yazdır
             setTimeout(() => {
               resultArea.innerHTML = `
                 <a href="/oyunlar/${finalGame.slug}" class="suggested-card">
-                  <img src="${finalImg}" onerror="this.onerror=null;this.src='${finalFallback}'" alt="" />
-                  <div class="s-info">
-                    <span class="s-badge">Sizin İçin Seçildi</span>
-                    <h4>${finalGame.name}</h4>
-                    <span class="s-link">Oyunu İncele -></span>
-                  </div>
+                  <img src="${finalImg}" class="s-bg-img" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.onerror=null;this.src='${finalFallback}';" />
                 </a>
               `;
               
+              setTimeout(() => {
+                const card = resultArea.querySelector('.suggested-card');
+                if(card) card.classList.add('show');
+              }, 50);
+              
               btnSuggest.style.pointerEvents = 'auto';
               btnSuggest.textContent = 'Tekrar Çek';
-            }, 100); // Flaş patladıktan hemen sonra içeriği değiştir
+            }, 150); 
           }
-        }, 70); // 70ms hızla döner
+        }, 70); 
       });
     }
 
-    // --- 3. ARAMA MANTIĞI ---
     const input = document.getElementById('game-search') as HTMLInputElement;
     const grid = document.getElementById('library-grid');
     const showcaseSection = document.getElementById('showcase-section');
@@ -513,7 +506,6 @@ const clientGames = JSON.stringify(games.map(g => ({ name: g.name, appId: g.appI
       });
     }
 
-    // --- 4. ZARİF KAPAK TİLT EFEKTİ (Sadece Vitrin İçin) ---
     const coverCards = document.querySelectorAll('.tilt-effect');
     coverCards.forEach(card => {
       const htmlCard = card as HTMLElement;

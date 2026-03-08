@@ -2,365 +2,657 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import Starfield from '../components/Starfield.astro';
 
 const siteUrl = 'https://makineceviri.net';
 const pageUrl = `${siteUrl}/rehber`;
-const pageTitle = 'Kullanım Rehberi — Makine Çeviri';
-const pageDesc = 'MakineAI Launcher kurulum ve kullanım rehberi. Türkçe yama nasıl kurulur, güncellenir ve kaldırılır.';
+const pageTitle = 'Sistem Rehberi — Makine Çeviri';
+const pageDesc = 'MakineAI altyapısı nasıl kurulur, Türkçe yama nasıl entegre edilir ve veritabanı sorguları.';
+
+// Terminal Arayüzü İçin Veritabanı (Sorunlar ve SSS)
+const terminalData = [
+  {
+    id: "01",
+    q: "Windows 'Güvenli Olmayabilir' uyarısı veriyor",
+    a: "Uyarı ekranındaki 'Daha fazla bilgi' yazısına tıklayın, ardından 'Yine de çalıştır' butonuna basın. MakineAI %100 güvenlidir, Windows dijital sertifikası olmayan yeni araçlar için bu standart uyarıyı verir."
+  },
+  {
+    id: "02",
+    q: "Antivirüs yazılımı kurulumu engelliyor",
+    a: "Antivirüs ayarlarınızdan MakineAI klasörünü 'İstisnalar' (Exclusions) listesine ekleyin. Programımız oyun dosyalarına sanal müdahale ettiği için bazı korumalar bunu yanlış (false-positive) algılayabilir."
+  },
+  {
+    id: "03",
+    q: "Kurulumda 'Dosya Kilitli / Yazma İzni Yok' hatası",
+    a: "Oyunu ve Steam/Epic istemcisini arka plandan tamamen kapatın. Sorun devam ederse MakineAI simgesine sağ tıklayıp 'Yönetici olarak çalıştır' seçeneğini kullanarak gerekli izinleri sağlayın."
+  },
+  {
+    id: "04",
+    q: "Orijinal oyun dosyalarım bozulur mu?",
+    a: "Hayır. Sistemimiz memory-bypass ve sanal katman mantığıyla çalışır. Her dosya öncesinde yedeklenir. Yamayı kaldırdığınız an oyun saniyeler içinde orijinal haline döner."
+  },
+  {
+    id: "05",
+    q: "Oyun resmi güncelleme alırsa ne olur?",
+    a: "Oyun yapımcısı büyük bir güncelleme yayınlarsa yama güvenlik gereği geçici olarak askıya alınır. MakineAI veritabanı güncellendiğinde istemci üzerinden tek tıkla yamayı yeni sürüme adapte edebilirsiniz."
+  },
+  {
+    id: "06",
+    q: "Çeviri sırasında FPS kaybı yaşar mıyım?",
+    a: "Sistem kaynaklarınızı korumak ana önceliğimizdir. Çeviri işlemleri GPU'yu yormaz. C++ altyapımız sayesinde işlemci (CPU) tüketimi %0.1 ile %0.5 arasındadır. Performans etkilenmez."
+  },
+  {
+    id: "07",
+    q: "Çevrimdışı (Offline) oynayabilir miyim?",
+    a: "Evet. Kurulumu bir kez tamamladığınızda yamalar diskinize entegre edilir. İnternet bağlantınız olmasa dahi oyunlarınızı Türkçe oynamaya devam edebilirsiniz."
+  },
+  {
+    id: "08",
+    q: "Sistem tamamen ücretsiz mi?",
+    a: "Evet, %100 ücretsizdir. Makine Çeviri topluluk odaklı bir projedir. İstemcide herhangi bir reklam, zorunlu abonelik veya gizli ücretlendirme bulunmaz."
+  }
+];
 ---
 
 <Layout title={pageTitle} description={pageDesc} canonical={pageUrl}>
-  <Starfield />
-  <Navbar />
+  <Navbar showSearch={false} />
 
-  <div class="guide">
-    <div class="guide__hero">
-      <h1 class="guide__title">Kullanım Rehberi</h1>
+  <main class="galaxy-playground-main">
+    
+    <div class="galaxy-bg">
+      <div class="nebula-blob nebula-1"></div>
+      <div class="nebula-blob nebula-2"></div>
+      <div class="stars layer-1"></div>
+      <div class="stars layer-2"></div>
     </div>
 
-    <nav class="guide__toc glass-card">
-      <h2 class="guide__toc-title">Bu sayfada ne var?</h2>
-      <ol class="guide__toc-list">
-        <li><a href="#nedir">MakineAI ne?</a></li>
-        <li><a href="#gereksinimler">Bilgisayarım yeterli mi?</a></li>
-        <li><a href="#kurulum">Nasıl kurarım?</a></li>
-        <li><a href="#ilk-ceviri">Türkçe yama nasıl kurarım?</a></li>
-        <li><a href="#yonetim">Yamayı nasıl yönetirim?</a></li>
-        <li><a href="#sorun-giderme">Sorun yaşıyorum</a></li>
-        <li><a href="#sss">Sık sorulan sorular</a></li>
-      </ol>
-    </nav>
+    <div class="playground-container">
+      
+      <header class="playground-hero ai-fade-up">
+        <h1 class="hero-title">
+          Sınırları Kaldırın. <br />
+          <span class="text-gradient">Oyunlara Hükmedin.</span>
+        </h1>
+        <p class="hero-subtitle">
+          MakineAI altyapısıyla oyunlarınızı Türkçe yapmak hiç bu kadar pürüzsüz olmamıştı. Aşağıdaki üç adımı izleyerek saniyeler içinde sistemi aktif edin.
+        </p>
+      </header>
 
-    <div class="guide__body">
+      <section class="interactive-guide ai-fade-up delay-1">
+        
+        <div class="guide-nav">
+          <button class="step-trigger active" data-step="1">
+            <div class="step-indicator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+            <div class="step-content">
+              <h3>Sistemi İndirin</h3>
+              <p>MakineAI çekirdeğini bilgisayarınıza kurun.</p>
+            </div>
+            <div class="progress-track"><div class="progress-fill"></div></div>
+          </button>
 
-      <!-- MakineAI Nedir? -->
-      <section class="guide__section glass-card" id="nedir">
-        <h2>MakineAI ne?</h2>
-        <p>Bilgisayarındaki oyunlara <strong>Türkçe yama kuran</strong> bir program. Tamamen <strong>ücretsiz</strong>.</p>
-        <p>Sen sadece "Kur" butonuna bas, gerisini MakineAI halleder. Oyununu bulmaktan Türkçe yamayı kurmaya kadar her şeyi otomatik yapar.</p>
-        <div class="guide__features">
-          <div class="guide__feature glass-card--inner">
-            <div class="guide__feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17.25a6.25 6.25 0 1 1 0-12.5 6.25 6.25 0 0 1 0 12.5z"/><path d="M16 16l4.5 4.5" stroke-linecap="round"/></svg>
+          <button class="step-trigger" data-step="2">
+            <div class="step-indicator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <div class="step-content">
+              <h3>Diski Tarayın</h3>
+              <p>Sistem, yüklü oyunlarınızı otomatik tespit eder.</p>
             </div>
-            <div>
-              <strong>Oyunlarını otomatik bulur</strong>
-              <p>Steam, Epic Games, GOG... hepsini tarar.</p>
+            <div class="progress-track"><div class="progress-fill"></div></div>
+          </button>
+
+          <button class="step-trigger" data-step="3">
+            <div class="step-indicator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="step-content">
+              <h3>Entegre Edin</h3>
+              <p>Yamayı kurun ve saniyeler içinde oynamaya başlayın.</p>
             </div>
-          </div>
-          <div class="guide__feature glass-card--inner">
-            <div class="guide__feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </div>
-            <div>
-              <strong>Tek tıkla Türkçe yama</strong>
-              <p>Dosya kopyalama, ayar değiştirme yok. Sadece tıkla.</p>
-            </div>
-          </div>
-          <div class="guide__feature glass-card--inner">
-            <div class="guide__feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <strong>Oyununa zarar vermez</strong>
-              <p>Her şeyi yedekler. Beğenmezsen tek tıkla geri al.</p>
-            </div>
-          </div>
-          <div class="guide__feature glass-card--inner">
-            <div class="guide__feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-            </div>
-            <div>
-              <strong>Otomatik güncelleme</strong>
-              <p>Oyun güncellenince yama da güncellenir.</p>
-            </div>
-          </div>
+            <div class="progress-track"><div class="progress-fill"></div></div>
+          </button>
         </div>
-      </section>
 
-      <!-- Sistem Gereksinimleri -->
-      <section class="guide__section glass-card" id="gereksinimler">
-        <h2>Bilgisayarım yeterli mi?</h2>
-        <p>Windows 10 veya 11 kullanıyorsan, muhtemelen evet. Detaylar:</p>
-        <div class="guide__req-grid">
-          <div class="guide__req-card glass-card--inner">
-            <h3>Minimum</h3>
-            <table class="guide__req-table">
-              <tbody>
-                <tr><td>İşletim Sistemi</td><td>Windows 10 1903+ (64-bit)</td></tr>
-                <tr><td>Disk (Uygulama)</td><td>~90 MB</td></tr>
-                <tr><td>Ağ</td><td>İnternet bağlantısı</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="guide__req-card guide__req-card--rec glass-card--inner">
-            <div class="guide__req-badge">Tavsiye</div>
-            <h3>Önerilen</h3>
-            <table class="guide__req-table">
-              <tbody>
-                <tr><td>İşletim Sistemi</td><td>Windows 11</td></tr>
-                <tr><td>RAM</td><td>4 GB+</td></tr>
-                <tr><td>Disk</td><td>2 GB+ boş</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- Kurulum -->
-      <section class="guide__section glass-card" id="kurulum">
-        <h2>MakineAI nasıl kurulur?</h2>
-        <p>3 adımda bitti:</p>
-        <div class="guide__steps">
-          <div class="guide__step">
-            <div class="guide__step-num">1</div>
-            <div class="guide__step-content">
-              <h3>İndir</h3>
-              <p>Aşağıdaki butona tıkla, ZIP dosyasını indir.</p>
-              <a href="/" class="guide__step-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                MakineAI'yı İndir
-              </a>
-            </div>
-          </div>
-          <div class="guide__step">
-            <div class="guide__step-num">2</div>
-            <div class="guide__step-content">
-              <h3>ZIP'i aç</h3>
-              <p>İndirdiğin dosyaya <strong>sağ tıkla</strong> ve <strong>"Tümünü ayıkla..."</strong> de. Nereye çıkartacağını sor, istediğin yere çıkart.</p>
-              <div class="guide__tip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                <span>Masaüstüne de çıkartabilirsin, sorun olmaz.</span>
+        <div class="guide-visual-wrapper tilt-effect" id="visual-board">
+          <div class="guide-visual glass-panel">
+            <div class="hardware-glow" id="h-glow"></div>
+            
+            <div class="visual-layer active" id="layer-1">
+              <div class="mockup-window">
+                <div class="m-header"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+                <div class="m-body flex-center">
+                  <div class="apple-dl-ui">
+                    <div class="dl-circle-wrap">
+                      <svg viewBox="0 0 100 100" class="dl-svg">
+                        <circle cx="50" cy="50" r="46" class="dl-bg"></circle>
+                        <circle cx="50" cy="50" r="46" class="dl-progress"></circle>
+                      </svg>
+                      <div class="dl-icon-center">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="4" x2="12" y2="16"/><polyline points="7 11 12 16 17 11"/></svg>
+                      </div>
+                    </div>
+                    <div class="apple-dl-text">MakineAI_Setup.exe İndiriliyor</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="guide__step">
-            <div class="guide__step-num">3</div>
-            <div class="guide__step-content">
-              <h3>Çalıştır</h3>
-              <p><strong>MakineAI.exe</strong> dosyasına çift tıkla. Program açılacak.</p>
-              <div class="guide__tip guide__tip--warn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span>Windows <strong>"Bu dosya güvenli olmayabilir"</strong> diyebilir. <strong>"Yine de çalıştır"</strong> butonuna bas. Bu normal, zararsız.</span>
+
+            <div class="visual-layer" id="layer-2">
+              <div class="mockup-window">
+                <div class="m-header"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+                <div class="m-body flex-center flex-column">
+                  <div class="apple-scan-grid">
+                    <div class="scan-card sc-1"><div class="sc-img"></div><div class="sc-line"></div></div>
+                    <div class="scan-card sc-2"><div class="sc-img"></div><div class="sc-line"></div></div>
+                    <div class="scan-card sc-3"><div class="sc-img"></div><div class="sc-line"></div></div>
+                    <div class="scan-card sc-4"><div class="sc-img"></div><div class="sc-line"></div></div>
+                    
+                    <div class="glass-sweep"></div> </div>
+                  <div class="apple-scan-text">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    Kütüphane Taranıyor...
+                  </div>
+                </div>
               </div>
             </div>
+
+            <div class="visual-layer" id="layer-3">
+              <div class="mockup-window">
+                <div class="m-header"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+                <div class="m-body flex-center blur-bg">
+                  <div class="apple-success-ui">
+                    <div class="success-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12" class="check-draw"></polyline>
+                      </svg>
+                    </div>
+                    <h2 class="apple-success-title">Sistem Entegre Edildi</h2>
+                    <button class="apple-play-btn">Oyunu Başlat</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <section class="sys-req-section ai-fade-up delay-2">
+        <div class="req-glass-card">
+          <div class="req-left">
+            <h3>Donanım Profili</h3>
+            <p>MakineAI, en düşük özellikli sistemlerde bile arka planda hissettirmeden çalışacak şekilde tasarlanmıştır.</p>
+          </div>
+          <div class="req-right">
+            <div class="req-item"><span>İşletim Sistemi</span> <strong>Windows 10 / 11 (64-bit)</strong></div>
+            <div class="req-item"><span>Depolama</span> <strong>90 MB İstemci Alanı</strong></div>
+            <div class="req-item"><span>Ağ Durumu</span> <strong>İnternet Bağlantısı Gerekli</strong></div>
           </div>
         </div>
       </section>
 
-      <!-- İlk Çeviriniz -->
-      <section class="guide__section glass-card" id="ilk-ceviri">
-        <h2>Türkçe yama nasıl kurulur?</h2>
-        <p>MakineAI'yı açtıktan sonra 2 dakikada Türkçe oynarsın:</p>
-        <div class="guide__steps">
-          <div class="guide__step">
-            <div class="guide__step-num">1</div>
-            <div class="guide__step-content">
-              <h3>Oyunların otomatik bulunur</h3>
-              <p>MakineAI açılınca Steam, Epic, GOG kütüphanelerini tarar. Türkçe yama olan oyunların listede görünür.</p>
-            </div>
+      <section id="sss" class="faq-section ai-fade-up delay-3">
+        <div class="cyber-grid"></div>
+
+        <div class="faq-container">
+          <div class="section-header">
+            <h2 class="section-title">
+              Sistem <span class="metallic-text" data-text="Veritabanı.">Veritabanı.</span>
+            </h2>
+            <p class="section-subtitle">
+              MakineAI motorunun işleyişi, güvenlik protokolleri ve hata çözümleri hakkında merak edilenleri veri tabanımızdan sorgulayın.
+            </p>
           </div>
-          <div class="guide__step">
-            <div class="guide__step-num">2</div>
-            <div class="guide__step-content">
-              <h3>Oyuna tıkla</h3>
-              <p>Listeden Türkçe yapmak istediğin oyuna tıkla.</p>
+
+          <div class="faq-interface">
+            
+            <div class="query-list">
+              <div class="list-header">
+                <span class="pulse-dot"></span> BEKLEYEN SORGULAR
+              </div>
+              <div class="queries-wrapper">
+                <div class="queries">
+                  {terminalData.map((faq, index) => (
+                    <button class={`query-btn ${index === 0 ? 'active' : ''}`} data-answer={faq.a}>
+                      <div class="q-content">
+                        <span class="q-id">Q_{faq.id}</span>
+                        <span class="q-text">{faq.q}</span>
+                      </div>
+                      <div class="active-indicator"></div>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="guide__step">
-            <div class="guide__step-num">3</div>
-            <div class="guide__step-content">
-              <h3>"Kur" butonuna bas</h3>
-              <p>Türkçe yama otomatik indirilip kurulacak. 10-30 saniye sürer.</p>
+
+            <div class="answer-terminal">
+              <div class="terminal-top">
+                <div class="t-dots"><span></span><span></span><span></span></div>
+                <div class="t-status">AĞ BAĞLANTISI: <span class="cyan">STABİL</span></div>
+              </div>
+              
+              <div class="terminal-display">
+                <div class="ai-response-wrapper">
+                  <span class="sys-tag">[MakineAI_Core] >_ </span>
+                  <span id="typewriter-output" class="typewriter-text">Sorgu seçiliyor...</span>
+                  <span class="cursor"></span>
+                </div>
+              </div>
+              
+              <div class="terminal-footer">
+                <div class="barcode"></div>
+                <div class="hex-data">0x00A1 0x1B8F 0x9C22</div>
+              </div>
             </div>
+
           </div>
-          <div class="guide__step">
-            <div class="guide__step-num">4</div>
-            <div class="guide__step-content">
-              <h3>Oyunu aç, Türkçe oyna!</h3>
-              <p>Bitti! Oyununu Steam'den veya Epic'ten normal şekilde aç. Türkçe olacak.</p>
-            </div>
-          </div>
-        </div>
-        <div class="guide__callout">
-          <strong>Oyunun listede yok mu?</strong>
-          <p>Ana ekranda <strong>"Oyun Ekle"</strong> butonuna bas. Oyunun kurulu olduğu klasörü seç. MakineAI gerisini halleder.</p>
         </div>
       </section>
 
-      <!-- Çeviri Yönetimi -->
-      <section class="guide__section glass-card" id="yonetim">
-        <h2>Yama yönetimi</h2>
-        <p>Yamayı kurduktan sonra istediğin zaman güncelleyebilir veya kaldırabilirsin:</p>
-
-        <div class="guide__mgmt-grid">
-          <div class="guide__mgmt-card glass-card--inner">
-            <div class="guide__mgmt-icon guide__mgmt-icon--install">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </div>
-            <h3>Kur</h3>
-            <p>"Kur" butonuna bas. Yama indirilir ve oyuna uygulanır. Orijinal dosyalar yedeklenir.</p>
+      <section class="discord-module ai-fade-up delay-3">
+        <div class="discord-glass">
+          <div class="d-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
           </div>
-
-          <div class="guide__mgmt-card glass-card--inner">
-            <div class="guide__mgmt-icon guide__mgmt-icon--update">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-            </div>
-            <h3>Güncelle</h3>
-            <p>Yeni sürüm varsa "Güncelle" butonuna bas. Sadece değişen dosyalar güncellenir, hızlıdır.</p>
+          <div class="d-text">
+            <h2>Ana Ağa Bağlanın</h2>
+            <p>68.000'den fazla kullanıcının bulunduğu topluluğumuza katılın, çözemediğiniz konularda anında destek alın.</p>
           </div>
-
-          <div class="guide__mgmt-card glass-card--inner">
-            <div class="guide__mgmt-icon guide__mgmt-icon--remove">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-            </div>
-            <h3>Kaldır</h3>
-            <p>"Kaldır" butonuna bas. Oyun orijinal haline döner. Hiçbir iz kalmaz.</p>
-          </div>
-        </div>
-
-        <div class="guide__info-box glass-card--inner">
-          <h3>Yama ne yapıyor aslında?</h3>
-          <p>Merak ediyorsan: yama oyunun metin dosyalarını Türkçe versiyonlarıyla değiştiriyor. Bazı oyunlara Türkçe font da ekliyor (ş, ç, ğ harfleri için). Birkaç oyunda Türkçe seslendirme bile var!</p>
+          <a href="https://discord.com/invite/QDezpy4QtV" target="_blank" class="d-btn">Discord'a Katıl</a>
         </div>
       </section>
-
-      <!-- Sorun Giderme -->
-      <section class="guide__section glass-card" id="sorun-giderme">
-        <h2>Sorun mu var?</h2>
-        <p>Aşağıdaki yaygın sorunlardan birini yaşıyor olabilirsin. Tıkla, çözümü oku:</p>
-        <div class="guide__trouble-list">
-          <details class="guide__trouble">
-            <summary>
-              <span>Windows "Bu dosya güvenli olmayabilir" diyor</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p><strong>"Daha fazla bilgi"</strong> yazısına tıkla, sonra <strong>"Yine de çalıştır"</strong> butonuna bas. MakineAI güvenlidir, Windows sadece tanımadığı programlar için böyle uyarı verir.</p>
-            </div>
-          </details>
-
-          <details class="guide__trouble">
-            <summary>
-              <span>Antivirüs engelliyor</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p>Antivirüsün ayarlarından MakineAI klasörünü <strong>"istisna"</strong> veya <strong>"güvenilir"</strong> olarak ekle. Her antivirüste farklıdır ama genellikle Ayarlar &gt; İstisnalar bölümünde bulursun.</p>
-            </div>
-          </details>
-
-          <details class="guide__trouble">
-            <summary>
-              <span>"DLL bulunamadı" hatası alıyorum</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p><a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank" rel="noopener noreferrer">Bu linke tıkla</a>, indirilen dosyayı çalıştır ve kur. Sonra MakineAI'yı tekrar aç.</p>
-            </div>
-          </details>
-
-          <details class="guide__trouble">
-            <summary>
-              <span>Yama kurarken "dosya kilitli" diyor</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p>Oyunu kapat. Steam'i de kapat. Sonra tekrar dene. Oyun açıkken dosyalar kilitli kalıyor, o yüzden yama kurulamıyor.</p>
-            </div>
-          </details>
-
-          <details class="guide__trouble">
-            <summary>
-              <span>"Yazma izni yok" hatası</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p>MakineAI simgesine <strong>sağ tıkla</strong> ve <strong>"Yönetici olarak çalıştır"</strong> seç. Bu, programa dosya yazma izni verir.</p>
-            </div>
-          </details>
-
-          <details class="guide__trouble">
-            <summary>
-              <span>MakineAI çöktü, oyunum bozuldu mu?</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p><strong>Hayır, bozulmadı.</strong> MakineAI'yı tekrar aç, kurtarma ekranı gelecek. "Onar" butonuna bas, oyun eski haline döner.</p>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <!-- SSS -->
-      <section class="guide__section glass-card" id="sss">
-        <h2>Sık sorulan sorular</h2>
-        <div class="guide__trouble-list">
-          <details class="guide__trouble">
-            <summary>
-              <span>Yama oyunumu bozar mı?</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p><strong>Hayır.</strong> Her dosya kurulmadan önce yedekleniyor. Yamayı kaldırırsan oyun orijinal haline dönüyor. Steam'den de "dosya doğrulama" yapabilirsin.</p>
-            </div>
-          </details>
-
-          <details class="guide__trouble">
-            <summary>
-              <span>Oyun güncellendi, yama bozulur mu?</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p>Bozulabilir ama sorun değil. MakineAI sana haber verir. Yamayı tekrar kurmak yeterli, 10 saniye sürer.</p>
-            </div>
-          </details>
-
-          <details class="guide__trouble">
-            <summary>
-              <span>"Türkçe Yama" ve "Türkçe Dublaj" ne farkı var?</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p><strong>Türkçe Yama:</strong> Menüler, diyaloglar, alt yazılar Türkçe olur.<br><strong>Türkçe Dublaj:</strong> Karakterler Türkçe konuşur. İkisini ayrı ayrı veya birlikte kurabilirsin.</p>
-            </div>
-          </details>
-
-          <details class="guide__trouble">
-            <summary>
-              <span>Yamayı kaldırıp tekrar kurabilir miyim?</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p><strong>Evet.</strong> İstediğin kadar kaldır, tekrar kur. Dosyalar bilgisayarında önbellekte duruyor, tekrar indirmen bile gerekmez.</p>
-            </div>
-          </details>
-
-          <details class="guide__trouble">
-            <summary>
-              <span>Para ödeyecek miyim?</span>
-              <svg class="guide__trouble-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </summary>
-            <div class="guide__trouble-answer">
-              <p><strong>Hayır.</strong> MakineAI tamamen ücretsiz. Topluluk projesi. Reklam da yok.</p>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <!-- Destek -->
-      <div class="guide__support glass-card">
-        <h2>Hâlâ çözemediysen</h2>
-        <p>Discord sunucumuza gel, sana yardım edelim. 68.000+ kişilik topluluk var.</p>
-        <a href="https://discord.com/invite/QDezpy4QtV" target="_blank" rel="noopener noreferrer" class="guide__support-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/></svg>
-          Discord'a Katıl
-        </a>
-      </div>
 
     </div>
-  </div>
+  </main>
 
   <Footer />
 </Layout>
+
+<style>
+  /* --- 1. GENEL DÜZEN VE OPTİMİZE ARKA PLAN --- */
+  .galaxy-playground-main { position: relative; min-height: 100vh; padding-top: 150px; padding-bottom: 100px; background: #030305; color: #fafafa; overflow: hidden; font-family: inherit; }
+  .galaxy-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .nebula-blob { position: absolute; border-radius: 50%; mix-blend-mode: screen; }
+  .nebula-1 { top: -30%; left: -10%; width: 80vw; height: 80vw; background: radial-gradient(circle, rgba(78, 205, 196, 0.1) 0%, transparent 60%); }
+  .nebula-2 { bottom: -20%; right: -20%; width: 70vw; height: 70vw; background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 60%); }
+  .stars { position: absolute; inset: -50%; background-image: radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)), radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0,0,0,0)), radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)); background-repeat: repeat; background-size: 200px 200px; animation: starTwinkle 5s infinite alternate; }
+  .layer-1 { opacity: 0.5; }
+  .layer-2 { background-size: 350px 350px; opacity: 0.3; animation-delay: 2s; transform: rotate(20deg); }
+  @keyframes starTwinkle { 0% { opacity: 0.2; } 100% { opacity: 0.6; } }
+
+  .playground-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+
+  /* --- 2. HERO --- */
+  .playground-hero { text-align: center; margin-bottom: 5rem; display: flex; flex-direction: column; align-items: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; font-family: 'SF Mono', monospace; font-size: 0.85rem; font-weight: 700; color: #a1a1aa; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 100px; margin-bottom: 1.5rem; letter-spacing: 0.05em; }
+  .hero-badge svg { width: 16px; height: 16px; }
+  .hero-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem; color: #fff; }
+  .text-gradient { background: linear-gradient(135deg, #fff 20%, #a1a1aa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-subtitle { font-size: 1.15rem; color: #a1a1aa; max-width: 650px; line-height: 1.6; }
+
+  /* --- 3. OTOMATİK OYNATILAN İNTERAKTİF REHBER --- */
+  .interactive-guide { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: center; margin-bottom: 6rem; }
+  .guide-nav { display: flex; flex-direction: column; gap: 1rem; }
+  
+  .step-trigger {
+    position: relative; display: flex; align-items: center; gap: 20px; width: 100%; text-align: left;
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 24px; border-radius: 20px;
+    cursor: pointer; transition: all 0.3s ease; overflow: hidden;
+  }
+  .step-trigger:hover { background: rgba(255,255,255,0.05); }
+  .step-trigger.active { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); transform: translateX(10px); }
+  
+  .step-indicator { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: rgba(255,255,255,0.05); color: #71717a; transition: all 0.3s; }
+  .step-indicator svg { width: 24px; height: 24px; }
+  .step-trigger.active .step-indicator { background: #fff; color: #000; box-shadow: 0 0 15px rgba(255,255,255,0.2); }
+
+  .step-content h3 { font-size: 1.25rem; font-weight: 700; color: #a1a1aa; margin-bottom: 4px; transition: color 0.3s; }
+  .step-content p { font-size: 0.95rem; color: #52525b; margin: 0; transition: color 0.3s; }
+  .step-trigger.active .step-content h3 { color: #fff; }
+  .step-trigger.active .step-content p { color: #d4d4d8; }
+
+  /* İlerleme Çubuğu */
+  .progress-track { position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: transparent; }
+  .progress-fill { width: 100%; height: 100%; background: #fff; transform-origin: left; transform: scaleX(0); }
+  .step-trigger.active .progress-fill { animation: fillBar 5s linear forwards; }
+  @keyframes fillBar { to { transform: scaleX(1); } }
+
+  /* Sağ Taraf - Cam Panel (Mockup) */
+  .guide-visual-wrapper { perspective: 1000px; width: 100%; }
+  .glass-panel {
+    position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 24px; overflow: hidden;
+    background: rgba(9, 9, 11, 0.8); border: 1px solid rgba(255,255,255,0.1); 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6); backdrop-filter: blur(20px); transform-style: preserve-3d;
+  }
+  
+  .hardware-glow { position: absolute; left: 0; top: 0; width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; opacity: 0; transition: opacity 0.3s; z-index: 1; will-change: transform; }
+  .glass-panel:hover .hardware-glow { opacity: 1; }
+
+  .visual-layer { position: absolute; inset: 0; opacity: 0; visibility: hidden; transform: scale(0.98); transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); z-index: 2; }
+  .visual-layer.active { opacity: 1; visibility: visible; transform: scale(1); }
+
+  .mockup-window { width: 100%; height: 100%; display: flex; flex-direction: column; }
+  .m-header { height: 40px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; padding: 0 16px; gap: 8px; background: rgba(0,0,0,0.3); }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
+  .m-body { flex: 1; position: relative; overflow: hidden; background: #000; }
+  .flex-center { display: flex; align-items: center; justify-content: center; height: 100%; }
+  .flex-column { flex-direction: column; }
+
+  /* --- ADIM 1: APPLE TARZI İNDİRME HALKASI --- */
+  .apple-dl-ui { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  .dl-circle-wrap { position: relative; width: 80px; height: 80px; }
+  .dl-svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .dl-bg { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 4; }
+  .dl-progress { fill: none; stroke: #fff; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 290; stroke-dashoffset: 290; transition: stroke-dashoffset 4.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .visual-layer.active .dl-progress { stroke-dashoffset: 0; }
+  .dl-icon-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; }
+  .dl-icon-center svg { width: 28px; height: 28px; animation: subtleBounce 2s infinite alternate ease-in-out; }
+  .apple-dl-text { font-size: 0.95rem; color: #a1a1aa; font-weight: 500; }
+  @keyframes subtleBounce { 0% { transform: translateY(-3px); } 100% { transform: translateY(3px); } }
+
+  /* --- ADIM 2: APPLE TARZI KÜTÜPHANE TARAMA (Radar İptal, Cam Geçişi) --- */
+  .apple-scan-grid { display: flex; gap: 24px; position: relative; padding: 40px; }
+  .scan-card { width: 70px; height: 100px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  
+  /* Tarama esnasında kapakların aydınlanması */
+  .visual-layer.active .sc-1 { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); transform: translateY(-8px); transition-delay: 0.8s; box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
+  .visual-layer.active .sc-2 { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); transform: translateY(-8px); transition-delay: 1.6s; box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
+  .visual-layer.active .sc-3 { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); transform: translateY(-8px); transition-delay: 2.4s; box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
+  .visual-layer.active .sc-4 { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); transform: translateY(-8px); transition-delay: 3.2s; box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
+
+  /* İç Detaylar */
+  .sc-img { position: absolute; top: 8px; left: 8px; right: 8px; bottom: 24px; background: rgba(255,255,255,0.02); border-radius: 6px; }
+  .sc-line { position: absolute; bottom: 10px; left: 10px; width: 60%; height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; }
+  .visual-layer.active .scan-card .sc-img { background: rgba(255,255,255,0.2); }
+  .visual-layer.active .scan-card .sc-line { background: rgba(255,255,255,0.4); }
+
+  /* Cam Efektli Tarama Işığı */
+  .glass-sweep { position: absolute; top: 0; bottom: 0; left: -50px; width: 60px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); filter: blur(5px); transform: skewX(-20deg); opacity: 0; }
+  .visual-layer.active .glass-sweep { animation: sweepPass 4s cubic-bezier(0.25, 1, 0.5, 1) forwards; opacity: 1; }
+  @keyframes sweepPass { 0% { left: -50px; } 100% { left: 120%; } }
+
+  .apple-scan-text { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: #a1a1aa; font-weight: 500; margin-top: 2rem; opacity: 0; transform: translateY(10px); }
+  .visual-layer.active .apple-scan-text { opacity: 1; transform: translateY(0); transition: all 0.5s ease 0.5s; }
+  .apple-scan-text svg { width: 18px; height: 18px; animation: spinScan 2s linear infinite; }
+  @keyframes spinScan { to { transform: rotate(360deg); } }
+
+  /* --- ADIM 3: KUSURSUZ ONAY EKRANI --- */
+  .apple-success-ui { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .success-circle { width: 80px; height: 80px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; transform: scale(0); box-shadow: 0 0 40px rgba(255,255,255,0.2); }
+  .visual-layer.active .success-circle { transform: scale(1); transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s; }
+  .success-circle svg { width: 40px; height: 40px; }
+  
+  /* Tik işareti çizim animasyonu */
+  .check-draw { stroke-dasharray: 50; stroke-dashoffset: 50; }
+  .visual-layer.active .check-draw { stroke-dashoffset: 0; transition: stroke-dashoffset 0.5s ease 0.8s; }
+
+  .apple-success-title { font-size: 1.8rem; font-weight: 800; color: #fff; margin: 1.5rem 0 2rem; letter-spacing: -0.02em; opacity: 0; transform: translateY(10px); }
+  .visual-layer.active .apple-success-title { opacity: 1; transform: translateY(0); transition: all 0.5s ease 1s; }
+  
+  .apple-play-btn { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 12px 36px; font-weight: 600; font-size: 1rem; border-radius: 100px; cursor: pointer; backdrop-filter: blur(10px); opacity: 0; transform: translateY(10px); transition: all 0.3s; }
+  .visual-layer.active .apple-play-btn { opacity: 1; transform: translateY(0); transition: all 0.5s ease 1.2s; }
+  .apple-play-btn:hover { background: #fff; color: #000; transform: translateY(-2px) scale(1.05) !important; box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
+
+  /* --- 4. SİSTEM GEREKSİNİMLERİ KARTI --- */
+  .sys-req-section { margin-bottom: 8rem; }
+  .req-glass-card { display: flex; align-items: center; gap: 4rem; padding: 3rem 4rem; background: rgba(24,24,27,0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 24px; backdrop-filter: blur(10px); }
+  .req-left { flex: 1; }
+  .req-left h3 { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 1rem; }
+  .req-left p { color: #a1a1aa; line-height: 1.6; margin: 0; }
+  .req-right { flex: 1.2; display: flex; flex-direction: column; gap: 16px; }
+  .req-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid rgba(255,255,255,0.03); }
+  .req-item span { color: #71717a; font-size: 0.95rem; }
+  .req-item strong { color: #fff; font-size: 1rem; }
+
+  /* --- 5. TERMINAL / VERİTABANI TASARIMI (HIZLI VE KAYDIRILABİLİR YAPI) --- */
+  .faq-section { position: relative; padding: 4rem 0; z-index: 10; overflow: hidden; margin-bottom: 4rem; }
+  .cyber-grid { position: absolute; inset: 0; z-index: 0; background-size: 50px 50px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px); mask-image: radial-gradient(circle at center, black 10%, transparent 80%); -webkit-mask-image: radial-gradient(circle at center, black 10%, transparent 80%); }
+  .faq-container { position: relative; z-index: 2; }
+  .section-header { margin-bottom: 4rem; text-align: left; }
+  .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; letter-spacing: -0.04em; margin-bottom: 1rem; }
+  .metallic-text { position: relative; display: inline-block; color: #a1a1aa; }
+  .metallic-text::after { content: attr(data-text); position: absolute; left: 0; top: 0; background: linear-gradient(110deg, transparent 20%, #fff 40%, #fff 60%, transparent 80%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: metallicShine 4s linear infinite; }
+  .section-subtitle { font-size: 1.1rem; color: #71717a; max-width: 600px; line-height: 1.6; }
+
+  .faq-interface { display: flex; gap: 2rem; align-items: stretch; background: rgba(13, 13, 17, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 1.5rem; backdrop-filter: blur(20px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); min-height: 500px; }
+  
+  .query-list { flex: 1; display: flex; flex-direction: column; }
+  .list-header { display: flex; align-items: center; gap: 10px; font-family: 'SF Mono', monospace; font-size: 0.8rem; color: #71717a; margin-bottom: 1.5rem; padding-left: 10px; letter-spacing: 0.05em; }
+  .pulse-dot { width: 8px; height: 8px; background: #d4a843; border-radius: 50%; box-shadow: 0 0 10px #d4a843; animation: pulse 2s infinite; }
+  
+  /* SIKIŞMA SORUNU ÇÖZÜMÜ: SCROLLBAR */
+  .queries-wrapper { flex: 1; position: relative; overflow: hidden; }
+  .queries { 
+    position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px; 
+    overflow-y: auto; padding-right: 12px; padding-bottom: 20px;
+  }
+  
+  /* Özel Scrollbar Tasarımı */
+  .queries::-webkit-scrollbar { width: 6px; }
+  .queries::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); border-radius: 10px; }
+  .queries::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+  .queries::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+  
+  .query-btn { 
+    flex-shrink: 0; /* EZİLMEYİ ÖNLER */
+    position: relative; width: 100%; text-align: left; background: rgba(255,255,255,0.02); 
+    border: 1px solid rgba(255,255,255,0.03); border-radius: 12px; padding: 16px 20px; 
+    color: #a1a1aa; cursor: pointer; transition: all 0.3s ease; overflow: hidden; 
+  }
+  .query-btn:hover { background: rgba(255,255,255,0.05); color: #fff; transform: translateX(5px); }
+  .q-content { display: flex; flex-direction: column; gap: 6px; }
+  .q-id { font-family: 'SF Mono', monospace; font-size: 0.75rem; color: #4ecdc4; }
+  .q-text { font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+  
+  .active-indicator { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #4ecdc4; box-shadow: 0 0 15px #4ecdc4; opacity: 0; transition: opacity 0.3s; }
+  .query-btn.active { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: #fff; transform: translateX(5px); }
+  .query-btn.active .active-indicator { opacity: 1; }
+
+  .answer-terminal { flex: 1.5; background: #000; border: 1px solid #27272a; border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; position: relative; }
+  .terminal-top { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: #09090b; border-bottom: 1px solid #27272a; }
+  .t-dots { display: flex; gap: 6px; } .t-dots span { width: 10px; height: 10px; border-radius: 50%; background: #3f3f46; } .t-dots span:nth-child(1) { background: #ff5f56; } .t-dots span:nth-child(2) { background: #ffbd2e; } .t-dots span:nth-child(3) { background: #27c93f; }
+  .t-status { font-family: 'SF Mono', monospace; font-size: 0.7rem; color: #71717a; } .cyan { color: #4ecdc4; }
+  
+  .terminal-display { flex: 1; padding: 2.5rem; display: flex; align-items: flex-start; }
+  .ai-response-wrapper { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.95rem; line-height: 1.8; color: #e4e4e7; }
+  .sys-tag { color: #d4a843; font-weight: 600; margin-right: 8px; }
+  .cursor { display: inline-block; width: 8px; height: 16px; background: #4ecdc4; vertical-align: middle; margin-left: 4px; animation: blinkCursor 1s step-end infinite; }
+  .scrambled { color: #4ecdc4; opacity: 0.8; }
+  
+  .terminal-footer { padding: 12px 20px; background: #09090b; border-top: 1px solid #27272a; display: flex; justify-content: space-between; align-items: center; }
+  .barcode { width: 60px; height: 15px; background: repeating-linear-gradient(to right, #3f3f46, #3f3f46 2px, transparent 2px, transparent 4px, #3f3f46 4px, #3f3f46 5px, transparent 5px, transparent 8px); opacity: 0.5; }
+  .hex-data { font-family: monospace; font-size: 0.7rem; color: #3f3f46; }
+
+  /* --- 6. DISCORD MODÜLÜ --- */
+  .discord-module { padding-bottom: 2rem; }
+  .discord-glass { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 3rem 4rem; background: linear-gradient(135deg, rgba(88, 101, 242, 0.1) 0%, rgba(24, 24, 27, 0.6) 100%); border: 1px solid rgba(88, 101, 242, 0.2); border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); backdrop-filter: blur(10px); }
+  .d-icon { width: 64px; height: 64px; background: #5865F2; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; box-shadow: 0 10px 20px rgba(88, 101, 242, 0.4); }
+  .d-icon svg { width: 36px; height: 36px; }
+  .d-text flex: 1;
+  .d-text h2 { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+  .d-text p { color: #a1a1aa; line-height: 1.5; margin: 0; max-width: 500px; }
+  .d-btn { display: inline-block; background: #fff; color: #000; font-weight: 800; padding: 16px 36px; border-radius: 100px; text-decoration: none; white-space: nowrap; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 10px 20px rgba(255,255,255,0.2); }
+  .d-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255,255,255,0.3); background: #e4e4e7; }
+
+  /* Animasyonlar & Responsive */
+  @keyframes metallicShine { 0% { background-position: 200% 50%; } 100% { background-position: -200% 50%; } }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  @keyframes blinkCursor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  .ai-fade-up { opacity: 0; transform: translateY(30px); animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 992px) {
+    .interactive-guide { grid-template-columns: 1fr; gap: 3rem; }
+    .req-glass-card { flex-direction: column; align-items: stretch; gap: 2rem; padding: 2rem; }
+    .faq-interface { flex-direction: column; }
+    .answer-terminal { min-height: 350px; }
+    .queries-wrapper { height: 250px; } /* Mobilde kaydırma alanı yüksekliği */
+    .discord-glass { flex-direction: column; text-align: center; padding: 3rem 2rem; }
+    .d-text p { margin: 0 auto; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. OTOMATİK OYNATILAN REHBER (AUTO-PLAY) ---
+    const triggers = document.querySelectorAll('.step-trigger');
+    const layers = document.querySelectorAll('.visual-layer');
+    let currentStep = 1;
+    let autoPlayInterval: any;
+    const STEP_DURATION = 5000; 
+
+    function switchStep(stepIndex: number) {
+      currentStep = stepIndex;
+      
+      triggers.forEach(t => {
+        if (parseInt(t.getAttribute('data-step') || '1') === currentStep) {
+          t.classList.remove('active');
+          void (t as HTMLElement).offsetWidth; 
+          t.classList.add('active');
+        } else {
+          t.classList.remove('active');
+        }
+      });
+
+      layers.forEach(layer => {
+        if (layer.id === `layer-${currentStep}`) {
+          layer.classList.add('active');
+        } else {
+          layer.classList.remove('active');
+        }
+      });
+    }
+
+    function nextStep() {
+      let next = currentStep + 1;
+      if (next > 3) next = 1;
+      switchStep(next);
+    }
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(nextStep, STEP_DURATION);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const step = parseInt(trigger.getAttribute('data-step') || '1');
+        switchStep(step);
+        resetAutoPlay(); 
+      });
+    });
+
+    startAutoPlay();
+
+    // --- 2. DONANIMSAL MANYETİK PARLAMA ---
+    const visualBoard = document.getElementById('visual-board');
+    const glow = document.getElementById('h-glow');
+    let mouseX = 0;
+    let mouseY = 0;
+    let isHovering = false;
+
+    const updateGlow = () => {
+      if (isHovering && glow) {
+        glow.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        requestAnimationFrame(updateGlow);
+      }
+    };
+
+    if (visualBoard && glow) {
+      visualBoard.addEventListener('mousemove', (e) => {
+        const rect = visualBoard.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+      });
+      visualBoard.addEventListener('mouseenter', () => {
+        isHovering = true;
+        requestAnimationFrame(updateGlow);
+      });
+      visualBoard.addEventListener('mouseleave', () => {
+        isHovering = false;
+      });
+    }
+
+    // --- 3. KART TİLT (EĞİM) EFEKTİ ---
+    const tiltWrapper = document.querySelector('.tilt-effect') as HTMLElement;
+    const glassPanel = document.querySelector('.glass-panel') as HTMLElement;
+    
+    if (tiltWrapper && glassPanel) {
+      tiltWrapper.addEventListener('mousemove', (e) => {
+        const rect = tiltWrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -3; 
+        const rotateY = ((x - centerX) / centerX) * 3;
+        glassPanel.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+      tiltWrapper.addEventListener('mouseleave', () => {
+        glassPanel.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    }
+
+    // --- 4. VERİTABANI (TYPEWRITER) MANTIĞI ---
+    const buttons = document.querySelectorAll('.query-btn');
+    const outputElement = document.getElementById('typewriter-output');
+    const firstAnswer = buttons[0]?.getAttribute('data-answer') || '';
+    let typingInterval: any;
+    let scrambleInterval: any;
+
+    const typeWriter = (text: string, element: HTMLElement) => {
+      clearInterval(typingInterval);
+      clearInterval(scrambleInterval);
+      element.innerHTML = ''; 
+      
+      let i = 0;
+      const chars = '!<>-_\\/[]{}—=+*^?#_';
+      let scrambleCycles = 0;
+      
+      scrambleInterval = setInterval(() => {
+        let gibberish = '';
+        for(let j=0; j<15; j++) {
+          gibberish += chars[Math.floor(Math.random() * chars.length)];
+        }
+        element.innerHTML = `<span class="scrambled">${gibberish}</span>`;
+        scrambleCycles++;
+        
+        if(scrambleCycles > 5) {
+          clearInterval(scrambleInterval);
+          element.innerHTML = '';
+          
+          typingInterval = setInterval(() => {
+            if (i < text.length) {
+              element.innerHTML += text.charAt(i);
+              i++;
+            } else {
+              clearInterval(typingInterval);
+            }
+          }, 15); 
+        }
+      }, 30);
+    };
+
+    if(outputElement) {
+      typeWriter(firstAnswer, outputElement);
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if(btn.classList.contains('active')) return;
+
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const answer = btn.getAttribute('data-answer');
+        if (answer && outputElement) {
+          typeWriter(answer, outputElement);
+        }
+      });
+    });
+
+  });
+</script>
